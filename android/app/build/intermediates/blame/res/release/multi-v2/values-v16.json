@@ -1,0 +1,57 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v16\\values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\WeDig 15\\.gradle\\caches\\transforms-2\\files-2.1\\9679d9adc03c412b4abbfa894faab806\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2,5,8,11,14",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,215,358,510,652",
+                        "endLines": "4,7,10,13,16",
+                        "endColumns": "12,12,12,12,12",
+                        "endOffsets": "210,353,505,647,795"
+                    },
+                    "to": {
+                        "startLines": "3,6,9,12,15",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "121,281,424,576,718",
+                        "endLines": "5,8,11,14,17",
+                        "endColumns": "12,12,12,12,12",
+                        "endOffsets": "276,419,571,713,861"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\WeDig 15\\.gradle\\caches\\transforms-2\\files-2.1\\3eee9845bcf976c9475134c53922987b\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "866",
+                        "endLines": "21",
+                        "endColumns": "12",
+                        "endOffsets": "1034"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\WeDig 15\\.gradle\\caches\\transforms-2\\files-2.1\\18c8759130a0e7a299b732399f0dd6da\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

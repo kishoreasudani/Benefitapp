@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "310761243324",
+    "firebase_url": "https://benefitapp-e8ff2.firebaseio.com",
+    "project_id": "benefitapp-e8ff2",
+    "storage_bucket": "benefitapp-e8ff2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310761243324:android:aae5fc2c9b2f91e63306b9",
+        "android_client_info": {
+          "package_name": "com.benefitappwedigtech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.benefitappwedigtech",
+            "certificate_hash": "782db9717c9655a6d453acb7131d0f5e1f9e93d4"
+          }
+        },
+        {
+          "client_id": "310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.benefitappwedigtech",
+            "certificate_hash": "b9ba964548fc4aa31d15c76cad416c63c87282a6"
+          }
+        },
+        {
+          "client_id": "310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGuajfZexYa1OhZQgBsRRiQx-DntJ4H3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

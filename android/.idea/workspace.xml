@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="73cca8d8-ae14-42a9-872d-6ac3ae86c7d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FAQs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FAQs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PedometerApp.zip" beforeDir="false" afterPath="$PROJECT_DIR$/PedometerApp.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/index.android.bundle" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/index.android.bundle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/GoogleFitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/GoogleFitManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/GoogleFitModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/GoogleFitModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/GoogleFitPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/GoogleFitPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/StepCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/StepCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/StepHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/StepHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/pedometerapp/StepSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/StepSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/node_modules_reactnavigationstack_lib_module_views_assets_backicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_01splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_123.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_arrowbutton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_averagecoins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_averagesteps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_backarrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_banefitcoin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_bar_chart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_calories.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_confetti.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_dateofbirth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_distance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_facebookicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_faq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_googleicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_invitefriends.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_landinglogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_liquid_fill.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menucoinsoff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menucoinson.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menudashboardoff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menudashboardon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menurewardsof.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menurewardson.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menusettingsoff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_menusettingson.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_mobilenumber.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_nykaabg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_nykaalogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_privacypolicy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_reward.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_termsandconditions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_usericon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_wave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_wave_flipped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_wavepedometer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_wavepedometerv2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_yatrabg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/app_assets_images_img_yatralogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnativeratings_src_images_airbnbstar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnativeratings_src_images_airbnbstarselected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnativeratings_src_images_bell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnativeratings_src_images_heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnativeratings_src_images_rocket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnativeratings_src_images_star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnavigationstack_lib_module_views_assets_backicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/node_modules_reactnavigationstack_lib_module_views_assets_backiconmask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/node_modules_reactnavigationstack_lib_module_views_assets_backicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/node_modules_reactnavigationstack_lib_module_views_assets_backicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/node_modules_reactnavigationstack_lib_module_views_assets_backicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../app.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/WeekGraph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/123.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/Wave-Pedometer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/WavePedometer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/WavePedometerV2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/bar_chart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/liquid_fill.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/wave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/img/wave_flipped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/Images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/assets/Images/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/assets/styles/GlobalStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/assets/styles/GlobalStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/components/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/components/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/components/ListEmptyComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/components/ListEmptyComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/components/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/components/Loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/components/LoaderInline.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/components/LoaderInline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/appConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/config/appConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/urls.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/config/urls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/routes/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/routes/start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/AboutUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/AllRewards.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/AllRewards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/AppleStyleSwipeableRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/AppleStyleSwipeableRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/ChangePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/ChangePassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/FAQs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/FAQs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/ForgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/ForgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/GmailStyleSwipeableRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/GmailStyleSwipeableRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/MyCoins.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/MyCoins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/MyRewardDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/MyRewards.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/MyRewards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Notifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Notifications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Otp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Otp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/PrivacyPolicy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/PrivacyPolicy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/SignupCreatePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/SignupCreatePassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/TermsAndConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/TermsAndConditions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/UpdatePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/UpdatePassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/ViewReward.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/ViewReward.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/screens/WeekGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app/screens/WeekGraph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/actions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/01-Splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/arrow-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/arrow-down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/arrow-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/average-coins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/average-steps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/back-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/banefit-coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/calories.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/clear-all.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/confetti.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/date-of-birth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/distance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/edit-camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/edit-pencil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/facebook-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/faq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/google-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/invite-friends.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/landing-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/landing-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-coins-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-coins-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-dashboard-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-dashboard-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-rewards-of.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-rewards-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-settings-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-settings-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/mobile-number.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/notifications.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/nykaa-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/nykaa-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/privacy-policy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/reward.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/splash-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/terms-and-conditions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/yatra-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/yatra-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/app.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/01-Splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/arrow-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/arrow-button1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/arrow-down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/arrow-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/average-coins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/average-steps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/back-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/banefit-coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/bar_chart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/calories.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/clear-all.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/confetti.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/date-of-birth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/distance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/edit-camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/edit-pencil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/facebook-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/faq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/google-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/invite-friends.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/landing-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/landing-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/liquid_fill.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-coins-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-coins-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-dashboard-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-dashboard-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-rewards-of.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-rewards-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-settings-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menu-settings-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menudashboardoff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/menudashboardon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/mobile-number.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/notifications.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/nykaa-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/nykaa-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/privacy-policy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/reward.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/splash-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/terms-and-conditions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/user-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/userinfo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/yatra-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/img/yatra-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/Images/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Khand-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Khand-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Khand-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Khand-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Khand-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Poppins-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Poppins-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/fonts/Poppins.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/styles/GlobalStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/assets/styles/colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/components/Button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/components/FadeAnimation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/components/ListEmptyComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/components/Loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/components/LoaderInline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/config/NavigationService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/config/appConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/config/dbConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/config/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/config/urls.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/lib/enums.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/reducers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/reducers/rootReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/routes/start.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/AboutUs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/AllRewards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/AppleStyleSwipeableRow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/ChangePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/EditProfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/FAQs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/ForgotPassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/GmailStyleSwipeableRow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/InviteFriends.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Landing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Logout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/MyCoins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/MyRewardDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/MyRewards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Otp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/PrivacyPolicy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Profile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/Signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/SignupCreatePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/TermsAndConditions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/UpdatePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/screens/WeekGraph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/services/databaseServices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app1/services/networkServices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/actions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/01-Splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/arrow-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/arrow-down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/arrow-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/average-coins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/average-steps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/back-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/banefit-coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/calories.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/clear-all.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/confetti.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/date-of-birth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/distance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/edit-camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/edit-pencil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/facebook-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/faq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/google-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/invite-friends.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/landing-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/landing-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-coins-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-coins-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-dashboard-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-dashboard-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-rewards-of.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-rewards-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-settings-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/menu-settings-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/mobile-number.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/notifications.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/nykaa-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/nykaa-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/privacy-policy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/reward.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/splash-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/terms-and-conditions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/yatra-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/Pedometer-Assets-21 Aug (2)/Assets/yatra-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/app-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/app.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/01-Splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/arrow-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/arrow-button1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/arrow-down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/arrow-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/average-coins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/average-steps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/back-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/banefit-coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/calories.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/clear-all.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/confetti.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/date-of-birth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/distance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/edit-camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/edit-pencil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/facebook-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/faq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/google-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/invite-friends.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/landing-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/landing-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/liquid_fill.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-coins-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-coins-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-dashboard-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-dashboard-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-rewards-of.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-rewards-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-settings-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menu-settings-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menudashboardoff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/menudashboardon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/mobile-number.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/notifications.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/nykaa-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/nykaa-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/privacy-policy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/reward.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/splash-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/terms-and-conditions.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/user-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/userinfo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/yatra-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/img/yatra-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/Images/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Khand-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Khand-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Khand-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Khand-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Khand-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Poppins-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Poppins-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/fonts/Poppins.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/styles/GlobalStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/assets/styles/colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/components/Button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/components/FadeAnimation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/components/ListEmptyComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/components/Loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/components/LoaderInline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/config/NavigationService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/config/appConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/config/dbConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/config/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/config/urls.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/lib/enums.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/reducers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/reducers/rootReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/routes/start.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/AboutUs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/AllRewards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/AppleStyleSwipeableRow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/ChangePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/EditProfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/FAQs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/ForgotPassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/GmailStyleSwipeableRow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/InviteFriends.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Landing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Logout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/MyCoins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/MyRewardDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/MyRewards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Otp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/PrivacyPolicy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Profile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/Signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/SignupCreatePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/TermsAndConditions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/UpdatePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/ViewReward.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/screens/WeekGraph.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/services/databaseServices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/services/fitService.android.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/services/fitService.ios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app_old/services/networkServices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/PedometerApp.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/PedometerApp.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="PL2GAR4832114851" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PedometerApp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PedometerApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PedometerApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PedometerApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="D:\Chhitar\reactNative\PedometerApp\android\app\pedometer.keystore" />
+    <option name="KEY_ALIAS" value="pedometer" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/gradle.properties" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-7" />
+    <option name="width" value="1015" />
+    <option name="height" value="745" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages AndroidView="true" />
+      <hideEmptyPackages AndroidView="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExportApk.ApkPath" value="D:\Chhitar\reactNative\PedometerApp\android\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Chhitar\reactNative\PedometerApp\android\app" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="android:app [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.android:app [signingReport]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="73cca8d8-ae14-42a9-872d-6ac3ae86c7d3" name="Default Changelist" comment="" />
+      <created>1570111161223</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570111161223</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.72302735" visible="true" weight="0.2980333" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" sideWeight="0.27697262" side_tool="true" weight="0.2980333" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.32850242" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32850242" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.3517398" side_tool="true" weight="0.34460548" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" sideWeight="0.64826024" visible="true" weight="0.34460548" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49924356" weight="0.32850242" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/benefitappwedigtech/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret column="32" selection-start-column="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/google-services.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="107" column="5" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

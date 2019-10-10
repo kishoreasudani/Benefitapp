@@ -1,0 +1,2 @@
+# Referenced at D:\Chhitar\reactNative\PedometerApp\android\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:59
+-keep class com.benefitappwedigtech.MainApplication { <init>(); }

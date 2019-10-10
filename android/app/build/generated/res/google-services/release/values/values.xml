@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://benefitapp-e8ff2.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">310761243324</string>
+    <string name="google_api_key" translatable="false">AIzaSyDGuajfZexYa1OhZQgBsRRiQx-DntJ4H3g</string>
+    <string name="google_app_id" translatable="false">1:310761243324:android:aae5fc2c9b2f91e63306b9</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDGuajfZexYa1OhZQgBsRRiQx-DntJ4H3g</string>
+    <string name="google_storage_bucket" translatable="false">benefitapp-e8ff2.appspot.com</string>
+    <string name="project_id" translatable="false">benefitapp-e8ff2</string>
+</resources>
