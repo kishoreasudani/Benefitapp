@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Oct 09 20:14:21 IST 2019
+#Tue Oct 15 18:02:03 IST 2019
 60.set=NATIVE_RESOURCE
 52.set=NATIVE_RESOURCE
 53.base=D\:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\release\\0

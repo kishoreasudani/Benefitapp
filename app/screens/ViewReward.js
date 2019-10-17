@@ -133,11 +133,19 @@ class ViewRewardScreen extends Component {
                         //   loading: false,
                     })
 
-                    // Utils.displayAlert("CONGRATULATIONS !", "Your Rewards Will Be Saved In My Rewards", "View Rewards", () => {
+                    // Utils.displayAlertRewards("CONGRATULATIONS !", "Your Rewards will be saved in My Rewards.", "Okay", () => {
                     //     this.props.navigation.navigate('MyRewards');
-                    // }, true, "", true, true, Images.L3);
-                    this.props.navigation.navigate('MyRewards');
-                    Utils.displayAlert("CONGRATULATIONS !", "Your Rewards will be saved in My Rewards.");
+                    // }, true, "", true, true, Images.RewardsPopUp);
+
+                    // this.props.navigation.navigate('MyRewards');
+                    Utils.displayAlertRewards("",
+                        " CONGRATULATIONS ! \n Your Rewards will be saved in My Rewards.", "View Rewards", () => {
+                            this.props.navigation.navigate('MyRewards');
+                        }, false, "", true, true, Images.RewardsPopUp);
+
+                    // this.props.navigation.navigate('MyRewards');
+                    // Utils.displayAlert("CONGRATULATIONS !", "Your Rewards will be saved in My Rewards."
+                    //     , true, "", true, true, Images.RewardsPopUp);
                 } else {
                     // _this.getVoucherId();
                     _this.setState({

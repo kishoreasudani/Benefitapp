@@ -737,8 +737,8 @@
     <integer name="mtrl_tab_indicator_anim_duration_ms">250</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <string name="ACCOUNT_KIT_CLIENT_TOKEN">dbc11690c0f6224a47d4d6c0971de411</string>
-    <string name="FACEBOOK_APP_ID">490871485028325</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">4de4455c1d5fe33b32d42ee255c8d6ce</string>
+    <string name="FACEBOOK_APP_ID">2522826854662757</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -779,8 +779,8 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="adjustable_description" translatable="false">Adjustable</string>
-    <string name="ak_client_token">dbc11690c0f6224a47d4d6c0971de411</string>
-    <string name="ak_login_protocol_scheme">490871485028325</string>
+    <string name="ak_client_token">4de4455c1d5fe33b32d42ee255c8d6ce</string>
+    <string name="ak_login_protocol_scheme">2522826854662757</string>
     <string name="app_name">Benefit</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
@@ -810,7 +810,7 @@
     <string name="catalyst_settings_title" project="catalyst" translatable="false">Catalyst Dev Settings</string>
     <string name="character_counter_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">7af48976-d964-4f69-9b9c-53c929b4c480</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">3dbbed77-ca35-488e-8eaa-e4027283ade6</string>
     <string description="Large label shown when account verification is successful" name="com_accountkit_account_verified">Account verified!</string>
     <string description="Button label" name="com_accountkit_button_begin">Begin</string>
     <string description="Button label for cancel" name="com_accountkit_button_cancel">Cancel</string>
@@ -931,11 +931,11 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
-    <string name="default_web_client_id" translatable="false">310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">310761243324-73d7dpracth9p092mlmdjkb3680avpau.apps.googleusercontent.com</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
-    <string name="facebook_app_id">490871485028325</string>
-    <string name="fb_login_protocol_scheme">fb490871485028325</string>
+    <string name="facebook_app_id">2522826854662757</string>
+    <string name="fb_login_protocol_scheme">fb2522826854662757</string>
     <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="firebase_database_url" translatable="false">https://benefitapp-e8ff2.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">310761243324</string>

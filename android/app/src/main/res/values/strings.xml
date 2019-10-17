@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Benefit</string>
-    <string name="FACEBOOK_APP_ID">490871485028325</string>
-    <string name="ACCOUNT_KIT_CLIENT_TOKEN">dbc11690c0f6224a47d4d6c0971de411</string>
-    <string name="ak_login_protocol_scheme">490871485028325</string>
-    <string name="facebook_app_id">490871485028325</string>
-    <string name="fb_login_protocol_scheme">fb490871485028325</string>
-    <string name="ak_client_token">dbc11690c0f6224a47d4d6c0971de411</string>
+<string name="app_name">Benefit</string>
+<string name="FACEBOOK_APP_ID">2522826854662757</string>
+<string name="ACCOUNT_KIT_CLIENT_TOKEN">4de4455c1d5fe33b32d42ee255c8d6ce</string>
+<string name="ak_login_protocol_scheme">2522826854662757</string>
+<string name="facebook_app_id">2522826854662757</string>
+<string name="fb_login_protocol_scheme">fb2522826854662757</string>
+<string name="ak_client_token">4de4455c1d5fe33b32d42ee255c8d6ce</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.benefitappwedigtech"
-    android:versionCode="1"
+    android:versionCode="5"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to access Google Play Licensing -->
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
@@ -54,7 +55,6 @@
     <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
     <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name="com.benefitappwedigtech.MainApplication"

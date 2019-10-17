@@ -92,9 +92,9 @@
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-common:2.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.googlecode.libphonenumber:libphonenumber:8.10.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.auto.value:auto-value-annotations:1.6.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.googlecode.libphonenumber:libphonenumber:8.10.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.zxing:core:3.3.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.react:react-native:0.58.6@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.android:account-kit-sdk:5.4.0@aar" level="project" />
@@ -135,6 +135,8 @@
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagetranscoder:1.12.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-okhttp3:1.10.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.webkit:android-jsc:r174650@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.cardview:cardview:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.evernote:android-job:1.1.11@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.legacy:legacy-support-v4:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-common:17.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks:17.0.0@aar" level="project" />
@@ -172,7 +174,7 @@
     <orderEntry type="library" name="Gradle: androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.print:print:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.cardview:cardview:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: net.vrallev.android:cat:1.0.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.interpolator:interpolator:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-livedata:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar" level="project" />
@@ -183,6 +185,7 @@
     <orderEntry type="library" name="Gradle: io.fabric.sdk.android:fabric:1.4.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:animated-drawable:1.12.0@aar" level="project" />
     <orderEntry type="module" module-name="react-native-charts-wrapper" />
+    <orderEntry type="module" module-name="react-native-facebook-account-kit" />
     <orderEntry type="module" module-name="react-native-google-fit" />
     <orderEntry type="module" module-name="react-native-oui-pedometer" />
     <orderEntry type="module" module-name="react-native-play-audio" />
@@ -205,8 +208,35 @@
     <orderEntry type="module" module-name="react-native-splash-screen" />
     <orderEntry type="module" module-name="react-native-vector-icons" />
     <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
     <orderEntry type="module" module-name="react-native-background-task" />
+    <orderEntry type="module" module-name="react-native-fbsdk" />
+    <orderEntry type="module" module-name="react-native-google-signin" />
+    <orderEntry type="module" module-name="react-native-charts-wrapper" />
+    <orderEntry type="module" module-name="react-native-facebook-account-kit" />
+    <orderEntry type="module" module-name="react-native-google-fit" />
+    <orderEntry type="module" module-name="react-native-oui-pedometer" />
+    <orderEntry type="module" module-name="react-native-play-audio" />
+    <orderEntry type="module" module-name="react-native-touch-id" />
+    <orderEntry type="module" module-name="react-native-share" />
+    <orderEntry type="module" module-name="react-native-cardview" />
+    <orderEntry type="module" module-name="react-native-restart" />
+    <orderEntry type="module" module-name="react-native-check-app-install" />
+    <orderEntry type="module" module-name="@react-native-community_netinfo" />
+    <orderEntry type="module" module-name="react-native-sqlite-2" />
+    <orderEntry type="module" module-name="rn-fetch-blob" />
+    <orderEntry type="module" module-name="react-native-snackbar" />
+    <orderEntry type="module" module-name="react-native-linear-gradient" />
+    <orderEntry type="module" module-name="react-native-image-picker" />
+    <orderEntry type="module" module-name="react-native-fs" />
+    <orderEntry type="module" module-name="react-native-firebase" />
+    <orderEntry type="module" module-name="react-native-file-picker" />
+    <orderEntry type="module" module-name="react-native-device-info" />
+    <orderEntry type="module" module-name="react-native-maps" />
+    <orderEntry type="module" module-name="react-native-splash-screen" />
+    <orderEntry type="module" module-name="react-native-vector-icons" />
+    <orderEntry type="module" module-name="react-native-gesture-handler" />
+    <orderEntry type="module" module-name="react-native-background-task" />
+    <orderEntry type="module" module-name="react-native-fbsdk" />
     <orderEntry type="module" module-name="react-native-google-signin" />
   </component>
 </module>

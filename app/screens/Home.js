@@ -370,9 +370,17 @@ class HomeScreen extends Component {
                                 finalStepCount = New_Steps;
                             }
                         }
+                        // if (finalStepCount > 0) {
+                        //     this.setState({
+                        //         stepsCount: 0
+                        //     });
+                        // }
+                        // else {
                         this.setState({
-                            stepsCount: finalStepCount
+                            stepsCount: Math.abs(finalStepCount)
                         });
+                        //}
+
                     }
                 }
             })
@@ -573,7 +581,7 @@ class HomeScreen extends Component {
         //require("../assets/Images/img/user-icon.png")
         const avatar = this.state.avatar != null && this.state.avatar != "" ?
             { uri: URL.ImageURLProduction + "data/user/" + this.props.userData.id + "/" + this.state.avatar } : require("../assets/Images/img/user-icon.png")
-        const LiquidLevel = 100 - ((this.state.stepsCount / this.state.GoalSteps) * 100);
+        const LiquidLevel = 87 - ((this.state.stepsCount / this.state.GoalSteps) * 100);
         //console.log(LiquidLevel)
         return (
             <View style={ [GlobalStyle.container, localStyle.container] }>
@@ -710,16 +718,16 @@ class HomeScreen extends Component {
                     } }>
                         <View style={ localStyle.innerContainer }>
                             <View style={ [GlobalStyle.card, localStyle.card] }>
-                                <TouchableOpacity>
-                                    <Image source={ Images.distance }
-                                        style={ {
-                                            width: Utils.moderateVerticalScale(40),
-                                            height: Utils.moderateVerticalScale(40),
-                                            borderRadius: Utils.moderateVerticalScale(20),
-                                            alignItems: "center",
-                                        } }
-                                    />
-                                </TouchableOpacity>
+
+                                <Image source={ Images.distance }
+                                    style={ {
+                                        width: Utils.moderateVerticalScale(40),
+                                        height: Utils.moderateVerticalScale(40),
+                                        borderRadius: Utils.moderateVerticalScale(20),
+                                        alignItems: "center",
+                                    } }
+                                />
+
                                 <View
                                     style={ {
                                         width: "100%",
@@ -739,17 +747,17 @@ class HomeScreen extends Component {
 
                         <View style={ localStyle.innerContainer }>
                             <View style={ [GlobalStyle.card, localStyle.card] }>
-                                <TouchableOpacity>
 
-                                    <Image source={ Images.calories }
-                                        style={ {
-                                            width: Utils.moderateVerticalScale(40),
-                                            height: Utils.moderateVerticalScale(40),
-                                            borderRadius: Utils.moderateVerticalScale(20),
-                                            alignItems: "center",
-                                        } }
-                                    />
-                                </TouchableOpacity>
+
+                                <Image source={ Images.calories }
+                                    style={ {
+                                        width: Utils.moderateVerticalScale(40),
+                                        height: Utils.moderateVerticalScale(40),
+                                        borderRadius: Utils.moderateVerticalScale(20),
+                                        alignItems: "center",
+                                    } }
+                                />
+
                                 <View
                                     style={ {
                                         width: "100%",
@@ -769,17 +777,17 @@ class HomeScreen extends Component {
                         </View>
                         <View style={ localStyle.innerContainer }>
                             <View style={ [GlobalStyle.card, localStyle.card] }>
-                                <TouchableOpacity>
 
-                                    <Image source={ Images.time }
-                                        style={ {
-                                            width: Utils.moderateVerticalScale(40),
-                                            height: Utils.moderateVerticalScale(40),
-                                            borderRadius: Utils.moderateVerticalScale(20),
-                                            alignItems: "center",
-                                        } }
-                                    />
-                                </TouchableOpacity>
+
+                                <Image source={ Images.time }
+                                    style={ {
+                                        width: Utils.moderateVerticalScale(40),
+                                        height: Utils.moderateVerticalScale(40),
+                                        borderRadius: Utils.moderateVerticalScale(20),
+                                        alignItems: "center",
+                                    } }
+                                />
+
                                 <View
                                     style={ {
                                         width: "100%",
@@ -799,16 +807,16 @@ class HomeScreen extends Component {
                     <View style={ { flexDirection: 'row', } }>
                         <View style={ localStyle.innerContainer2 }>
                             <View style={ [GlobalStyle.card, localStyle.card] }>
-                                <TouchableOpacity>
-                                    <Image source={ Images.average_steps }
-                                        style={ {
-                                            width: 40,
-                                            height: 40,
-                                            borderRadius: 40 / 2,
-                                            alignItems: "center",
-                                        } }
-                                    />
-                                </TouchableOpacity>
+
+                                <Image source={ Images.average_steps }
+                                    style={ {
+                                        width: 40,
+                                        height: 40,
+                                        borderRadius: 40 / 2,
+                                        alignItems: "center",
+                                    } }
+                                />
+
                                 <View
                                     style={ {
                                         width: "100%",
@@ -834,17 +842,17 @@ class HomeScreen extends Component {
                         </View>
                         <View style={ localStyle.innerContainer2 }>
                             <View style={ [GlobalStyle.card, localStyle.card] }>
-                                <TouchableOpacity>
 
-                                    <Image source={ Images.average_coins }
-                                        style={ {
-                                            width: 40,
-                                            height: 40,
-                                            borderRadius: 40 / 2,
-                                            alignItems: "center",
-                                        } }
-                                    />
-                                </TouchableOpacity>
+
+                                <Image source={ Images.average_coins }
+                                    style={ {
+                                        width: 40,
+                                        height: 40,
+                                        borderRadius: 40 / 2,
+                                        alignItems: "center",
+                                    } }
+                                />
+
                                 <View
                                     style={ {
                                         width: "100%",

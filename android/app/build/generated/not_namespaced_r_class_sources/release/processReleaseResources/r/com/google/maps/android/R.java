@@ -61,19 +61,19 @@ public final class R {
 
         public static final int amu_bubble_mask = 0x7f08005a;
         public static final int amu_bubble_shadow = 0x7f08005b;
-        public static final int common_full_open_on_phone = 0x7f0800aa;
-        public static final int common_google_signin_btn_icon_dark = 0x7f0800ab;
-        public static final int common_google_signin_btn_icon_dark_focused = 0x7f0800ac;
-        public static final int common_google_signin_btn_icon_dark_normal = 0x7f0800ad;
-        public static final int common_google_signin_btn_icon_light = 0x7f0800b0;
-        public static final int common_google_signin_btn_icon_light_focused = 0x7f0800b1;
-        public static final int common_google_signin_btn_icon_light_normal = 0x7f0800b2;
-        public static final int common_google_signin_btn_text_dark = 0x7f0800b4;
-        public static final int common_google_signin_btn_text_dark_focused = 0x7f0800b5;
-        public static final int common_google_signin_btn_text_dark_normal = 0x7f0800b6;
-        public static final int common_google_signin_btn_text_light = 0x7f0800b9;
-        public static final int common_google_signin_btn_text_light_focused = 0x7f0800ba;
-        public static final int common_google_signin_btn_text_light_normal = 0x7f0800bb;
+        public static final int common_full_open_on_phone = 0x7f0800ab;
+        public static final int common_google_signin_btn_icon_dark = 0x7f0800ac;
+        public static final int common_google_signin_btn_icon_dark_focused = 0x7f0800ad;
+        public static final int common_google_signin_btn_icon_dark_normal = 0x7f0800ae;
+        public static final int common_google_signin_btn_icon_light = 0x7f0800b1;
+        public static final int common_google_signin_btn_icon_light_focused = 0x7f0800b2;
+        public static final int common_google_signin_btn_icon_light_normal = 0x7f0800b3;
+        public static final int common_google_signin_btn_text_dark = 0x7f0800b5;
+        public static final int common_google_signin_btn_text_dark_focused = 0x7f0800b6;
+        public static final int common_google_signin_btn_text_dark_normal = 0x7f0800b7;
+        public static final int common_google_signin_btn_text_light = 0x7f0800ba;
+        public static final int common_google_signin_btn_text_light_focused = 0x7f0800bb;
+        public static final int common_google_signin_btn_text_light_normal = 0x7f0800bc;
     }
     public static final class id {
         private id() {}

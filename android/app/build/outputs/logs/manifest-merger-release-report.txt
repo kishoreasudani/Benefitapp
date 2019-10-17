@@ -5,6 +5,7 @@ INJECTED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidMa
 INJECTED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:1:1-88:12
 INJECTED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:1:1-88:12
 MERGED from [:react-native-charts-wrapper] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-charts-wrapper\android\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-facebook-account-kit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-facebook-account-kit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
 MERGED from [:react-native-google-fit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-google-fit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-oui-pedometer] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-oui-pedometer\android\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-play-audio] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-play-audio\android\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-11:12
@@ -85,8 +86,8 @@ MERGED from [androidx.browser:browser:1.0.0] C:\Users\WeDig 15\.gradle\caches\tr
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\13e5d09b0d579bbab50426a7fbb27e25\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\9d3c38449b74dae8351ae9b158207fd0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\b287af51d54a11ef99223949fd9259ee\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\583c836124b15288166637eda1d7a6ca\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\932966e2f31ddbf084ec426d20663ffb\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\583c836124b15288166637eda1d7a6ca\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\829be651087964cde0c69cf2f5943d5a\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\83bc012b44d3b4774f720122a16dcbb3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\db05849cb9cd1674ff8cf0e40fd03a9f\AndroidManifest.xml:17:1-22:12
@@ -224,8 +225,14 @@ uses-permission#android.permission.ACTIVITY_RECOGNITION
 ADDED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:13:5-78
 	android:name
 		ADDED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:14:5-75
+	android:name
+		ADDED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:14:22-72
 application
 ADDED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:16:5-86:19
+MERGED from [:react-native-facebook-account-kit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-facebook-account-kit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:9:5-13:19
+MERGED from [:react-native-facebook-account-kit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-facebook-account-kit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:9:5-13:19
 MERGED from [:react-native-share] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-share\android\build\intermediates\library_manifest\release\AndroidManifest.xml:14:5-26:19
 MERGED from [:react-native-share] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-share\android\build\intermediates\library_manifest\release\AndroidManifest.xml:14:5-26:19
 MERGED from [:rn-fetch-blob] D:\Chhitar\reactNative\PedometerApp\node_modules\rn-fetch-blob\android\build\intermediates\library_manifest\release\AndroidManifest.xml:35:5-45:19
@@ -341,7 +348,7 @@ MERGED from [io.fabric.sdk.android:fabric:1.4.4] C:\Users\WeDig 15\.gradle\cache
 	android:icon
 		ADDED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:20:9-43
 	android:supportsRtl
-		ADDED from [com.facebook.android:facebook-android-sdk:5.8.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\55528971860f8f39cd216d9eb702f7c3\AndroidManifest.xml:28:18-44
+		ADDED from [:react-native-facebook-account-kit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-facebook-account-kit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:12:9-35
 	android:label
 		ADDED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:21:9-41
 	android:appComponentFactory
@@ -487,6 +494,8 @@ INJECTED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidMa
 INJECTED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml
 MERGED from [:react-native-charts-wrapper] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-charts-wrapper\android\build\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-charts-wrapper] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-charts-wrapper\android\build\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-facebook-account-kit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-facebook-account-kit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-facebook-account-kit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-facebook-account-kit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-google-fit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-google-fit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-google-fit] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-google-fit\android\build\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-oui-pedometer] D:\Chhitar\reactNative\PedometerApp\node_modules\react-native-oui-pedometer\android\build\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
@@ -647,10 +656,10 @@ MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\WeDig 15\.gr
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\9d3c38449b74dae8351ae9b158207fd0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\b287af51d54a11ef99223949fd9259ee\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\b287af51d54a11ef99223949fd9259ee\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\583c836124b15288166637eda1d7a6ca\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\583c836124b15288166637eda1d7a6ca\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\932966e2f31ddbf084ec426d20663ffb\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\932966e2f31ddbf084ec426d20663ffb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\583c836124b15288166637eda1d7a6ca\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\583c836124b15288166637eda1d7a6ca\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\829be651087964cde0c69cf2f5943d5a\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\829be651087964cde0c69cf2f5943d5a\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\83bc012b44d3b4774f720122a16dcbb3\AndroidManifest.xml:20:5-44
@@ -1209,5 +1218,3 @@ ADDED from [com.facebook.android:facebook-core:5.8.0] C:\Users\WeDig 15\.gradle\
 		ADDED from [com.facebook.android:facebook-core:5.8.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\10a8979fabd79ee048796e94bc287955\AndroidManifest.xml:54:13-69
 	android:name
 		ADDED from [com.facebook.android:facebook-core:5.8.0] C:\Users\WeDig 15\.gradle\caches\transforms-2\files-2.1\10a8979fabd79ee048796e94bc287955\AndroidManifest.xml:52:13-65
-uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from D:\Chhitar\reactNative\PedometerApp\android\app\src\main\AndroidManifest.xml:1:1-88:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4

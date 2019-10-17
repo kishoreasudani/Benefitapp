@@ -556,26 +556,44 @@ class WeekGraphScreen extends Component {
                                 <TouchableOpacity onPress={ () => this.GetDailyCount() }>
                                     {
                                         this.state.status ?
-                                            <Text style={ { marginLeft: 0, fontSize: 16, color: "#54c18d" } }> Steps  </Text>
+                                            <Text style={ {
+                                                marginLeft: Utils.moderateVerticalScale(0),
+                                                fontSize: Utils.moderateVerticalScale(16), color: "#54c18d"
+                                            } }> Steps  </Text>
 
-                                            : <Text style={ { marginLeft: 0, fontSize: 16, color: "#555555" } }> Steps  </Text>
+                                            : <Text style={ {
+                                                marginLeft: Utils.moderateVerticalScale(0),
+                                                fontSize: Utils.moderateVerticalScale(16), color: "#555555"
+                                            } }> Steps  </Text>
                                     }
                                 </TouchableOpacity>
 
                                 <TouchableOpacity onPress={ () => this.DailyCalorie() }>
                                     {
                                         this.state.status1 ?
-                                            <Text style={ { marginLeft: 70, fontSize: 16, color: "#54c18d" } }> XCAL </Text>
+                                            <Text style={ {
+                                                marginLeft: Utils.moderateVerticalScale(70),
+                                                fontSize: Utils.moderateVerticalScale(16), color: "#54c18d"
+                                            } }> XCAL </Text>
                                             :
-                                            <Text style={ { marginLeft: 70, fontSize: 16, color: "#555555" } }> XCAL </Text>
+                                            <Text style={ {
+                                                marginLeft: Utils.moderateVerticalScale(70),
+                                                fontSize: Utils.moderateVerticalScale(16), color: "#555555"
+                                            } }> XCAL </Text>
                                     }
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={ () => this.DailyDistanceSamples() }>
                                     {
                                         this.state.status2 ?
-                                            <Text style={ { marginLeft: 60, fontSize: 16, color: "#54c18d" } }> Distance </Text>
+                                            <Text style={ {
+                                                marginLeft: Utils.moderateVerticalScale(60),
+                                                fontSize: Utils.moderateVerticalScale(16), color: "#54c18d"
+                                            } }> Distance </Text>
                                             :
-                                            <Text style={ { marginLeft: 60, fontSize: 16, color: "#555555" } }> Distance </Text>
+                                            <Text style={ {
+                                                marginLeft: Utils.moderateVerticalScale(60),
+                                                fontSize: Utils.moderateVerticalScale(16), color: "#555555"
+                                            } }> Distance </Text>
 
                                     }
                                 </TouchableOpacity>

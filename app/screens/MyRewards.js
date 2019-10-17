@@ -157,10 +157,10 @@ class MyRewardsScreen extends Component {
 
                 style={ {
                     width: "47%",
-                    marginLeft: Utils.moderateScale(5),
-                    marginRight: Utils.moderateScale(4),
+                    marginLeft: Utils.moderateVerticalScale(5),
+                    marginRight: Utils.moderateVerticalScale(5),
                     marginBottom: Utils.moderateVerticalScale(5),
-                    borderRadius: Utils.moderateScale(8)
+                    borderRadius: Utils.moderateVerticalScale(8)
                 } }
             >
                 <View style={ { width: "50%", height: Utils.moderateVerticalScale(170) } }>
@@ -351,8 +351,8 @@ class MyRewardsScreen extends Component {
                                                     borderRadius: 45 / 2,
                                                     justifyContent: 'center',
                                                     alignItems: 'center',
-                                                    marginTop: Utils.moderateScale(-50),
-                                                    marginLeft: Utils.moderateScale(80)
+                                                    marginTop: Utils.moderateVerticalScale(-50),
+                                                    marginLeft: Utils.moderateVerticalScale(50)
                                                 } }
                                             />
 
@@ -497,7 +497,7 @@ const localStyle = StyleSheet.create({
     ModalInsideView: {
         backgroundColor: "white",
         width: '80%',
-        height: '45%',
+        height: Utils.moderateVerticalScale(280),
         borderRadius: 20,
         borderWidth: 1,
         borderColor: "#000",
@@ -510,11 +510,19 @@ const localStyle = StyleSheet.create({
         width: '100%',
         height: '75%',
     },
+    // close: {
+    //     alignItems: 'center',
+    //     color: '#000',
+    //     marginLeft: "92%",
+    //     fontSize: 20,
+    //     marginTop: Utils.moderateVerticalScale(5),
+    //     zIndex: 1,
+    // },
     close: {
         alignItems: 'center',
         color: '#000',
-        marginLeft: Utils.moderateVerticalScale(270),
-        fontSize: 20,
+        marginLeft: Utils.moderateVerticalScale(20),
+        fontSize: Utils.moderateVerticalScale(20),
         marginTop: Utils.moderateVerticalScale(5)
 
     },

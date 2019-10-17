@@ -1624,12 +1624,12 @@
         "source": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\app_assets_images_img_banefitcoin.png"
     },
     {
-        "merged": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\WeDig 15\\.gradle\\caches\\transforms-2\\files-2.1\\18c8759130a0e7a299b732399f0dd6da\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\WeDig 15\\.gradle\\caches\\transforms-2\\files-2.1\\3eee9845bcf976c9475134c53922987b\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\WeDig 15\\.gradle\\caches\\transforms-2\\files-2.1\\18c8759130a0e7a299b732399f0dd6da\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -3290,6 +3290,10 @@
     {
         "merged": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\WeDig 15\\.gradle\\caches\\transforms-2\\files-2.1\\3eee9845bcf976c9475134c53922987b\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_app_assets_images_img_rewardspopup.gif.flat",
+        "source": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\app_assets_images_img_rewardspopup.gif"
     },
     {
         "merged": "D:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\res\\merged\\release\\anim_design_bottom_sheet_slide_in.xml.flat",

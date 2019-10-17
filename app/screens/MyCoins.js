@@ -66,10 +66,9 @@ class MyCoinsScreen extends Component {
     }
 
     myCoin() {
-        const _this = this;
-        this.state = {
-            loading: true,
-        }
+        // this.state = {
+        //     loading: true,
+        // }
         let data = {
             page_no: 0,
             page_size: 0,
@@ -104,7 +103,7 @@ class MyCoinsScreen extends Component {
                     { item.DateOnly }
                 </Text><Text style={ {
                     color: "#4E4E4F",
-                    marginRight: Utils.moderateVerticalScale(22)
+                    marginRight: Utils.moderateVerticalScale(10)
                 } }>
                     { item.totalCoins }</Text>
             </View>
@@ -182,7 +181,7 @@ class MyCoinsScreen extends Component {
                             </Text>
                         </View>
 
-                        <View style={ [GlobalStyle.card, localStyle.cardCoins,
+                        <View style={ [localStyle.cardCoins,
                         {
                             paddingTop: Utils.moderateVerticalScale(15),
                             paddingBottom: Utils.moderateVerticalScale(15),
@@ -197,12 +196,18 @@ class MyCoinsScreen extends Component {
                                         alignContent: "flex-start",
                                         fontSize: Utils.moderateVerticalScale(15),
                                         marginRight: Utils.moderateVerticalScale(200)
-                                    } }> This Week { " " }{ " " }{ " " }{ " " }{ " " }{ " " }{ " " }{ " " }
+                                    } }> This Week  { " " }
                                         {
                                             this.state.status ?
-                                                <Icon style={ { fontSize: Utils.moderateVerticalScale(12), color: "#4E4E4F", } }
+                                                <Icon style={ {
+                                                    fontSize: Utils.moderateVerticalScale(12),
+                                                    color: "#4E4E4F",
+                                                } }
                                                     name="ios-arrow-down" />
-                                                : <Icon style={ { fontSize: Utils.moderateVerticalScale(12), color: "#4E4E4F", } }
+                                                : <Icon style={ {
+                                                    fontSize: Utils.moderateVerticalScale(12),
+                                                    color: "#4E4E4F",
+                                                } }
                                                     name="ios-arrow-up" />
                                         }
 
@@ -219,6 +224,7 @@ class MyCoinsScreen extends Component {
                                     null
                                     :
                                     <View style={ [localStyle.cardInner] } >
+
                                         <FlatList
                                             data={ this.state.MyCoinData1 }
                                             showsVerticalScrollIndicator={ false }
@@ -240,6 +246,19 @@ class MyCoinsScreen extends Component {
                                 marginRight: Utils.moderateVerticalScale(15)
                             } }>
                                 { this.state.MyCoinData.currentMonth }
+                            </Text>
+                        </View>
+
+                        <View style={ [GlobalStyle.card, localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }] }>
+                            <Text style={ {
+                                color: '#fff', fontWeight: '400', fontSize: Utils.moderateVerticalScale(15),
+                                marginLeft: Utils.moderateVerticalScale(15)
+                            } }>  Total Spent </Text>
+                            <Text style={ {
+                                color: '#fff', fontSize: Utils.moderateVerticalScale(18),
+                                marginRight: Utils.moderateVerticalScale(15)
+                            } }>
+                                { this.state.MyCoinData.totalUsed }
                             </Text>
                         </View>
 
@@ -345,7 +364,7 @@ const localStyle = StyleSheet.create({
         marginLeft: Utils.moderateScale(15),
         backgroundColor: '#272727',
         flex: 1,
-        paddingTop: Utils.moderateVerticalScale(17),
+        // paddingTop: Utils.moderateVerticalScale(17),
         // marginTop: Utils.moderateVerticalScale(-2),
         marginBottom: Utils.moderateVerticalScale(3),
         //height: Utils.moderateVerticalScale(180),

@@ -1,4 +1,4 @@
-#Wed Oct 09 20:14:19 IST 2019
+#Tue Oct 15 18:02:00 IST 2019
 base.0=D\:\\Chhitar\\reactNative\\PedometerApp\\android\\app\\build\\intermediates\\transforms\\dexMerger\\release\\0
 path.1=classes2.dex
 renamed.1=classes2.dex

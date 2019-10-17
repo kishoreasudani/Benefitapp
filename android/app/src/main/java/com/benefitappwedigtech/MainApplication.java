@@ -9,6 +9,7 @@ import com.airbnb.android.react.maps.MapsPackage;
 import com.avishayil.rnrestart.ReactNativeRestartPackage;
 import com.azendoo.reactnativesnackbar.SnackbarPackage;
 import com.facebook.react.ReactApplication;
+import io.underscope.react.fbak.RNAccountKitPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -54,6 +55,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNAccountKitPackage(),
             new MPAndroidChartPackage(),
             new FBSDKPackage(),
             new RNGoogleSigninPackage(),

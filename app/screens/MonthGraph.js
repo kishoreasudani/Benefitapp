@@ -51,37 +51,37 @@ class MonthGraphScreen extends Component {
         const date = new Date().getDate();
         const month = new Date().getMonth() + 1;
         const year = new Date().getFullYear();
+
         this.state = {
             calDate: "",
             stepsCount: 0,
             CalorieCount: 0,
             DistanceCount: 0,
-            prevMonthAvailable: false,
+            //prevMonthAvailable: false,
             dateSelected: year + "-" + month + "-" + date,
             prevMonthAvailable: true,
             nextMonthAvailable: true
-
         }
+
         this.GetDailyCount = this.GetDailyCount.bind(this);
         this.DailyDistanceSamples = this.DailyDistanceSamples.bind(this);
         this.DailyCalorie = this.DailyCalorie.bind(this);
         //this.onDayPress = this.onDayPress.bind(this);
         this.GetDateCal = this.GetDateCal.bind(this);
     }
+
     componentDidMount() {
         this._isMount = true;
         const date1 = String(new Date().getDate()).padStart(2, '0');
         const month1 = new Date().getMonth() + 1;
         const year1 = new Date().getFullYear();
         const CurrentDate = year1 + "-" + month1 + "-" + date1;
-        console.log('CurrentDate', CurrentDate)
         this.GetDateCal(CurrentDate);
     }
 
     GetDateCal(date) {
         this.GetDailyCount(date);
         this.DailyDistanceSamples(date);
-        this.DailyCalorie(date);
     }
 
     GetDailyCount(date) {
@@ -114,6 +114,7 @@ class MonthGraphScreen extends Component {
                 this.setState({
                     stepsCount: Math.abs(SetDistance),
                 });
+                this.DailyCalorie(date);
             })
             .catch((err) => { console.warn(err) })
         this.state = {
@@ -156,38 +157,49 @@ class MonthGraphScreen extends Component {
     }
 
     DailyCalorie(date) {
-        this.state = {
-            loading: true,
+        // this.state = {
+        //     loading: true,
+        // }
 
-        }
         var start_new_date = date + "T00:00:17.971Z";
         var end_new_date = date + "T23:59:59.971Z";
 
-        const newOptions = {
-            startDate: start_new_date,
-            endDate: end_new_date
-        };
+        // const newOptions = {
+        //     startDate: start_new_date,
+        //     endDate: end_new_date
+        // };
 
-        GoogleFit.getDailyCalorieSamples(newOptions, (err, res) => {
-            var CalCount = "";
-            if (res == false) {
-                CalCount = 0;
-            }
-            else {
-                if (res[0].calorie != undefined && res[0].calorie != null && res[0].calorie != '') {
-                    CalCount = Math.round(res[0].calorie)
-                }
-                else {
-                    CalCount = 0;
-                }
-            }
-            this.setState({
-                CalorieCount: Math.abs(CalCount),
-            });
-        });
-        this.state = {
-            loading: false,
+        // GoogleFit.getDailyCalorieSamples(newOptions, (err, res) => {
+        //     var CalCount = "";
+        //     if (res == false) {
+        //         CalCount = 0;
+        //     }
+        //     else {
+        //         if (res[0].calorie != undefined && res[0].calorie != null && res[0].calorie != '') {
+        //             CalCount = Math.round(res[0].calorie)
+        //         }
+        //         else {
+        //             CalCount = 0;
+        //         }
+        //     }
+        //     this.setState({
+        //         CalorieCount: Math.abs(CalCount),
+        //     });
+        // });
+        // this.state = {
+        //     loading: false,
+        // } 
+        var CalCount = "";
+        if (this.state.stepsCount == undefined) {
+            CalCount = 0;
         }
+        else {
+            CalCount = Math.abs(this.state.stepsCount * 0.09);
+        }
+        this.setState({
+            CalorieCount: Math.round(CalCount),
+        });
+
     }
 
     componentWillUnmount() {
@@ -245,15 +257,16 @@ class MonthGraphScreen extends Component {
 
                             <Calendar
                                 style={ { width: "100%", } }
-                                // current={ '2019-10-01' }
+                                current={ this.state.dateSelected }
                                 // minDate={ '2019-10-01' }
-                                maxDate={ {
-                                    [this.state.dateSelected]:
-                                    {
-                                        selectedDayBackgroundColor: '#3CB371',
+                                maxDate={ this.state.dateSelected }
+                                // maxDate={ {
+                                //     [this.state.dateSelected]:
+                                //     {
+                                //         selectedDayBackgroundColor: '#3CB371',
 
-                                    }
-                                } }
+                                //     }
+                                // } }
                                 markedDates={ {
                                     [this.state.calDate.dateString]:
                                         { selected: true, marked: false, selectedColor: '#3CB371' },
@@ -286,21 +299,21 @@ class MonthGraphScreen extends Component {
                                 hideDayNames={ false }
                                 showWeekNumbers={ false }
                                 disableMonthChange={ false }
-                                onPressArrowLeft={ substractMonth => substractMonth() }
-                                onPressArrowRight={ addMonth => addMonth() }
+                                // onPressArrowLeft={ substractMonth => substractMonth() }
+                                //onPressArrowRight={ addMonth => addMonth() }
                                 theme={ {
                                     backgroundColor: '#272727',
                                     calendarBackground: '#272727',
-                                    textSectionTitleColor: '#676767',
+                                    textSectionTitleColor: '#fff',
                                     selectedDayBackgroundColor: '#3CB371',
                                     selectedDayTextColor: '#272727',
                                     todayTextColor: '#3CB371',
-                                    dayTextColor: 'white',
-                                    textDisabledColor: '#d9e1e8',
+                                    dayTextColor: '#fff',
+                                    textDisabledColor: '#676767',
                                     dotColor: '#3CB371',
                                     selectedDotColor: '#272727',
-                                    monthTextColor: 'white',
-                                    indicatorColor: 'white',
+                                    monthTextColor: '#fff',
+                                    indicatorColor: '#fff',
                                 } }
                             />
 

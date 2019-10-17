@@ -4,7 +4,7 @@ import * as Utils from "../../lib/utils";
 export const GlobalStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "transparent",
+    backgroundColor: "#161616",
   },
   imageBackground: {
     width: '100%', height: '100%',
@@ -100,7 +100,7 @@ export const GlobalStyle = StyleSheet.create({
   },
   header: {
     width: Utils.width,
-    backgroundColor: "transparent",
+    backgroundColor: "#161616",
     height: Utils.moderateVerticalScale(Platform.OS == "ios" ? 70 : 70),
     paddingTop: Utils.moderateVerticalScale(Platform.OS == "ios" ? 10 : 40),
     elevation: 0

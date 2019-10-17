@@ -238,6 +238,9 @@ class ProfileScreen extends Component {
 
     UpdateUserProfile() {
         check = true;
+        var regex = new RegExp("^[a-zA-Z0-9]+$");
+        var TCodeFirstName = this.state.txtFirstName;
+        var TCodeLastName = this.state.txtLastName;
         msg = '';
         if (this.state.txtFirstName == '') {
             check = false;
@@ -252,6 +255,16 @@ class ProfileScreen extends Component {
             check = false;
             msg = 'Please enter Date Of Birth';
         }
+        else if (/[^a-zA-Z0-9\-\/]/.test(TCodeFirstName)) {
+            alert('first name is not alphanumeric.');
+            return false;
+        }
+
+        else if (/[^a-zA-Z0-9\-\/]/.test(TCodeLastName)) {
+            alert('last name is not alphanumeric.');
+            return false;
+        }
+
         if (check == false) {
             Snackbar.show({
                 title: msg,
@@ -356,29 +369,33 @@ class ProfileScreen extends Component {
                                     colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
                                     style={ {
                                         width: '100%', height: Utils.moderateVerticalScale(100),
-                                        paddingTop: 10,
+                                        paddingTop: Utils.moderateVerticalScale(10),
                                         borderTopLeftRadius: Utils.moderateScale(Platform.OS == "android" ? 15 : 8),
                                         borderTopRightRadius: Utils.moderateScale(Platform.OS == "android" ? 15 : 8),
                                     } } >
 
                                     <TouchableOpacity onPress={ () => { this.ShowModalFunction(true) } } >
-                                        <View style={ { paddingTop: 5, } }>
+                                        <View style={ {
+                                            paddingTop: Utils.moderateVerticalScale(15),
+                                        } }>
                                             <FAIcon
                                                 name="edit"
                                                 style={ {
                                                     color: "black",
                                                     fontSize: Utils.moderateScale(15),
-                                                    bottom: 10,
-                                                    paddingTop: 7,
-                                                    borderRadius: 20,
+                                                    //bottom: Utils.moderateVerticalScale(10),
+                                                    paddingTop: Utils.moderateVerticalScale(7),
+                                                    borderRadius: Utils.moderateVerticalScale(20),
                                                     textAlign: "center",
+                                                    position: "absolute",
                                                     // borderColor: "#000",
                                                     backgroundColor: "#61AABF",
-                                                    lineHeight: 20,
-                                                    height: 30,
-                                                    width: 30,
+                                                    lineHeight: Utils.moderateVerticalScale(25),
+                                                    height: Utils.moderateVerticalScale(40),
+                                                    width: Utils.moderateVerticalScale(40),
                                                     // borderWidth: 1,
-                                                    right: -280,
+                                                    zIndex: 1,
+                                                    right: Utils.moderateVerticalScale(10),
                                                 } }
                                             />
                                         </View>
@@ -441,20 +458,20 @@ class ProfileScreen extends Component {
                                                 height: Utils.moderateVerticalScale(30),
                                                 width: Utils.moderateVerticalScale(30),
                                                 borderWidth: 1,
-                                                //right: -60,
+                                                // right: -60,
                                                 //position: "absolute",
                                                 zIndex: 1
                                             } }
                                         />
                                     </TouchableOpacity>
 
-                                    <View style={ { marginTop: 20 } }>
+                                    <View style={ { marginTop: Utils.moderateVerticalScale(20), } }>
                                         <Text style={ {
                                             fontFamily: 'Khand-Regular',
                                             fontSize: Utils.moderateVerticalScale(18),
                                             color: "#fff", marginVertical: Utils.moderateVerticalScale(5)
                                         } }>
-                                            { this.state.txtFirstName } { "" }
+                                            { this.state.txtFirstName } { " " }
                                             { this.state.txtLastName }
                                         </Text>
                                     </View>
@@ -471,8 +488,8 @@ class ProfileScreen extends Component {
                                         <Image
                                             source={ require("../assets/Images/img/mobile-number.png") }
                                             style={ {
-                                                width: 40,
-                                                height: 40,
+                                                width: Utils.moderateVerticalScale(40),
+                                                height: Utils.moderateVerticalScale(40),
                                                 borderRadius: 40 / 2,
                                                 alignItems: "center"
                                             } }
@@ -492,8 +509,8 @@ class ProfileScreen extends Component {
                                     <Image
                                         source={ require("../assets/Images/img/email.png") }
                                         style={ {
-                                            width: 35,
-                                            height: 35,
+                                            width: Utils.moderateVerticalScale(35),
+                                            height: Utils.moderateVerticalScale(35),
                                             borderRadius: 40 / 2,
                                             alignItems: "center"
                                         } }
@@ -512,8 +529,8 @@ class ProfileScreen extends Component {
                                     <Image
                                         source={ require("../assets/Images/img/date-of-birth.png") }
                                         style={ {
-                                            width: 35,
-                                            height: 35,
+                                            width: Utils.moderateVerticalScale(35),
+                                            height: Utils.moderateVerticalScale(35),
                                             borderRadius: 40 / 2,
                                             alignItems: "center"
                                         } }
@@ -646,7 +663,7 @@ class ProfileScreen extends Component {
                                             marginLeft: 0
                                         },
                                         dateInput: {
-                                            marginLeft: -220,
+                                            marginLeft: Utils.moderateVerticalScale(-220),
                                             borderWidth: 0
                                         }
                                     } }
@@ -693,7 +710,7 @@ const localStyle = StyleSheet.create({
         alignItems: 'center',
         color: '#000',
         marginLeft: Utils.moderateVerticalScale(20),
-        fontSize: 20,
+        fontSize: Utils.moderateVerticalScale(20),
         marginTop: Utils.moderateVerticalScale(5)
 
     },
@@ -751,16 +768,16 @@ const localStyle = StyleSheet.create({
     },
     MainContainer: {
         flex: 1,
-        paddingTop: 20,
+        paddingTop: Utils.moderateVerticalScale(20),
         alignItems: "center",
-        marginTop: 50,
+        marginTop: Utils.moderateVerticalScale(50),
         justifyContent: "center"
     },
     input: {
-        marginTop: -8,
-        fontSize: 16,
+        marginTop: Utils.moderateVerticalScale(-8),
+        fontSize: Utils.moderateVerticalScale(16),
         color: "#fff",
-        padding: 4,
+        padding: Utils.moderateVerticalScale(4),
         marginLeft: Utils.moderateVerticalScale(10),
     },
     formGroup: {
@@ -773,16 +790,16 @@ const localStyle = StyleSheet.create({
         color: '#555555',
         marginLeft: Utils.moderateVerticalScale(-30),
         alignSelf: 'stretch',
-        paddingTop: 30,
+        paddingTop: Utils.moderateVerticalScale(30),
     },
     formLabel: {
         alignItems: 'center',
         color: '#555555',
-        marginTop: 2,
-        marginLeft: 10,
+        marginTop: Utils.moderateVerticalScale(2),
+        marginLeft: Utils.moderateVerticalScale(10),
         alignSelf: 'stretch',
-        padding: 3,
-        margin: 2
+        padding: Utils.moderateVerticalScale(3),
+        margin: Utils.moderateVerticalScale(2),
 
     },
     buttonContainer2: {

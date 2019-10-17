@@ -39,6 +39,7 @@ export const Images = {
   nykaaLogo: require("./img/nykaa-logo.png"),
   banefit: require("./img/banefit-coin.png"),
   benefitCoin: require("./img/banefit-coin.png"),
+  RewardsPopUp: require("./img/RewardsPopUp.gif"),
   L3: require("./img/LoaderV4.gif"),
   notifications: require("./img/notifications.png"),
   WavePedometerV2: require("./img/Wave-Pedometer-V2-2.gif"),

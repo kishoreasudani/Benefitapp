@@ -41,6 +41,7 @@ class LandingScreen extends Component {
       deviceId: '',
       deviceIP: '',
     };
+
     this.googleLogin = this.googleLogin.bind(this);
     this.facebookLogin = this.facebookLogin.bind(this);
     this.saveRegisterData = this.saveRegisterData.bind(this);
@@ -67,7 +68,7 @@ class LandingScreen extends Component {
   _configureGoogleSignIn() {
     GoogleSignin.configure({
       scopes: ['https://www.googleapis.com/auth/userinfo.profile'],
-      webClientId: '705288931269-50bjk3mv640ekv20c84q3pq6f6uojs5f.apps.googleusercontent.com',
+      webClientId: '310761243324-73d7dpracth9p092mlmdjkb3680avpau.apps.googleusercontent.com',
       offlineAccess: true
     });
   }

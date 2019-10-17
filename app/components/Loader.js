@@ -13,10 +13,7 @@ export default class Loader extends Component {
   render() {
     return (
       this.props.loading && (
-        <Header
-          style={ GlobalStyle.headerModal }
-          androidStatusBarColor="#161616"
-        >
+        <View style={ { width: '100%', height: '100%', flex: 1, backgroundColor: '#161616' } }>
           <Modal
             transparent={ true }
             animationType={ "fade" }
@@ -47,7 +44,7 @@ export default class Loader extends Component {
               </View>
             </View>
           </Modal>
-        </Header>
+        </View>
       )
     );
   }

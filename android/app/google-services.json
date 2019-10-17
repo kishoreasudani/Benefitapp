@@ -23,7 +23,7 @@
           }
         },
         {
-          "client_id": "310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com",
+          "client_id": "310761243324-5pn11cjla6s8mojvk7dqrve406oklu6q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.benefitappwedigtech",
@@ -31,7 +31,7 @@
           }
         },
         {
-          "client_id": "310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com",
+          "client_id": "310761243324-73d7dpracth9p092mlmdjkb3680avpau.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -44,7 +44,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "310761243324-vhtol2lop4l15275b95adnnm2aeg00q8.apps.googleusercontent.com",
+              "client_id": "310761243324-73d7dpracth9p092mlmdjkb3680avpau.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

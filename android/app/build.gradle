@@ -102,7 +102,7 @@ android {
         applicationId "com.benefitappwedigtech"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode 5
         versionName "1.0"
         multiDexEnabled true
     }
@@ -216,6 +216,7 @@ dependencies {
     implementation project(path: ':react-native-google-signin')
     implementation project(path: ':react-native-fbsdk')
     compile project(path: ':react-native-charts-wrapper')
+    compile project(path: ':react-native-facebook-account-kit')
 
 }
 

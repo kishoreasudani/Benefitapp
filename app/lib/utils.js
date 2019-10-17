@@ -52,7 +52,7 @@ function displayAlert(
     },
     heading: {
       textAlign: "center",
-      color: "#f1d043",
+      color: "#3CB371",
       fontWeight: "bold",
       fontSize: moderateScale(18)
     },
@@ -71,7 +71,7 @@ function displayAlert(
       height: moderateVerticalScale(40),
       width: "40%",
       marginHorizontal: moderateScale(10),
-      backgroundColor: "#f1d043",
+      backgroundColor: "#54c18d",
       borderRadius: moderateScale(4),
       justifyContent: "center",
       alignItems: "center"
@@ -181,6 +181,176 @@ function displayAlert(
                   </Text>
                 </TouchableOpacity>
               ) : null }
+              <TouchableOpacity
+                onPress={ () => {
+                  DialogManager.dismissAll(() => {
+                    typeof callbackOnOk === "function" && callbackOnOk();
+                  });
+                } }
+                style={ displayAlertStyle.acceptButton }
+              >
+                <Text style={ displayAlertStyle.acceptButtonText }>
+                  { buttonText.toUpperCase() }
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </DialogContent>
+      )
+    },
+    () => {
+      // callback for show
+    }
+  );
+}
+
+function displayAlertRewards(
+  title = "",
+  messageText = "",
+  buttonText = "OK",
+  callbackOnOk = null,
+  cancelable = false,
+  cancelableText = "Cancel",
+  dismissOnBackPress = true,
+  hasIcon = false,
+  icon = Images.alert
+) {
+  const displayAlertStyle = StyleSheet.create({
+    container: {
+      alignItems: "center",
+      backgroundColor: "#ffffff"
+    },
+    heading: {
+      textAlign: "center",
+      color: "#3CB371",
+      fontWeight: "bold",
+      fontSize: moderateScale(18)
+    },
+    messageContainer: {
+      marginTop: moderateScale(10),
+      width: "85%",
+      marginBottom: moderateScale(10)
+    },
+    messageText: {
+      textAlign: "center",
+      fontWeight: "bold",
+      color: "#333",
+      fontSize: moderateScale(16)
+    },
+    acceptButton: {
+      height: moderateVerticalScale(40),
+      width: "40%",
+      marginHorizontal: moderateScale(10),
+      backgroundColor: "#54c18d",
+      borderRadius: moderateScale(4),
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    cancelButton: {
+      height: moderateVerticalScale(40),
+      width: "40%",
+      marginHorizontal: moderateScale(10),
+      backgroundColor: "#ffff",
+      borderRadius: moderateScale(4),
+      borderColor: "#BDBDBD",
+      borderWidth: 1,
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    acceptButtonText: {
+      color: "#333333",
+      fontWeight: "bold",
+      fontSize: moderateScale(14)
+    },
+    cancelButtonText: {
+      color: "#333333",
+      fontWeight: "bold",
+      fontSize: moderateScale(14)
+    }
+  });
+  DialogManager.show(
+    {
+      haveTitleBar: false,
+      width: width - scale(50),
+      overlayOpacity: 0.4,
+      dialogAnimation: new ScaleAnimation(),
+      overlayBackgroundColor: "rgb(0, 0, 0)",
+      dismissOnHardwareBackPress: dismissOnBackPress,
+      dialogStyle: { borderRadius: 10, width: "90%", padding: 0 },
+      children: (
+        <DialogContent
+          contentStyle={ { borderRadius: 10, padding: 0, margin: 0 } }
+        >
+          <View
+            style={ [
+              displayAlertStyle.container,
+              { borderRadius: 10, margin: 0, paddingHorizontal: 0 }
+            ] }
+          >
+            <View
+              style={ {
+                padding: moderateScale(20),
+                marginVertical: moderateVerticalScale(5),
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center"
+              } }
+            >
+              { hasIcon ? (
+                <View
+                  style={ {
+                    height: moderateScale(45),
+                    width: moderateScale(45),
+                    justifyContent: "center",
+                    alignContent: "center",
+                    alignItems: "center",
+                    borderWidth: 1,
+                    borderColor: "transparent"
+                  } }
+                >
+                  <Image
+                    source={ icon }
+                    resizeMode="contain"
+                    style={ {
+                      height: moderateScale(100),
+                      width: moderateScale(100)
+                    } }
+                  />
+                </View>
+              ) : (
+                  <Text style={ displayAlertStyle.heading }>{ title }</Text>
+                ) }
+              <View style={ displayAlertStyle.messageContainer }>
+                <Text style={ displayAlertStyle.messageText }>{ messageText }</Text>
+              </View>
+            </View>
+            <View
+              style={ {
+                justifyContent: "space-evenly",
+                alignContent: "center",
+                alignItems: "center",
+                width: "100%",
+                marginHorizontal: 0,
+                flexDirection: "row",
+                marginBottom: 0,
+                borderTopColor: "#bdbdbd",
+                borderTopWidth: 1,
+                height: moderateVerticalScale(80)
+              } }
+            >
+              {/* { cancelable ? (
+                <TouchableOpacity
+                  onPress={ () => {
+                    DialogManager.dismissAll(() => {
+                    });
+                  } }
+                  style={ displayAlertStyle.cancelButton }
+                >
+                  <Text style={ displayAlertStyle.cancelButtonText }>
+                    { cancelableText.toUpperCase() }
+                  </Text>
+                </TouchableOpacity>
+              ) : null } */}
               <TouchableOpacity
                 onPress={ () => {
                   DialogManager.dismissAll(() => {
@@ -316,7 +486,6 @@ async function requestStoragePermission() {
       }
     );
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-
     }
   } catch (err) {
     console.log('Permission Error', err)
@@ -394,6 +563,7 @@ export {
   height,
   siteUrl,
   displayAlert,
+  displayAlertRewards,
   saveStateAsyncStorage,
   getStateAsyncStorage,
   makeApiRequest,

@@ -359,6 +359,7 @@ io/invertase/firebase/storage/RNFirebaseStorage$3.class
 io/invertase/firebase/storage/RNFirebaseStorage$5.class
 io/invertase/firebase/storage/RNFirebaseStorage$7.class
 io/invertase/firebase/storage/RNFirebaseStorage$9.class
+io/underscope/react/fbak/RNAccountKitPackage.class
 javax/annotation/CheckForNull.class
 javax/annotation/CheckForSigned.class
 javax/annotation/CheckReturnValue.class
