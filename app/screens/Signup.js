@@ -32,7 +32,7 @@ class SignupScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             showLoginType: true,
@@ -41,6 +41,7 @@ class SignupScreen extends Component {
                 password: ''
             },
             status: true,
+            statusBack: true,
             loading: false,
             txtFirstName: '',
             txtLastName: '',
@@ -56,6 +57,7 @@ class SignupScreen extends Component {
         this.IP = null;
         this._handlePress = this._handlePress.bind(this);
         this.getDeviceId = this.getDeviceId.bind(this);
+        this.BackSignUp = this.BackSignUp.bind(this);
         this.saveRegisterData = this.saveRegisterData.bind(this);
     }
 
@@ -70,6 +72,12 @@ class SignupScreen extends Component {
     componentDidMount() {
         this._isMount = true;
         this.getDeviceId();
+    }
+
+    BackSignUp = () => {
+        this.setState({
+            status: true,
+        })
     }
 
     ShowHideTextComponentView = () => {
@@ -95,12 +103,10 @@ class SignupScreen extends Component {
                 backgroundColor: "Red",
             });
         } else {
-
             this.setState({
                 status: false,
+                statusBack: true,
             })
-
-
         }
     }
 
@@ -127,17 +133,41 @@ class SignupScreen extends Component {
             "device_id": deviceId,
             "device_token": fcmToken,
             "fb_token": "",
-            "g_token": ""
+            "g_token": "",
+            otp_type: "register"
         };
         console.log(data)
         Utils.makeApiRequest(URL.API_URL.register.url, URL.API_URL.register.endPoint, data)
             .then(async response => {
                 if (response) {
                     this.setState({
-                        loading: false
+                        showLoginType: true,
+                        errors: {
+                            username: '',
+                            password: ''
+                        },
+                        status: true,
+                        statusBack: true,
+                        loading: false,
+                        txtFirstName: '',
+                        txtLastName: '',
+                        txtEmailId: '',
+                        // txtMobileNo: '',
+                        txtPassword: '',
+                        txtConfirmPassword: '',
+                        deviceId: '',
+                        deviceIP: '',
+                        deviceToken: '',
                     })
-                    Utils.displayAlert("Success!", response.message);
-                    _this.props.navigation.navigate("Login");
+
+                    Utils.displayAlertSignUp("",
+                        " SuccessFully Registration !", "Okay", () => {
+                            _this.props.navigation.navigate('Otp',
+                                {
+                                    mobileNo: this.state.txtMobileNo
+                                });
+                        }, false, "", true, true, Images.Success);
+
                 } else {
                     this.setState({
                         loading: false
@@ -178,174 +208,177 @@ class SignupScreen extends Component {
 
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />
+            return <Loader loading={this.state.loading} />
         }
         return (
-            <View style={ [GlobalStyle.container, styles.container1] }>
+            <View style={[GlobalStyle.container, styles.container1]}>
                 {
                     this.state.status ?
-                        <View style={ { paddingTop: Utils.moderateVerticalScale(50) } }></View> :
+                        <View style={{ paddingTop: Utils.moderateVerticalScale(50) }}>
+                        </View> :
                         <Header
-                            style={ GlobalStyle.header }
+                            style={GlobalStyle.header}
                             androidStatusBarColor="#161616"
                             iosBarStyle="light-content"
                         >
-                            <Left style={ { flex: 1 } }>
-                                {/* onPress={() => this.props.navigation.goBack()} */ }
-                                <TouchableOpacity onPress={ () => this.ShowHideTextComponentView() } >
-                                    <Image source={ Images.backArrow } style={ {
+                            <Left style={{ flex: 1 }}>
+                                {/* onPress={() => this.props.navigation.goBack()} */}
+                                {/* onPress={ () => this.ShowHideTextComponentView() } */}
+                                <TouchableOpacity onPress={() => this.BackSignUp()} >
+                                    <Image source={Images.backArrow} style={{
                                         marginRight: Utils.moderateScale(15, 0.5),
                                         width: Utils.moderateScale(15),
                                         height: Utils.moderateScale(14)
-                                    } }
+                                    }}
                                         resizeMode="contain"
                                         resizeMethod="resize" />
                                 </TouchableOpacity>
                             </Left>
-                            <Body style={ GlobalStyle.headerBody }>
-                                <Text style={ GlobalStyle.headerTitle }>Back</Text>
+                            <Body style={GlobalStyle.headerBody}>
+                                <Text style={GlobalStyle.headerTitle}>Back</Text>
                             </Body>
                         </Header>
+
                 }
-                <ImageBackground source={ require("../assets/Images/img/background.png") }
-                    style={ { flex: 1, width: '100%', height: '100%' } }>
+                <ImageBackground source={require("../assets/Images/img/background.png")}
+                    style={{ flex: 1, width: '100%', height: '100%' }}>
                     <StatusBar backgroundColor="transparent" barStyle="light-content" />
-                    <View style={ {
+                    <View style={{
                         paddingLeft: Utils.moderateVerticalScale(25),
                         paddingRight: Utils.moderateVerticalScale(35),
                         paddingTop: Utils.moderateVerticalScale(20),
                         flex: 1,
                         backgroundColor: 'transparent'
-                    } }>
+                    }}>
                         <Image
-                            source={ require("../assets/Images/img/landing-logo.png") }
-                            style={ {
+                            source={require("../assets/Images/img/landing-logo.png")}
+                            style={{
                                 width: Utils.moderateVerticalScale(90),
                                 height: Utils.moderateVerticalScale(90),
                                 alignItems: "center",
                                 marginLeft: Utils.moderateVerticalScale(125),
                                 marginTop: Utils.moderateVerticalScale(20)
                                 // flex- wrap: nowrap 
-                            } }
+                            }}
                         />
-                        <Text style={ styles.TextStyle1 }>SIGNUP</Text>
+                        <Text style={styles.TextStyle1}>SIGNUP</Text>
                         {
                             this.state.status ?
                                 null
-                                : <Text style={ styles.TextStyle4 }>CREATE PASSWORD</Text> }
+                                : <Text style={styles.TextStyle4}>CREATE PASSWORD</Text>}
                     </View>
-                    <ScrollView style={ { marginTop: Utils.moderateVerticalScale(170) } }>
+                    <ScrollView style={{ marginTop: Utils.moderateVerticalScale(170) }}>
                         {
                             this.state.status ?
 
-                                <View style={ styles.container }>
+                                <View style={styles.container}>
                                     <View>
-                                        <Text style={ styles.TextStyle2 }>FIRST NAME</Text>
+                                        <Text style={styles.TextStyle2}>FIRST NAME</Text>
                                         <TextInput
-                                            value={ this.state.txtFirstName }
-                                            onChangeText={ txtFirstName =>
+                                            value={this.state.txtFirstName}
+                                            onChangeText={txtFirstName =>
                                                 this.setState({ txtFirstName: txtFirstName })
                                             }
                                             returnKeyType="next"
-                                            style={ styles.input }
+                                            style={styles.input}
                                             placeholder="First Name"
                                             placeholderTextColor="#555555"
                                             autoCapitalize="none"
-                                            ref={ input => (this.inputs["txtFirstName"] = input) }
+                                            ref={input => (this.inputs["txtFirstName"] = input)}
 
                                             underlineColorAndroid="transparent"
                                         />
 
                                     </View>
                                     <View>
-                                        <Text style={ styles.TextStyle2 }>LAST NAME</Text>
+                                        <Text style={styles.TextStyle2}>LAST NAME</Text>
                                         <TextInput
-                                            value={ this.state.txtLastName }
-                                            onChangeText={ txtLastName =>
+                                            value={this.state.txtLastName}
+                                            onChangeText={txtLastName =>
                                                 this.setState({ txtLastName: txtLastName })
                                             }
                                             returnKeyType="next"
-                                            style={ styles.input }
+                                            style={styles.input}
                                             placeholder="Last Name"
                                             placeholderTextColor="#555555"
                                             autoCapitalize="none"
-                                            ref={ input => (this.inputs["txtLastName"] = input) }
+                                            ref={input => (this.inputs["txtLastName"] = input)}
 
                                             underlineColorAndroid="transparent"
                                         />
 
                                     </View>
                                     <View>
-                                        <Text style={ styles.TextStyle2 }>EMAIL</Text>
+                                        <Text style={styles.TextStyle2}>EMAIL</Text>
                                         <TextInput
-                                            value={ this.state.txtEmailId }
-                                            onChangeText={ txtEmailId =>
+                                            value={this.state.txtEmailId}
+                                            onChangeText={txtEmailId =>
                                                 this.setState({ txtEmailId: txtEmailId })
                                             }
                                             returnKeyType="next"
-                                            style={ styles.input }
+                                            style={styles.input}
                                             placeholder="Email"
                                             placeholderTextColor="#555555"
                                             autoCapitalize="none"
-                                            ref={ input => (this.inputs["txtEmailId"] = input) }
+                                            ref={input => (this.inputs["txtEmailId"] = input)}
 
                                             underlineColorAndroid="transparent"
                                         />
 
                                     </View>
                                     <View>
-                                        <Text style={ styles.TextStyle2 }>MOBILE</Text>
+                                        <Text style={styles.TextStyle2}>MOBILE</Text>
                                         <TextInput
-                                            value={ this.state.txtMobileNo }
-                                            onChangeText={ txtMobileNo =>
+                                            value={this.state.txtMobileNo}
+                                            onChangeText={txtMobileNo =>
                                                 this.setState({ txtMobileNo: txtMobileNo })
                                             }
                                             returnKeyType="next"
-                                            style={ styles.input }
+                                            style={styles.input}
                                             placeholder="Mobile"
-                                            maxLength={ 10 }
+                                            maxLength={10}
                                             keyboardType="numeric"
                                             placeholderTextColor="#555555"
                                             autoCapitalize="none"
-                                            ref={ input => (this.inputs["txtMobileNo"] = input) }
+                                            ref={input => (this.inputs["txtMobileNo"] = input)}
                                             underlineColorAndroid="transparent"
                                         />
 
                                     </View>
                                 </View>
 
-                                : <View style={ [styles.container] }>
+                                : <View style={[styles.container]}>
                                     <View>
-                                        <Text style={ styles.TextStyle2 }>PASSWORD</Text>
+                                        <Text style={styles.TextStyle2}>PASSWORD</Text>
                                         <TextInput
-                                            value={ this.state.txtPassword }
-                                            onChangeText={ txtPassword =>
+                                            value={this.state.txtPassword}
+                                            onChangeText={txtPassword =>
                                                 this.setState({ txtPassword: txtPassword })
                                             }
                                             returnKeyType="next"
-                                            style={ styles.input }
+                                            style={styles.input}
                                             placeholder="Password"
                                             placeholderTextColor="#555555"
                                             autoCapitalize="none"
-                                            secureTextEntry={ true }
-                                            ref={ input => (this.inputs["txtPassword"] = input) }
+                                            secureTextEntry={true}
+                                            ref={input => (this.inputs["txtPassword"] = input)}
                                             underlineColorAndroid="transparent"
                                         />
                                     </View>
                                     <View>
-                                        <Text style={ styles.TextStyle2 }>CONFIRM PASSWORD</Text>
+                                        <Text style={styles.TextStyle2}>CONFIRM PASSWORD</Text>
                                         <TextInput
-                                            value={ this.state.txtConfirmPassword }
-                                            onChangeText={ txtConfirmPassword =>
+                                            value={this.state.txtConfirmPassword}
+                                            onChangeText={txtConfirmPassword =>
                                                 this.setState({ txtConfirmPassword: txtConfirmPassword })
                                             }
                                             returnKeyType="next"
-                                            style={ styles.input }
-                                            secureTextEntry={ true }
+                                            style={styles.input}
+                                            secureTextEntry={true}
                                             placeholder="Confirm Password"
                                             placeholderTextColor="#555555"
                                             autoCapitalize="none"
-                                            ref={ input => (this.inputs["txtConfirmPassword"] = input) }
+                                            ref={input => (this.inputs["txtConfirmPassword"] = input)}
                                             underlineColorAndroid="transparent"
                                         />
                                     </View>
@@ -354,7 +387,7 @@ class SignupScreen extends Component {
                         }
 
 
-                        <View style={ {
+                        <View style={{
                             flex: 1,
                             backgroundColor: 'transparent',
                             marginVertical: Utils.moderateVerticalScale(10),
@@ -364,29 +397,29 @@ class SignupScreen extends Component {
                             alignContent: 'center',
                             width: '100%',
 
-                        } }>
+                        }}>
                             {
                                 this.state.status ?
-                                    <Text style={ { color: '#fff', fontSize: Utils.moderateVerticalScale(12) } }>01 <Text style={ { fontWeight: 'normal', fontSize: Utils.moderateVerticalScale(12), color: '#fff' } }>/02</Text></Text>
+                                    <Text style={{ color: '#fff', fontSize: Utils.moderateVerticalScale(12) }}>01 <Text style={{ fontWeight: 'normal', fontSize: Utils.moderateVerticalScale(12), color: '#fff' }}>/02</Text></Text>
                                     :
-                                    <Text style={ { color: '#fff', fontSize: Utils.moderateVerticalScale(12) } }>02 <Text style={ { fontWeight: 'normal', fontSize: Utils.moderateVerticalScale(12), color: '#fff' } }>/02</Text></Text>
+                                    <Text style={{ color: '#fff', fontSize: Utils.moderateVerticalScale(12) }}>02 <Text style={{ fontWeight: 'normal', fontSize: Utils.moderateVerticalScale(12), color: '#fff' }}>/02</Text></Text>
                             }
 
-                            <View style={ {
+                            <View style={{
                                 width: '100%',
                                 alignContent: 'center',
                                 justifyContent: 'center', alignItems: 'center',
-                            } }>
+                            }}>
                                 {
                                     this.state.status ?
-                                        <TouchableOpacity onPress={ () => this.ShowHideTextComponentView() } >
+                                        <TouchableOpacity onPress={() => this.ShowHideTextComponentView()} >
                                             <Image
-                                                source={ require("../assets/Images/img/arrow-button.png") }
-                                                style={ {
+                                                source={require("../assets/Images/img/arrow-button.png")}
+                                                style={{
                                                     width: Utils.moderateScale(55),
                                                     height: Utils.moderateScale(55),
                                                     alignItems: "center"
-                                                } }
+                                                }}
                                             />
 
                                         </TouchableOpacity>
@@ -397,14 +430,14 @@ class SignupScreen extends Component {
                                 {
                                     this.state.status ?
                                         null
-                                        : <TouchableOpacity onPress={ () => this._handlePress() } >
+                                        : <TouchableOpacity onPress={() => this._handlePress()} >
                                             <Image
-                                                source={ require("../assets/Images/img/arrow-button.png") }
-                                                style={ {
+                                                source={require("../assets/Images/img/arrow-button.png")}
+                                                style={{
                                                     width: Utils.moderateScale(55),
                                                     height: Utils.moderateScale(55),
                                                     alignItems: "center"
-                                                } }
+                                                }}
                                             />
 
                                         </TouchableOpacity>
@@ -415,7 +448,7 @@ class SignupScreen extends Component {
                     </ScrollView>
                     {
                         this.state.status ?
-                            <View style={ {
+                            <View style={{
                                 height: Utils.moderateVerticalScale(60),
                                 width: Utils.width,
                                 borderTopColor: '#25211E',
@@ -424,10 +457,10 @@ class SignupScreen extends Component {
                                 alignContent: 'center',
                                 alignItems: 'center',
                                 backgroundColor: '#25211e5e'
-                            } }>
-                                <TouchableOpacity onPress={ () => this.props.navigation.navigate("Login") } style={ { width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-                                    <Text style={ { color: '#fff' } }>Already registered?
-                        <Text style={ {} }>LOGIN</Text></Text>
+                            }}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")} style={{ width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                                    <Text style={{ color: '#fff' }}>Already registered?
+                        <Text style={{}}>LOGIN</Text></Text>
                                 </TouchableOpacity>
                             </View> : null
                     }

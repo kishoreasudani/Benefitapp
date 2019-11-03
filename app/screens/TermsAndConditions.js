@@ -34,7 +34,7 @@ class TermsAndConditionsScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             username: '',
@@ -56,19 +56,25 @@ class TermsAndConditionsScreen extends Component {
     }
     TermsConditions() {
         const _this = this;
+        this.setState({
+            loading: true,
+            loadingWeb: true,
+        })
         Utils.makeApiRequest(URL.API_URL.getTermsConditions.url, URL.API_URL.getTermsConditions.endPoint, {}, { authorization: this.props.userData.token }, "GET", false, false)
             .then(async response => {
                 if (response) {
                     console.log(response.body)
                     this.setState({
                         TermsConditionsData: response.body,
-                        loading: false
+                        loading: false,
+                        loadingWeb: false,
                     })
 
                 } else {
                     this.setState({
                         TermsConditionsData: [],
-                        loading: false
+                        loading: false,
+                        loadingWeb: false,
                     })
                 }
             })
@@ -77,48 +83,54 @@ class TermsAndConditionsScreen extends Component {
     hideSpinner() {
         this.setState({ loadingWeb: false });
     }
-
+    htmlRender(rawData) {
+        let data = '<html> <head><meta name="viewport" content="width=device-width, initial-scale=1"> </head> <body>';
+        data += rawData;
+        data += '</body></html>'
+        return data;
+    }
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />;
+            return <Loader loading={this.state.loading} />;
         }
         return (
-            <View style={ [GlobalStyle.container] }>
+            <View style={[GlobalStyle.container]}>
                 <Header
-                    style={ localStyle.TCHeader }
+                    style={localStyle.TCHeader}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 1 } }>
-                        <TouchableOpacity onPress={ () => this.props.navigation.goBack() } >
-                            <FAIcon name="arrow-left" style={ { color: "white", fontSize: Utils.moderateScale(15) } } />
+                    <Left style={{ flex: 1 }}>
+                        <TouchableOpacity onPress={() => this.props.navigation.goBack()} >
+                            <FAIcon name="arrow-left" style={{ color: "white", fontSize: Utils.moderateScale(15) }} />
                         </TouchableOpacity>
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
-                        <Text style={ GlobalStyle.headerTitle }>TERMS AND CONDITIONS</Text>
+                    <Body style={GlobalStyle.headerBody}>
+                        <Text style={GlobalStyle.headerTitle}>TERMS AND CONDITIONS</Text>
                     </Body>
-                    <Right style={ { flex: 1 } }>
+                    <Right style={{ flex: 1 }}>
 
                     </Right>
                 </Header>
-                <View style={ { flex: 1, backgroundColor: "#161616", } }>
-                    <View style={ [localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }] }>
-                        <View style={ localStyle.TermUse }>
-                            <Text style={ { color: '#555555', fontSize: 15 } }>BENEFIT TERMS OF USE</Text>
-                            <View style={ localStyle.TermView } />
-                            <View style={ { flex: 1, width: "100%" } }>
+                <View style={{ flex: 1, backgroundColor: "#161616", }}>
+                    <View style={[localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+                        <View style={localStyle.TermUse}>
+                            <Text style={{ color: '#555555', fontSize: 15 }}>BENEFIT TERMS OF USE</Text>
+                            <View style={localStyle.TermView} />
+                            <View style={{ flex: 1, width: "100%", backgroundColor: '#161616' }}>
                                 <WebView
-                                    style={ { backgroundColor: "#272727", color: "#fff" } }
-                                    scalesPageToFit={ true }
-                                    source={ {
-                                        html: '<p style="color: white">' + this.state.TermsConditionsData.description + '</p>'
-                                    } }
-                                    onLoad={ () => this.hideSpinner() }
-                                    javaScriptEnabled={ true }
-                                    domStorageEnabled={ true }
+                                    style={{ flex: 1, backgroundColor: 'transparent', }}
+                                    scalesPageToFit={true}
+                                    // source={{
+                                    //     html: '<p style="color: white">' + this.state.TermsConditionsData.description + '</p>'
+                                    // }}
+                                    source={{ html: this.htmlRender(this.state.TermsConditionsData.description) }}
+                                    onLoad={() => this.hideSpinner()}
+                                    javaScriptEnabled={true}
+                                    domStorageEnabled={true}
                                 />
                             </View>
-                            { this.state.loadingWeb && <LoaderInline loading={ this.state.loadingWeb } /> }
+                            {this.state.loadingWeb && <LoaderInline loading={this.state.loadingWeb} />}
                         </View>
                     </View>
                 </View>
@@ -146,6 +158,7 @@ const localStyle = StyleSheet.create({
     TCHeader: {
         width: Utils.width,
         backgroundColor: "#161616",
+        borderBottomColor: "#161616",
         height: Utils.moderateVerticalScale(100),
         paddingTop: Utils.moderateVerticalScale(30),
         elevation: 0

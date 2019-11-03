@@ -21,11 +21,11 @@ import DeviceInfo from 'react-native-device-info';
 import firebase from 'react-native-firebase';
 import * as URL from "../config/urls";
 
-const FBSDK = require('react-native-fbsdk');
-const {
-  AccessToken,
-  LoginManager,
-} = FBSDK;
+// const FBSDK = require('react-native-fbsdk');
+// const {
+//   AccessToken,
+//   LoginManager,
+// } = FBSDK;
 
 class LandingScreen extends Component {
   state = {
@@ -35,7 +35,7 @@ class LandingScreen extends Component {
     header: null
   };
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       deviceId: '',
@@ -68,7 +68,7 @@ class LandingScreen extends Component {
   _configureGoogleSignIn() {
     GoogleSignin.configure({
       scopes: ['https://www.googleapis.com/auth/userinfo.profile'],
-      webClientId: '310761243324-73d7dpracth9p092mlmdjkb3680avpau.apps.googleusercontent.com',
+      webClientId: '310761243324-ib051m7a68omjcejtq280f3hclaobn6n.apps.googleusercontent.com',
       offlineAccess: true
     });
   }
@@ -213,6 +213,7 @@ class LandingScreen extends Component {
   async facebookLogin() {
 
     let that = this;
+    // LoginManager.logInWithPermissions(['public_profile', 'email']).then(
     LoginManager.logInWithPermissions(['public_profile', 'email']).then(
       function (result) {
         console.log('result', result)
@@ -252,48 +253,48 @@ class LandingScreen extends Component {
 
   render() {
     return (
-      <ImageBackground source={ Images.background } style={ GlobalStyle.imageBackground }>
+      <ImageBackground source={Images.background} style={GlobalStyle.imageBackground}>
 
-        <View style={ localStyle.logoContainer }>
-          <Image source={ Images.logo } style={ localStyle.logo } resizeMethod="resize" resizeMode="cover" />
+        <View style={localStyle.logoContainer}>
+          <Image source={Images.logo} style={localStyle.logo} resizeMethod="resize" resizeMode="cover" />
         </View>
 
-        <View style={ localStyle.innerContainer }>
+        <View style={localStyle.innerContainer}>
           <LinearGradient
-            start={ { x: 0, y: 0 } }
-            end={ { x: 1, y: 0 } }
-            colors={ ['#70bf52', '#4fc19d', '#28c4f5'] }
-            style={ localStyle.buttonContainer }>
-            <TouchableOpacity onPress={ () => this.props.navigation.navigate("Login") } style={ localStyle.buttonContainer }>
-              <Text style={ {} }>LOGIN</Text>
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            colors={['#70bf52', '#4fc19d', '#28c4f5']}
+            style={localStyle.buttonContainer}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")} style={localStyle.buttonContainer}>
+              <Text style={{}}>LOGIN</Text>
             </TouchableOpacity>
           </LinearGradient>
 
-          <View style={ localStyle.circle } >
-            <Text style={ { fontSize: Utils.moderateVerticalScale(12), color: '#fff' } }>OR</Text>
+          <View style={localStyle.circle} >
+            <Text style={{ fontSize: Utils.moderateVerticalScale(12), color: '#fff' }}>OR</Text>
           </View>
-          <View style={ { flexDirection: "row", alignItems: 'center', justifyContent: "space-between", } } >
-            <TouchableOpacity onPress={ this.facebookLogin }
-              style={ localStyle.socialButton } activeOpacity={ 0.5 }>
-              <Image source={ Images.facebookSocialIcon }
-                style={ localStyle.imageIconStyle }
+          <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: "space-between", }} >
+            {/* <TouchableOpacity onPress={this.facebookLogin}
+              style={localStyle.socialButton} activeOpacity={0.5}>
+              <Image source={Images.facebookSocialIcon}
+                style={localStyle.imageIconStyle}
               />
-              <Text style={ localStyle.textStyle }>LOGIN</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={ this.googleLogin }
-              style={ localStyle.socialButton } activeOpacity={ 0.5 }>
-              <Image source={ Images.googleSocialIcon }
-                style={ localStyle.imageIconStyle }
+              <Text style={localStyle.textStyle}>LOGIN</Text>
+            </TouchableOpacity> */}
+            <TouchableOpacity onPress={this.googleLogin}
+              style={localStyle.socialButton} activeOpacity={0.5}>
+              <Image source={Images.googleSocialIcon}
+                style={localStyle.imageIconStyle}
               />
-              <Text style={ localStyle.textStyle }>LOGIN</Text>
+              <Text style={localStyle.textStyle}>LOGIN</Text>
             </TouchableOpacity>
           </View>
         </View>
 
 
-        <View style={ localStyle.footerContainer }>
-          <TouchableOpacity onPress={ () => this.props.navigation.navigate("Signup") } style={ { width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-            <Text style={ { color: '#fff' } }>New user? <Text style={ {} }>SIGNUP</Text></Text>
+        <View style={localStyle.footerContainer}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("Signup")} style={{ width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+            <Text style={{ color: '#fff' }}>New user? <Text style={{}}>SIGNUP</Text></Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>

@@ -28,6 +28,7 @@ import FAIcon from "react-native-vector-icons/FontAwesome";
 import Loader from "../components/Loader";
 import Snackbar from 'react-native-snackbar';
 import DatePicker from "react-native-datepicker";
+import moment from "moment";
 // create a component
 const optionsImage = {
     title: 'Select or Click Photo',
@@ -44,7 +45,7 @@ class ProfileScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
 
         let date = new Date().getDate();
@@ -145,6 +146,11 @@ class ProfileScreen extends Component {
                                 loading: false
                             });
                         }
+                        else {
+                            this.setState({
+                                loading: false
+                            })
+                        }
                     } else {
                         this.setState({ loading: false }, () => {
                             Utils.displayAlert("Oops!", "No data is their for this user.");
@@ -160,6 +166,10 @@ class ProfileScreen extends Component {
     }
 
     async selectFile() {
+        this.setState({
+            loading: false
+        })
+
         ImagePicker.showImagePicker(optionsImage, (response) => {
             console.log("Response = ", response);
             let name = response.fileName;
@@ -183,13 +193,20 @@ class ProfileScreen extends Component {
             });
             this.selectedDocument = response.fileName;
             if (response.didCancel) {
+                this.setState({
+                    loading: false
+                })
                 console.log("User cancelled file picker");
             } else if (response.error) {
+                this.setState({
+                    loading: false
+                })
                 console.log("ImagePicker Error: ", response.error);
             } else {
                 this.UpdateUserImage();
                 this.setState({
-                    file: response
+                    file: response,
+                    loading: false
                 });
             }
         });
@@ -272,12 +289,14 @@ class ProfileScreen extends Component {
                 backgroundColor: "Red",
             });
         } else {
-            this.setState({
-                loading: true
-            }, () => {
-                this.UpdateProfile();
-            })
+            // this.setState({
+            //     loading: true
+            // }, () => {
+            this.UpdateProfile();
+            // })
+            // this.setState({ loading: false });
         }
+        //this.setState({ loading: false });
     }
 
     UpdateProfile() {
@@ -288,10 +307,10 @@ class ProfileScreen extends Component {
             "mobile": this.state.txtMobileNo,
             "dob": this.state.txtDob,
         };
-        console.log('data', data);
-        this.setState({
-            loading: false
-        })
+        // console.log('data', data);
+        // this.setState({
+        //     loading: false
+        // })
 
         try {
             this.setState({ loading: true });
@@ -329,88 +348,92 @@ class ProfileScreen extends Component {
 
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />;
+            return <Loader loading={this.state.loading} />;
         }
         return (
-            <View style={ [GlobalStyle.container, localStyle.container] }>
+            <View style={[GlobalStyle.container, localStyle.container]}>
                 <Header
-                    style={ GlobalStyle.header }
+                    style={GlobalStyle.header}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 1 } }>
-                        {/* onPress={() => this.props.navigation.goBack()} */ }
-                        <TouchableOpacity onPress={ () => this.props.navigation.navigate('Home',
+                    <Left style={{ flex: 1 }}>
+                        {/* onPress={() => this.props.navigation.goBack()} */}
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home',
                             {
                                 refreshing: true
-                            }) }>
+                            })}>
                             <FAIcon
                                 name="arrow-left"
-                                style={ {
+                                style={{
                                     color: "white",
                                     fontSize: Utils.moderateScale(15),
-                                } }
+                                }}
                             />
                         </TouchableOpacity>
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
-                        <Text style={ GlobalStyle.headerTitle }>PROFILE</Text>
+                    <Body style={GlobalStyle.headerBody}>
+                        <Text style={GlobalStyle.headerTitle}>PROFILE</Text>
                     </Body>
-                    <Right style={ { flex: 1 } }>
+                    <Right style={{ flex: 1 }}>
                     </Right>
                 </Header>
 
-                {/* onPress={() => this.props.navigation.navigate("ChangePassword")} */ }
-                <View style={ localStyle.innerContainer }>
-                    <View style={ [GlobalStyle.card, localStyle.card] }>
-                        <ScrollView style={ { color: "#272727", width: '100%', } }>
+                {/* onPress={() => this.props.navigation.navigate("ChangePassword")} */}
+                <View style={localStyle.innerContainer}>
+                    <View style={[GlobalStyle.card, localStyle.card]}>
+                        <ScrollView style={{ color: "#272727", width: '100%', }}>
                             <View >
-                                <LinearGradient start={ { x: 0, y: 0 } } end={ { x: 1, y: 0 } }
-                                    colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                                    style={ {
+                                <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
+                                    colors={['#70bf51', '#54c18d', '#3cc4f5']}
+                                    style={{
                                         width: '100%', height: Utils.moderateVerticalScale(100),
                                         paddingTop: Utils.moderateVerticalScale(10),
                                         borderTopLeftRadius: Utils.moderateScale(Platform.OS == "android" ? 15 : 8),
                                         borderTopRightRadius: Utils.moderateScale(Platform.OS == "android" ? 15 : 8),
-                                    } } >
+                                    }} >
 
-                                    <TouchableOpacity onPress={ () => { this.ShowModalFunction(true) } } >
-                                        <View style={ {
+                                    <TouchableOpacity onPress={() => { this.ShowModalFunction(true) }} >
+                                        <View style={{
                                             paddingTop: Utils.moderateVerticalScale(15),
-                                        } }>
+                                        }}>
                                             <FAIcon
                                                 name="edit"
-                                                style={ {
+                                                style={{
                                                     color: "black",
                                                     fontSize: Utils.moderateScale(15),
                                                     //bottom: Utils.moderateVerticalScale(10),
-                                                    paddingTop: Utils.moderateVerticalScale(7),
-                                                    borderRadius: Utils.moderateVerticalScale(20),
+                                                    paddingTop: Utils.moderateVerticalScale(3),
+                                                    // backgroundColor: "#61AABF",
+                                                    borderRadius: Utils.moderateVerticalScale(15),
                                                     textAlign: "center",
                                                     position: "absolute",
-                                                    // borderColor: "#000",
-                                                    backgroundColor: "#61AABF",
+                                                    borderColor: "#000",
+                                                    //backgroundColor: "#61AABF",
+                                                    alignItems: "center",
+                                                    // resizeMode: "cover",
                                                     lineHeight: Utils.moderateVerticalScale(25),
-                                                    height: Utils.moderateVerticalScale(40),
-                                                    width: Utils.moderateVerticalScale(40),
-                                                    // borderWidth: 1,
-                                                    zIndex: 1,
+                                                    height: Utils.moderateVerticalScale(30),
+                                                    width: Utils.moderateVerticalScale(30),
+                                                    borderWidth: 1,
+                                                    zIndex: 10,
                                                     right: Utils.moderateVerticalScale(10),
-                                                } }
+                                                }}
                                             />
                                         </View>
                                     </TouchableOpacity>
                                 </LinearGradient>
-                                <View style={ {
+                                <View style={{
                                     justifyContent: 'center', alignContent: 'flex-end',
                                     alignItems: 'center', position: "relative", zIndex: 0
-                                } }>
-                                    { this.state.avatar != null && this.state.avatar != "" ? (
+                                }}>
+                                    {this.state.avatar != null && this.state.avatar != "" ? (
                                         <Image
-                                            source={ {
+                                            source={{
                                                 uri: URL.ImageURLProduction + "data/user/" + this.state.id + "/" + this.state.avatar
-                                            } }
-                                            style={ {
+                                            }}
+
+                                            style={{
                                                 width: Utils.moderateVerticalScale(100),
                                                 height: Utils.moderateVerticalScale(100),
                                                 borderRadius: Utils.moderateVerticalScale(100 / 2),
@@ -420,12 +443,12 @@ class ProfileScreen extends Component {
                                                 resizeMode: "cover",
                                                 zIndex: 0,
                                                 marginTop: Utils.moderateVerticalScale(-60)
-                                            } }
+                                            }}
                                         />
                                     ) : (
                                             <Image
-                                                source={ require("../assets/Images/img/user-icon.png") }
-                                                style={ {
+                                                source={require("../assets/Images/img/userinfo1.jpg")}
+                                                style={{
                                                     width: Utils.moderateVerticalScale(100),
                                                     height: Utils.moderateVerticalScale(100),
                                                     borderRadius: Utils.moderateVerticalScale(100 / 2),
@@ -435,128 +458,132 @@ class ProfileScreen extends Component {
                                                     resizeMode: "cover",
                                                     zIndex: 0,
                                                     marginTop: Utils.moderateVerticalScale(-60)
-                                                } }
+                                                }}
                                             />
-                                        ) }
+                                        )}
 
                                     <TouchableOpacity
-                                        onPress={ () => {
+                                        onPress={() => {
                                             this.selectFile();
-                                        } }
+                                        }}
                                     >
-                                        <FAIcon
-                                            name="camera"
-                                            style={ {
-                                                color: "green",
-                                                fontSize: Utils.moderateScale(15),
-                                                bottom: Utils.moderateVerticalScale(10),
-                                                borderRadius: Utils.moderateVerticalScale(20),
-                                                textAlign: "center",
-                                                borderColor: "#fff",
-                                                backgroundColor: "#000",
-                                                lineHeight: Utils.moderateVerticalScale(30),
-                                                height: Utils.moderateVerticalScale(30),
-                                                width: Utils.moderateVerticalScale(30),
-                                                borderWidth: 1,
-                                                // right: -60,
-                                                //position: "absolute",
-                                                zIndex: 1
-                                            } }
-                                        />
+                                        <View>
+                                            <FAIcon
+                                                name="camera"
+                                                style={{
+                                                    width: Utils.moderateVerticalScale(30),
+                                                    height: Utils.moderateVerticalScale(30),
+                                                    borderRadius: Utils.moderateVerticalScale(30 / 2),
+                                                    color: "green",
+                                                    fontSize: Utils.moderateScale(15),
+                                                    bottom: Utils.moderateVerticalScale(10),
+                                                    textAlign: "center",
+                                                    borderColor: "#fff",
+                                                    //backgroundColor: "#000",
+                                                    lineHeight: Utils.moderateVerticalScale(30),
+                                                    borderWidth: 1,
+                                                    // right: -60,
+                                                    //position: "absolute",
+                                                    zIndex: 1
+                                                }}
+                                            />
+                                        </View>
                                     </TouchableOpacity>
 
-                                    <View style={ { marginTop: Utils.moderateVerticalScale(20), } }>
-                                        <Text style={ {
+                                    <View style={{ marginTop: Utils.moderateVerticalScale(20), }}>
+                                        <Text style={{
                                             fontFamily: 'Khand-Regular',
                                             fontSize: Utils.moderateVerticalScale(18),
                                             color: "#fff", marginVertical: Utils.moderateVerticalScale(5)
-                                        } }>
-                                            { this.state.txtFirstName } { " " }
-                                            { this.state.txtLastName }
+                                        }}>
+                                            {this.state.txtFirstName} {" "}
+                                            {this.state.txtLastName}
                                         </Text>
                                     </View>
                                 </View>
-                                <View style={ {
+                                <View style={{
                                     height: Utils.moderateVerticalScale(0.5),
                                     width: '100%', backgroundColor: "#525252",
                                     marginVertical: Utils.moderateVerticalScale(25)
-                                } } />
+                                }} />
                             </View>
                             <View  >
-                                <View style={ localStyle.formGroup } >
-                                    <View style={ { paddingLeft: 5, paddingRight: 35, paddingTop: 40 } }>
+                                <View style={localStyle.formGroup} >
+                                    <View style={{ paddingLeft: 5, paddingRight: 35, paddingTop: 40 }}>
                                         <Image
-                                            source={ require("../assets/Images/img/mobile-number.png") }
-                                            style={ {
+                                            source={require("../assets/Images/img/mobile-number.png")}
+                                            style={{
                                                 width: Utils.moderateVerticalScale(40),
                                                 height: Utils.moderateVerticalScale(40),
                                                 borderRadius: 40 / 2,
                                                 alignItems: "center"
-                                            } }
+                                            }}
                                         />
                                     </View>
-                                    <View style={ localStyle.textContainer }>
-                                        <Text style={ localStyle.formLabel }>MOBILE NUMBER</Text>
-                                        <Text style={ localStyle.input }>
-                                            +91  { this.state.txtMobileNo }
+                                    <View style={localStyle.textContainer}>
+                                        <Text style={localStyle.formLabel}>MOBILE NUMBER</Text>
+                                        <Text style={localStyle.input}>
+                                            +91  {this.state.txtMobileNo}
                                         </Text>
 
                                     </View>
                                 </View>
                             </View>
-                            <View style={ localStyle.formGroup } >
-                                <View style={ { paddingLeft: 10, paddingRight: 35, paddingTop: 40 } }>
+                            <View style={localStyle.formGroup} >
+                                <View style={{ paddingLeft: 10, paddingRight: 35, paddingTop: 40 }}>
                                     <Image
-                                        source={ require("../assets/Images/img/email.png") }
-                                        style={ {
+                                        source={require("../assets/Images/img/email.png")}
+                                        style={{
                                             width: Utils.moderateVerticalScale(35),
                                             height: Utils.moderateVerticalScale(35),
                                             borderRadius: 40 / 2,
                                             alignItems: "center"
-                                        } }
+                                        }}
                                     />
                                 </View>
-                                <View style={ localStyle.textContainer }>
-                                    <Text style={ localStyle.formLabel }>EMAIL ID</Text>
-                                    <Text style={ localStyle.input }>
-                                        { this.state.email }
+                                <View style={localStyle.textContainer}>
+                                    <Text style={localStyle.formLabel}>EMAIL ID</Text>
+                                    <Text style={localStyle.input}>
+                                        {this.state.email}
                                     </Text>
 
                                 </View>
                             </View>
-                            <View style={ localStyle.formGroup } >
-                                <View style={ { paddingLeft: 10, paddingRight: 35, paddingTop: 40 } }>
+                            <View style={localStyle.formGroup} >
+                                <View style={{ paddingLeft: 10, paddingRight: 35, paddingTop: 40 }}>
                                     <Image
-                                        source={ require("../assets/Images/img/date-of-birth.png") }
-                                        style={ {
+                                        source={require("../assets/Images/img/date-of-birth.png")}
+                                        style={{
                                             width: Utils.moderateVerticalScale(35),
                                             height: Utils.moderateVerticalScale(35),
                                             borderRadius: 40 / 2,
                                             alignItems: "center"
-                                        } }
+                                        }}
                                     />
                                 </View>
-                                <View style={ localStyle.textContainer }>
-                                    <Text style={ localStyle.formLabel }>DATE OF BIRTH</Text>
-                                    { this.state.dob ?
-                                        <Text style={ localStyle.input }>{ this.state.dob } </Text>
+                                <View style={localStyle.textContainer}>
+                                    <Text style={localStyle.formLabel}>DATE OF BIRTH</Text>
+                                    {this.state.dob ?
+                                        <Text style={localStyle.input}>
+                                            {moment(this.state.dob).format("DD MMMM YYYY")}
+                                        </Text>
                                         : null
                                     }
-                                    {/* <Text style={ localStyle.input }>{ this.state.dob } </Text> */ }
+                                    {/* <Text style={ localStyle.input }>{ this.state.dob } </Text> */}
                                 </View>
                             </View>
-                            <View style={ {
+                            <View style={{
                                 height: Utils.moderateVerticalScale(0.5),
                                 width: '100%', backgroundColor: "#525252",
                                 marginVertical: Utils.moderateVerticalScale(15)
-                            } } />
+                            }} />
                             <LinearGradient
-                                start={ { x: 0, y: 0 } }
-                                end={ { x: 1, y: 0 } }
-                                colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                                style={ localStyle.buttonContainer2 }>
-                                <TouchableOpacity onPress={ () => this.props.navigation.navigate("ChangePassword") } style={ { width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-                                    <Text style={ { fontFamily: 'Khand-Regular' } }>CHANGE PASSWORD</Text>
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 1, y: 0 }}
+                                colors={['#70bf51', '#54c18d', '#3cc4f5']}
+                                style={localStyle.buttonContainer2}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("ChangePassword")} style={{ width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                                    <Text style={{ fontFamily: 'Khand-Regular' }}>CHANGE PASSWORD</Text>
                                 </TouchableOpacity>
                             </LinearGradient>
 
@@ -569,94 +596,94 @@ class ProfileScreen extends Component {
                                     <Text style={ { fontFamily: 'Khand-Regular' } }>MY REWARDS</Text>
                                 </TouchableOpacity>
                             </LinearGradient> */}
-                            <View style={ { height: 30 } }></View>
+                            <View style={{ height: 30 }}></View>
                         </ScrollView>
                     </View>
                 </View>
                 <Modal
-                    transparent={ true }
-                    animationType={ "slide" }
-                    visible={ this.state.ModalVisibleStatus }
-                    onRequestClose={ () => { this.ShowModalFunction(!this.state.ModalVisibleStatus) } } >
-                    <View style={ { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#25232354' } }>
-                        <View style={ localStyle.ModalInsideView }>
-                            <TouchableOpacity onPress={ () => { this.ShowModalFunction(false) } }>
-                                <Text style={ localStyle.close }>
+                    transparent={true}
+                    animationType={"slide"}
+                    visible={this.state.ModalVisibleStatus}
+                    onRequestClose={() => { this.ShowModalFunction(!this.state.ModalVisibleStatus) }} >
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#25232354' }}>
+                        <View style={localStyle.ModalInsideView}>
+                            <TouchableOpacity onPress={() => { this.ShowModalFunction(false) }}>
+                                <Text style={localStyle.close}>
                                     X
                                 </Text>
                             </TouchableOpacity>
 
-                            <Text style={ localStyle.TextStyle1 }>
+                            <Text style={localStyle.TextStyle1}>
                                 Update Profile
                                 </Text>
-                            <ScrollView style={ {
+                            <ScrollView style={{
                                 width: "100%",
                                 height: Utils.moderateVerticalScale(250),
-                            } }>
+                            }}>
                                 <View>
-                                    <Text style={ localStyle.TextStyle2 }>FIRST NAME</Text>
+                                    <Text style={localStyle.TextStyle2}>FIRST NAME</Text>
                                     <TextInput
-                                        value={ this.state.txtFirstName }
-                                        onChangeText={ txtFirstName =>
+                                        value={this.state.txtFirstName}
+                                        onChangeText={txtFirstName =>
                                             this.setState({ txtFirstName: txtFirstName })
                                         }
                                         returnKeyType="next"
-                                        style={ localStyle.input1 }
+                                        style={localStyle.input1}
                                         placeholder="First Name"
                                         placeholderTextColor="#555555"
                                         autoCapitalize="none"
-                                        ref={ input => (this.inputs["txtFirstName"] = input) }
+                                        ref={input => (this.inputs["txtFirstName"] = input)}
                                         underlineColorAndroid="transparent"
                                     />
                                 </View>
 
-                                <Text style={ localStyle.TextStyle2 }>LAST NAME</Text>
+                                <Text style={localStyle.TextStyle2}>LAST NAME</Text>
                                 <TextInput
-                                    value={ this.state.txtLastName }
-                                    onChangeText={ txtLastName =>
+                                    value={this.state.txtLastName}
+                                    onChangeText={txtLastName =>
                                         this.setState({ txtLastName: txtLastName })
                                     }
                                     returnKeyType="next"
-                                    style={ localStyle.input1 }
+                                    style={localStyle.input1}
                                     placeholder="Last Name"
                                     placeholderTextColor="#555555"
                                     autoCapitalize="none"
-                                    ref={ input => (this.inputs["txtLastName"] = input) }
+                                    ref={input => (this.inputs["txtLastName"] = input)}
                                     underlineColorAndroid="transparent"
                                 />
-                                <Text style={ localStyle.TextStyle2 }>MOBILE NO</Text>
+                                <Text style={localStyle.TextStyle2}>MOBILE NO</Text>
                                 <TextInput
-                                    value={ this.state.txtMobileNo }
-                                    onChangeText={ txtMobileNo =>
+                                    value={this.state.txtMobileNo}
+                                    onChangeText={txtMobileNo =>
                                         this.setState({ txtMobileNo: txtMobileNo })
                                     }
                                     returnKeyType="next"
-                                    maxLength={ 10 }
+                                    maxLength={10}
                                     keyboardType="numeric"
-                                    style={ localStyle.input1 }
+                                    style={localStyle.input1}
                                     placeholder="Mobile No"
                                     placeholderTextColor="#555555"
                                     autoCapitalize="none"
-                                    ref={ input => (this.inputs["txtMobileNo"] = input) }
+                                    ref={input => (this.inputs["txtMobileNo"] = input)}
                                     underlineColorAndroid="transparent"
                                 />
 
-                                <Text style={ localStyle.TextStyle2 }>Date Of Birth</Text>
+                                <Text style={localStyle.TextStyle2}>Date Of Birth</Text>
 
                                 <DatePicker
-                                    style={ localStyle.input1 }
-                                    date={ this.state.txtDob }
+                                    style={localStyle.input1}
+                                    date={this.state.txtDob}
                                     mode="date"
                                     placeholder="Date Of Birth"
-                                    is12Hour={ true }
+                                    is12Hour={true}
                                     format="YYYY-MM-DD"
                                     //minDate={}
                                     visible="false"
-                                    hideExtraDays={ true }
-                                    firstDay={ 1 }
+                                    hideExtraDays={true}
+                                    firstDay={1}
                                     confirmBtnText="Confirm"
                                     cancelBtnText="Cancel"
-                                    customStyles={ {
+                                    customStyles={{
                                         dateIcon: {
                                             left: 0,
                                             display: "none",
@@ -666,27 +693,27 @@ class ProfileScreen extends Component {
                                             marginLeft: Utils.moderateVerticalScale(-220),
                                             borderWidth: 0
                                         }
-                                    } }
-                                    onDateChange={ txtDob => {
+                                    }}
+                                    onDateChange={txtDob => {
                                         this.setState({
                                             txtDob: txtDob
                                         });
-                                    } }
+                                    }}
                                 />
 
                             </ScrollView>
-                            <View style={ { width: "100%" } }>
+                            <View style={{ width: "100%" }}>
                                 <LinearGradient
-                                    start={ { x: 0, y: 0 } }
-                                    end={ { x: 1, y: 0 } }
-                                    colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                                    style={ localStyle.buttonContainer1 }>
-                                    <TouchableOpacity onPress={ () => this.UpdateUserProfile() }
-                                        style={ {
+                                    start={{ x: 0, y: 0 }}
+                                    end={{ x: 1, y: 0 }}
+                                    colors={['#70bf51', '#54c18d', '#3cc4f5']}
+                                    style={localStyle.buttonContainer1}>
+                                    <TouchableOpacity onPress={() => this.UpdateUserProfile()}
+                                        style={{
                                             width: '100%', alignContent: 'center', justifyContent: 'center',
                                             alignItems: 'center', height: '100%'
-                                        } }>
-                                        <Text style={ {} }>Update Profile</Text>
+                                        }}>
+                                        <Text style={{}}>Update Profile</Text>
                                     </TouchableOpacity>
                                 </LinearGradient>
                             </View>

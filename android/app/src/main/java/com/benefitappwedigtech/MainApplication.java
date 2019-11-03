@@ -9,6 +9,12 @@ import com.airbnb.android.react.maps.MapsPackage;
 import com.avishayil.rnrestart.ReactNativeRestartPackage;
 import com.azendoo.reactnativesnackbar.SnackbarPackage;
 import com.facebook.react.ReactApplication;
+import com.github.wuxudong.rncharts.MPAndroidChartPackage;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.github.wuxudong.rncharts.MPAndroidChartPackage;
+import com.jamesisaac.rnbackgroundtask.BackgroundTaskPackage;
 import io.underscope.react.fbak.RNAccountKitPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -55,6 +61,12 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new MPAndroidChartPackage(),
+            new RNGoogleSigninPackage(),
+            new RNGoogleSigninPackage(),
+            new FBSDKPackage(),
+            new MPAndroidChartPackage(),
+            new BackgroundTaskPackage(),
             new RNAccountKitPackage(),
             new MPAndroidChartPackage(),
             new FBSDKPackage(),

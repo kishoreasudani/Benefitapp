@@ -36,7 +36,7 @@ class MyCoinsScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             loading: true,
@@ -74,10 +74,11 @@ class MyCoinsScreen extends Component {
             page_size: 0,
             user_id: this.props.userData.id
         }
+
         Utils.makeApiRequest(URL.API_URL.getCoinsList.url, URL.API_URL.getCoinsList.endPoint, data, { authorization: this.props.userData.token })
             .then(async response => {
-                if (response) {
 
+                if (response) {
                     this.setState({
                         MyCoinData1: response.body.last7days,
                         MyCoinData: response.body,
@@ -90,22 +91,26 @@ class MyCoinsScreen extends Component {
                         loading: false
                     })
                 }
+
             })
+        this.setState({
+            loading: false
+        })
     }
     renderSubCategory({ item, index }) {
         return (
-            <View style={ { flexDirection: 'row', justifyContent: 'space-between' } }>
-                <Text style={ {
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={{
                     color: "#4E4E4F",
                     // marginTop: Utils.moderateVerticalScale(0),
                     //marginLeft: Utils.moderateVerticalScale(15)
-                } }>
-                    { item.DateOnly }
-                </Text><Text style={ {
+                }}>
+                    {item.DateOnly}
+                </Text><Text style={{
                     color: "#4E4E4F",
                     marginRight: Utils.moderateVerticalScale(10)
-                } }>
-                    { item.totalCoins }</Text>
+                }}>
+                    {item.totalCoins}</Text>
             </View>
         );
     }
@@ -125,193 +130,168 @@ class MyCoinsScreen extends Component {
     }
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />;
+            return <Loader loading={this.state.loading} />;
         }
         return (
-            <View style={ [GlobalStyle.container, localStyle.container] }>
+            <View style={[GlobalStyle.container, localStyle.container]}>
                 <Header
-                    style={ GlobalStyle.header }
+                    style={GlobalStyle.header}
                     androidStatusBarColor="#161616"
                 >
-                    <Left style={ { flex: 0 } }>
-                        <Text style={ GlobalStyle.headerTitle }>MY COINS</Text>
-                        {/* <TouchableOpacity onPress={ () => this.props.navigation.navigate('Home') }>
-                            <Image source={ Images.backArrow } style={ {
-                                marginRight: Utils.moderateScale(15, 0.5),
-                                width: Utils.moderateScale(18),
-                                height: Utils.moderateScale(14)
-                            } } resizeMode="contain" resizeMethod="resize" />
-                        </TouchableOpacity> */}
+                    <Left style={{ flex: 0 }}>
+                        <Text style={GlobalStyle.headerTitle}>MY COINS</Text>
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
-                        {/* <Text style={ GlobalStyle.headerTitle }>MY COINS</Text> */ }
+                    <Body style={GlobalStyle.headerBody}>
+
                     </Body>
                     <Right>
-                        {/* <TouchableOpacity onPress={ () => this.props.navigation.navigate("Notifications") }>
-                            <FAIcon
-                                name="bell"
-                                style={ {
-                                    color: "white",
-                                    fontSize: Utils.moderateScale(15),
-                                } }
-                            />
-                        </TouchableOpacity> */}
-                        <Buttons.ShowNotification onPress={ () => {
+                        <Buttons.ShowNotification onPress={() => {
                             this.props.navigation.navigate("Notifications")
-                        } } />
+                        }} />
                     </Right>
                 </Header>
                 <ScrollView>
-                    <View style={ localStyle.innerContainer }>
-                        <View style={ [GlobalStyle.card, localStyle.card,
-                        { flexDirection: 'row', justifyContent: 'space-between', }] }>
-                            <Text style={ {
+                    <View style={localStyle.innerContainer}>
+                        <View style={[GlobalStyle.card, localStyle.card,
+                        { flexDirection: 'row', justifyContent: 'space-between', }]}>
+                            <Text style={{
                                 color: '#fff', fontWeight: '400',
                                 fontSize: Utils.moderateVerticalScale(15),
                                 marginLeft: Utils.moderateVerticalScale(15)
-                            } }>  Today </Text>
-                            <Text style={ {
+                            }}>  Today </Text>
+                            <Text style={{
                                 color: '#fff',
                                 fontSize: Utils.moderateVerticalScale(18),
                                 marginRight: Utils.moderateVerticalScale(15)
-                            } }>
-                                { this.state.MyCoinData.todayCoin != null && this.state.MyCoinData.todayCoin != "" ? (
+                            }}>
+                                {this.state.MyCoinData.todayCoin != null && this.state.MyCoinData.todayCoin != "" ? (
                                     this.state.MyCoinData.todayCoin
-                                ) : (0) }
+                                ) : (0)}
                             </Text>
                         </View>
 
-                        <View style={ [localStyle.cardCoins,
+                        <View style={[localStyle.cardCoins,
                         {
                             paddingTop: Utils.moderateVerticalScale(15),
                             paddingBottom: Utils.moderateVerticalScale(15),
                             paddingLeft: Utils.moderateVerticalScale(15),
                             paddingRight: Utils.moderateVerticalScale(15),
                             // height: this.state.weekHeight
-                        }] }>
-                            <View style={ { flexDirection: 'row', justifyContent: 'space-between', } }>
-                                <TouchableOpacity onPress={ this.ShowHideTextComponentView } >
-                                    <Text style={ {
+                        }]}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+                                <TouchableOpacity onPress={this.ShowHideTextComponentView} >
+                                    <Text style={{
                                         color: '#fff',
                                         alignContent: "flex-start",
                                         fontSize: Utils.moderateVerticalScale(15),
                                         marginRight: Utils.moderateVerticalScale(200)
-                                    } }> This Week  { " " }
+                                    }}> This Week  {" "}
                                         {
                                             this.state.status ?
-                                                <Icon style={ {
+                                                <Icon style={{
                                                     fontSize: Utils.moderateVerticalScale(12),
                                                     color: "#4E4E4F",
-                                                } }
+                                                }}
                                                     name="ios-arrow-down" />
-                                                : <Icon style={ {
+                                                : <Icon style={{
                                                     fontSize: Utils.moderateVerticalScale(12),
                                                     color: "#4E4E4F",
-                                                } }
+                                                }}
                                                     name="ios-arrow-up" />
                                         }
 
                                     </Text>
                                 </TouchableOpacity>
-                                <Text style={ {
+                                <Text style={{
                                     color: '#fff',
                                     alignContent: "flex-end",
                                     fontSize: Utils.moderateVerticalScale(18),
-                                } }>  { this.state.MyCoinData.currentMonth } </Text>
+                                }}>  {this.state.MyCoinData.currentMonth} </Text>
                             </View>
                             {
                                 this.state.status ?
                                     null
                                     :
-                                    <View style={ [localStyle.cardInner] } >
+                                    <View style={[localStyle.cardInner]} >
 
                                         <FlatList
-                                            data={ this.state.MyCoinData1 }
-                                            showsVerticalScrollIndicator={ false }
-                                            horizontal={ false }
+                                            data={this.state.MyCoinData1}
+                                            showsVerticalScrollIndicator={false}
+                                            horizontal={false}
                                             //keyExtractor={ (item, index) => item.id.toString() }
-                                            renderItem={ this.renderSubCategory }
+                                            renderItem={this.renderSubCategory}
                                         />
                                     </View>
                             }
                         </View>
 
-                        <View style={ [GlobalStyle.card, localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }] }>
-                            <Text style={ {
+                        <View style={[GlobalStyle.card, localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+                            <Text style={{
                                 color: '#fff', fontWeight: '400', fontSize: Utils.moderateVerticalScale(15),
                                 marginLeft: Utils.moderateVerticalScale(15)
-                            } }>  This Month </Text>
-                            <Text style={ {
+                            }}>  This Month </Text>
+                            <Text style={{
                                 color: '#fff', fontSize: Utils.moderateVerticalScale(18),
                                 marginRight: Utils.moderateVerticalScale(15)
-                            } }>
-                                { this.state.MyCoinData.currentMonth }
+                            }}>
+                                {this.state.MyCoinData.currentMonth}
                             </Text>
                         </View>
 
-                        <View style={ [GlobalStyle.card, localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }] }>
-                            <Text style={ {
+                        <View style={[GlobalStyle.card, localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+                            <Text style={{
                                 color: '#fff', fontWeight: '400', fontSize: Utils.moderateVerticalScale(15),
                                 marginLeft: Utils.moderateVerticalScale(15)
-                            } }>  Total Spent </Text>
-                            <Text style={ {
+                            }}>  Total Spent </Text>
+                            <Text style={{
                                 color: '#fff', fontSize: Utils.moderateVerticalScale(18),
                                 marginRight: Utils.moderateVerticalScale(15)
-                            } }>
-                                { this.state.MyCoinData.totalUsed }
+                            }}>
+                                {this.state.MyCoinData.totalUsed}
                             </Text>
                         </View>
 
-                        <View style={ [GlobalStyle.card, localStyle.card,
-                        { flexDirection: 'row', justifyContent: 'space-between' }] }>
+                        <View style={[GlobalStyle.card, localStyle.card,
+                        { flexDirection: 'row', justifyContent: 'space-between' }]}>
                             <Image
-                                source={ Images.banefit }
-                                style={ {
+                                source={Images.banefit}
+                                style={{
                                     width: Utils.moderateVerticalScale(30),
                                     height: Utils.moderateVerticalScale(30),
                                     borderRadius: 40 / 2,
                                     marginLeft: Utils.moderateVerticalScale(20),
-                                } }
+                                }}
                             />
-                            <Text style={ {
+                            <Text style={{
                                 color: '#fff',
                                 fontWeight: '400',
                                 fontSize: Utils.moderateVerticalScale(15),
                                 marginRight: Utils.moderateVerticalScale(140),
-                            } }>Total Coins </Text>
-                            <Text style={ {
+                            }}>Total Coins </Text>
+                            <Text style={{
                                 color: '#fff',
                                 fontSize: Utils.moderateVerticalScale(18),
                                 marginRight: Utils.moderateVerticalScale(15)
-                            } }>{ this.state.MyCoinData.totalCoin } </Text>
+                            }}>{this.state.MyCoinData.totalCoin} </Text>
                         </View>
                     </View>
 
-                    {/* <View style={ { height: Utils.moderateVerticalScale(0.5), width: '100%', backgroundColor: "#525252", marginVertical: Utils.moderateVerticalScale(25) } } /> */ }
-                    <View style={ localStyle.innerContainer }>
-                        <View style={ [localStyle.card4,
-                        { flexDirection: 'row', justifyContent: 'space-between' }] }>
+                    {/* <View style={ { height: Utils.moderateVerticalScale(0.5), width: '100%', backgroundColor: "#525252", marginVertical: Utils.moderateVerticalScale(25) } } /> */}
+                    <View style={localStyle.innerContainer}>
+                        <View style={[localStyle.card4,
+                        { flexDirection: 'row', justifyContent: 'space-between' }]}>
                             <LinearGradient
-                                start={ { x: 0, y: 0 } }
-                                end={ { x: 1, y: 0 } }
-                                colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                                style={ localStyle.buttonContainer2 }>
-                                <TouchableOpacity onPress={ () => this.props.navigation.navigate("MyRewards") } style={ { width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-                                    <Text style={ { fontFamily: 'Khand-Regular' } }>MY REWARDS</Text>
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 1, y: 0 }}
+                                colors={['#70bf51', '#54c18d', '#3cc4f5']}
+                                style={localStyle.buttonContainer2}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("MyRewards")} style={{ width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                                    <Text style={{ fontFamily: 'Khand-Regular' }}>MY REWARDS</Text>
                                 </TouchableOpacity>
                             </LinearGradient>
                         </View>
                     </View>
-                    <View style={ { height: 32 } }></View>
-                    {/* <LinearGradient
-                        start={ { x: 0, y: 0 } }
-                        end={ { x: 1, y: 0 } }
-                        colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                        style={ localStyle.buttonContainer1 }>
-                        <TouchableOpacity onPress={ () => this.props.navigation.navigate("AllRewards") } style={ { width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-                            <Text style={ { fontFamily: 'Khand-Regular' } }>ALL REWARDS</Text>
-                        </TouchableOpacity>
-                    </LinearGradient> */}
+                    <View style={{ height: Utils.moderateVerticalScale(32) }}></View>
                 </ScrollView>
             </View >
         );

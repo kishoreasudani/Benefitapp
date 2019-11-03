@@ -45,7 +45,7 @@ class SettingsScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             username: '',
@@ -176,14 +176,14 @@ class SettingsScreen extends Component {
     }
     render() {
         return (
-            <View style={ [GlobalStyle.container, localStyle.container] }>
+            <View style={[GlobalStyle.container, localStyle.container]}>
                 <Header
-                    style={ GlobalStyle.header }
+                    style={GlobalStyle.header}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 0 } }>
-                        <Text style={ GlobalStyle.headerTitle }>SETTINGS</Text>
+                    <Left style={{ flex: 0 }}>
+                        <Text style={GlobalStyle.headerTitle}>SETTINGS</Text>
                         {/* <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
                             <Image source={Images.backArrow} style={{
                                 marginRight: Utils.moderateScale(15, 0.5),
@@ -192,8 +192,8 @@ class SettingsScreen extends Component {
                             }} resizeMode="contain" resizeMethod="resize" />
                         </TouchableOpacity> */}
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
-                        {/* <Text style={ GlobalStyle.headerTitle }>SETTINGS</Text> */ }
+                    <Body style={GlobalStyle.headerBody}>
+                        {/* <Text style={ GlobalStyle.headerTitle }>SETTINGS</Text> */}
                     </Body>
                     <Right>
                         {/* <TouchableOpacity onPress={ () => this.props.navigation.navigate("Notifications") }>
@@ -205,230 +205,230 @@ class SettingsScreen extends Component {
                                 } }
                             />
                         </TouchableOpacity> */}
-                        <Buttons.ShowNotification onPress={ () => {
+                        <Buttons.ShowNotification onPress={() => {
                             this.props.navigation.navigate("Notifications")
-                        } } />
+                        }} />
                     </Right>
                 </Header>
                 <ScrollView>
-                    <View style={ localStyle.innerContainer }>
-                        <View style={ [GlobalStyle.card, localStyle.card, {
+                    <View style={localStyle.innerContainer}>
+                        <View style={[GlobalStyle.card, localStyle.card, {
                             height: Utils.moderateVerticalScale(65),
                             flexDirection: 'row', justifyContent: 'space-between'
-                        }] }>
-                            <Text style={ {
+                        }]}>
+                            <Text style={{
                                 color: '#fff', fontWeight: '400',
                                 marginLeft: Utils.moderateScale(15),
                                 fontSize: Utils.moderateVerticalScale(15)
-                            } }>Notifications </Text>
+                            }}>Notifications </Text>
                             <Switch
-                                trackColor={ { true: "#93CE4F", false: "grey" } }
+                                trackColor={{ true: "#93CE4F", false: "grey" }}
                                 // onValueChange={ this.toggleSwitch }
-                                onValueChange={ switchValue =>
+                                onValueChange={switchValue =>
                                     this.setState({ switchValue: switchValue }, this.editSetting())
                                 }
-                                value={ this.state.switchValue }
+                                value={this.state.switchValue}
 
                             //onValueChange={ isSwitchOn => this.setState({ isSwitchOn }) }
                             // value={ this.state.isSwitchOn }
                             />
                         </View>
-                        <View style={ [GlobalStyle.card, localStyle.card, { justifyContent: 'space-between', }] }>
-                            <View style={ {
+                        <View style={[GlobalStyle.card, localStyle.card, { justifyContent: 'space-between', }]}>
+                            <View style={{
                                 flexDirection: 'row',
                                 borderBottomWidth: 1,
                                 paddingLeft: Utils.moderateScale(10),
-                                paddingTop: '5%',
+                                paddingTop: '3%',
                                 paddingRight: Utils.moderateScale(10),
                                 paddingBottom: '5%',
                                 borderBottomColor: '#3C3C3C', width: '90%',
                                 justifyContent: 'flex-start',
                                 marginHorizontal: Utils.moderateScale(10)
-                            } }>
-                                <Image source={ Images.inviteFriends }
-                                    style={ {
+                            }}>
+                                <Image source={Images.inviteFriends}
+                                    style={{
                                         width: 30,
                                         height: 30,
-                                        borderRadius: 40 / 2,
+                                        borderRadius: 30 / 2,
                                         // alignItems: "center"
-                                    } }
+                                    }}
                                 />
-                                <TouchableOpacity onPress={ () => Share.open(MultipleOptions) }>
-                                    <Text style={ {
+                                <TouchableOpacity onPress={() => Share.open(MultipleOptions)}>
+                                    <Text style={{
                                         color: '#fff',
                                         paddingTop: Utils.moderateScale(5),
                                         marginHorizontal: Utils.moderateScale(15)
-                                    } }>Invite Friends</Text>
+                                    }}>Invite Friends</Text>
                                 </TouchableOpacity>
                             </View>
 
-                            <View style={ {
+                            <View style={{
                                 flexDirection: 'row',
                                 borderBottomWidth: 1,
                                 paddingLeft: Utils.moderateScale(10),
-                                paddingTop: '5%',
+                                paddingTop: '3%',
                                 paddingRight: Utils.moderateScale(10),
                                 paddingBottom: '5%',
                                 borderBottomColor: '#3C3C3C', width: '90%',
                                 justifyContent: 'flex-start',
                                 marginHorizontal: Utils.moderateScale(10)
-                            } }>
-                                <Image source={ Images.about }
-                                    style={ {
+                            }}>
+                                <Image source={Images.about}
+                                    style={{
                                         width: 30,
                                         height: 30,
-                                        borderRadius: 40 / 2,
+                                        borderRadius: 30 / 2,
 
                                         // alignItems: "center"
-                                    } }
+                                    }}
                                 />
-                                <TouchableOpacity onPress={ () => this.props.navigation.navigate("AboutUs") }>
-                                    <Text style={ { color: '#fff', paddingTop: Utils.moderateScale(5), marginHorizontal: Utils.moderateScale(15) } }>About Us</Text>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("AboutUs")}>
+                                    <Text style={{ color: '#fff', paddingTop: Utils.moderateScale(5), marginHorizontal: Utils.moderateScale(15) }}>About Us</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={ {
+                            <View style={{
                                 flexDirection: 'row',
                                 borderBottomWidth: 1,
                                 paddingLeft: Utils.moderateScale(10),
-                                paddingTop: '5%',
+                                paddingTop: '3%',
                                 paddingRight: Utils.moderateScale(10),
                                 paddingBottom: '5%',
                                 borderBottomColor: '#3C3C3C', width: '90%',
                                 justifyContent: 'flex-start',
                                 marginHorizontal: Utils.moderateScale(10)
-                            } }>
-                                <Image source={ Images.faq }
-                                    style={ {
+                            }}>
+                                <Image source={Images.faq}
+                                    style={{
                                         width: 30,
                                         height: 30,
-                                        borderRadius: 40 / 2,
+                                        borderRadius: 30 / 2,
 
                                         // alignItems: "center"
-                                    } }
+                                    }}
                                 />
-                                <TouchableOpacity onPress={ () => this.props.navigation.navigate("FAQs") }>
-                                    <Text style={ { color: '#fff', paddingTop: Utils.moderateScale(5), marginHorizontal: Utils.moderateScale(15) } }>FAQs</Text>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("FAQs")}>
+                                    <Text style={{ color: '#fff', paddingTop: Utils.moderateScale(5), marginHorizontal: Utils.moderateScale(15) }}>FAQs</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={ {
+                            <View style={{
                                 flexDirection: 'row',
                                 borderBottomWidth: 1,
                                 paddingLeft: Utils.moderateScale(10),
-                                paddingTop: '5%',
+                                paddingTop: '3%',
                                 paddingRight: Utils.moderateScale(10),
                                 paddingBottom: '5%',
                                 borderBottomColor: '#3C3C3C', width: '90%',
                                 justifyContent: 'flex-start',
                                 marginHorizontal: Utils.moderateScale(10)
-                            } }>
-                                <Image source={ Images.termsAndConditions }
-                                    style={ {
+                            }}>
+                                <Image source={Images.termsAndConditions}
+                                    style={{
                                         width: 30,
                                         height: 30,
-                                        borderRadius: 40 / 2,
+                                        borderRadius: 30 / 2,
                                         // alignItems: "center"
-                                    } }
+                                    }}
                                 />
-                                <TouchableOpacity onPress={ () => this.props.navigation.navigate("TermsAndConditions") }>
-                                    <Text style={ { color: '#fff', paddingTop: Utils.moderateScale(5), marginHorizontal: Utils.moderateScale(15) } }>Terms & Conditions</Text>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("TermsAndConditions")}>
+                                    <Text style={{ color: '#fff', paddingTop: Utils.moderateScale(5), marginHorizontal: Utils.moderateScale(15) }}>Terms & Conditions</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={ {
+                            <View style={{
                                 flexDirection: 'row',
                                 borderBottomWidth: 1,
                                 paddingLeft: Utils.moderateScale(10),
-                                paddingTop: '5%',
+                                paddingTop: '3%',
                                 paddingRight: Utils.moderateScale(10),
                                 paddingBottom: '5%',
                                 borderBottomColor: '#3C3C3C', width: '90%',
                                 justifyContent: 'flex-start',
                                 marginHorizontal: Utils.moderateScale(10)
-                            } }>
-                                <Image source={ Images.privacyPolicy }
-                                    style={ {
+                            }}>
+                                <Image source={Images.privacyPolicy}
+                                    style={{
                                         width: Utils.moderateVerticalScale(30),
                                         height: Utils.moderateVerticalScale(30),
-                                        borderRadius: 40 / 2,
+                                        borderRadius: 30 / 2,
                                         // alignItems: "center"
-                                    } }
+                                    }}
                                 />
-                                <TouchableOpacity onPress={ () => this.props.navigation.navigate("PrivacyPolicy") }>
-                                    <Text style={ {
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("PrivacyPolicy")}>
+                                    <Text style={{
                                         color: '#fff', paddingTop: Utils.moderateScale(5),
                                         marginHorizontal: Utils.moderateScale(15)
-                                    } }>Privacy Policy</Text>
+                                    }}>Privacy Policy</Text>
                                 </TouchableOpacity>
 
                             </View>
-                            <View style={ localStyle.innerContainer }>
-                                <Text style={ { height: Utils.moderateVerticalScale(15) } }></Text>
+                            <View style={localStyle.innerContainer}>
+                                <Text style={{ height: Utils.moderateVerticalScale(15) }}></Text>
                             </View>
-                            <View style={ localStyle.innerContainer }>
-                                <View style={ [localStyle.card4,
-                                { flexDirection: 'row', justifyContent: 'space-between' }] }>
+                            <View style={localStyle.innerContainer}>
+                                <View style={[localStyle.card4,
+                                { flexDirection: 'row', justifyContent: 'space-between' }]}>
                                     <LinearGradient
-                                        start={ { x: 0, y: 0 } }
-                                        end={ { x: 1, y: 0 } }
-                                        colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                                        style={ localStyle.buttonContainer1 }>
+                                        start={{ x: 0, y: 0 }}
+                                        end={{ x: 1, y: 0 }}
+                                        colors={['#70bf51', '#54c18d', '#3cc4f5']}
+                                        style={localStyle.buttonContainer1}>
                                         <TouchableOpacity
-                                            onPress={ () => {
+                                            onPress={() => {
                                                 this.ShowModalFunction(true)
-                                            } }
+                                            }}
                                             // onPress={ () => {
                                             //     this.logout();
                                             // } }
-                                            style={ { width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-                                            <Text style={ { fontFamily: 'Khand-Regular' } }>LOGOUT</Text>
+                                            style={{ width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                                            <Text style={{ fontFamily: 'Khand-Regular' }}>LOGOUT</Text>
                                         </TouchableOpacity>
-                                        {/* onPress={ () => this.displayAlert() } */ }
+                                        {/* onPress={ () => this.displayAlert() } */}
                                     </LinearGradient>
                                 </View>
                             </View>
-                            <View style={ { flexDirection: 'row', padding: 10, justifyContent: 'flex-start', marginHorizontal: Utils.moderateScale(10) } }>
-                                <Text style={ { color: '#4E4E4F', marginHorizontal: Utils.moderateScale(4) } }>Help@benefitapp.in</Text>
-                                <Text style={ { color: '#4E4E4F', marginHorizontal: Utils.moderateScale(4) } }>|</Text>
-                                <Text style={ { color: '#4E4E4F', marginHorizontal: Utils.moderateScale(4) } }>Sales@benefitapp.in</Text>
+                            <View style={{ flexDirection: 'row', padding: 10, justifyContent: 'flex-start', marginHorizontal: Utils.moderateScale(10) }}>
+                                <Text style={{ color: '#4E4E4F', marginHorizontal: Utils.moderateScale(4) }}>Help@benefitapp.in</Text>
+                                <Text style={{ color: '#4E4E4F', marginHorizontal: Utils.moderateScale(4) }}>|</Text>
+                                <Text style={{ color: '#4E4E4F', marginHorizontal: Utils.moderateScale(4) }}>Sales@benefitapp.in</Text>
                             </View>
                         </View>
                     </View>
                 </ScrollView>
                 <Modal
-                    transparent={ true }
-                    animationType={ "slide" }
-                    visible={ this.state.ModalVisibleStatus }
-                    onRequestClose={ () => { this.ShowModalFunction(!this.state.ModalVisibleStatus) } } >
-                    <View style={ {
+                    transparent={true}
+                    animationType={"slide"}
+                    visible={this.state.ModalVisibleStatus}
+                    onRequestClose={() => { this.ShowModalFunction(!this.state.ModalVisibleStatus) }} >
+                    <View style={{
                         flex: 1, justifyContent: 'center',
                         alignItems: 'center', backgroundColor: '#25232354',
-                    } }>
-                        <View style={ localStyle.ModalInsideView }>
+                    }}>
+                        <View style={localStyle.ModalInsideView}>
                             {/* <TouchableOpacity onPress={ () => { this.ShowModalFunction(false) } }>
                                 <Text style={ localStyle.close }>
                                     X
                                 </Text>
                             </TouchableOpacity> */}
 
-                            <View style={ { width: "100%", height: Utils.moderateVerticalScale(200) } }>
+                            <View style={{ width: "100%", height: Utils.moderateVerticalScale(200) }}>
 
-                                <View style={ localStyle.innerContainer }>
+                                <View style={localStyle.innerContainer}>
                                     <LinearGradient
-                                        start={ { x: 0, y: 0 } }
-                                        end={ { x: 1, y: 0 } }
-                                        colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                                        style={ localStyle.buttonContainer2 }>
-                                        <TouchableOpacity onPress={ () => {
+                                        start={{ x: 0, y: 0 }}
+                                        end={{ x: 1, y: 0 }}
+                                        colors={['#70bf51', '#54c18d', '#3cc4f5']}
+                                        style={localStyle.buttonContainer2}>
+                                        <TouchableOpacity onPress={() => {
                                             this.ShowModalFunction(true)
                                             // Utils.displayAlert("Alert", "Are you sure to Logout?", "Yes", () => {
                                             //     this.props.navigation.navigate('Login');
                                             // }, "No")
 
-                                        } } style={ { width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
+                                        }} style={{ width: '100%', alignContent: 'center', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
                                         </TouchableOpacity>
-                                        {/* onPress={ () => this.displayAlert() } */ }
+                                        {/* onPress={ () => this.displayAlert() } */}
                                     </LinearGradient>
-                                    <Image source={ Images.alert }
-                                        style={ {
+                                    <Image source={Images.alert}
+                                        style={{
                                             width: Utils.moderateVerticalScale(50),
                                             height: Utils.moderateVerticalScale(50),
                                             borderRadius: 40 / 2,
@@ -437,86 +437,86 @@ class SettingsScreen extends Component {
                                             alignContent: 'center',
                                             marginTop: Utils.moderateVerticalScale(-20),
                                             marginLeft: Utils.moderateScale(120)
-                                        } }
+                                        }}
                                     />
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             flexDirection: "column",
                                             justifyContent: 'center',
                                             alignContent: 'center',
 
                                             marginLeft: Utils.moderateVerticalScale(130)
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             fontSize: 15,
                                             color: "#000000", justifyContent: 'center',
                                             alignItems: 'center'
-                                        } }>Alert</Text>
+                                        }}>Alert</Text>
 
                                     </View>
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             width: "100%",
                                             marginLeft: Utils.moderateVerticalScale(80)
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             fontSize: 15,
                                             justifyContent: 'center',
                                             alignItems: 'center'
-                                        } }>  Are you sure to Logout?</Text>
+                                        }}>  Are you sure to Logout?</Text>
                                     </View>
                                 </View>
                             </View>
-                            <View style={ {
+                            <View style={{
                                 height: Utils.moderateVerticalScale(1.0),
                                 backgroundColor: "#525252",
-                            } } />
+                            }} />
                             <View
-                                style={ {
+                                style={{
                                     flex: 1,
                                     flexDirection: "row",
                                     justifyContent: 'center',
                                     alignContent: 'center',
-                                } }
+                                }}
                             >
-                                <TouchableOpacity onPress={ () => { this.ShowModalFunction(false) } }>
+                                <TouchableOpacity onPress={() => { this.ShowModalFunction(false) }}>
                                     <View
-                                        style={ {
+                                        style={{
                                             paddingTop: Utils.moderateVerticalScale(30),
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
 
                                             fontSize: Utils.moderateVerticalScale(15),
                                             color: "#555555",
-                                        } }>
+                                        }}>
                                             No
                                     </Text>
                                     </View>
                                 </TouchableOpacity>
                                 <View
-                                    style={ {
+                                    style={{
                                         paddingLeft: Utils.moderateVerticalScale(70),
                                         borderRightWidth: 1,
                                         borderRightColor: "#555555",
-                                    } }
+                                    }}
                                 >
                                 </View>
-                                <TouchableOpacity onPress={ () => { this.logout() } }>
+                                <TouchableOpacity onPress={() => { this.logout() }}>
                                     <View
-                                        style={ {
+                                        style={{
                                             paddingLeft: Utils.moderateVerticalScale(60),
                                             paddingTop: Utils.moderateVerticalScale(30),
 
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             fontSize: 15, color: "#555555",
-                                        } }>
+                                        }}>
                                             Yes
                                     </Text>
                                     </View>

@@ -24,21 +24,28 @@ import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import Loader from "../components/Loader";
 import { BarChart } from 'react-native-charts-wrapper';
-import GoogleFit, { Scopes } from 'react-native-google-fit';
+import AppleHealthKit from 'rn-apple-healthkit';
 import { Calendar } from "react-native-calendars";
 import FAIcon from "react-native-vector-icons/FontAwesome";
-const options = {
-    scopes: [
-        Scopes.FITNESS_ACTIVITY_READ_WRITE,
-        Scopes.FITNESS_BODY_READ_WRITE,
-        Scopes.FITNESS_LOCATION_READ,
-        Scopes.FITNESS_LOCATION_READ_WRITE,
-    ],
-}
-const DailySteps = {
-    startDate: new Date(),
-    endDate: new Date().toISOString()
+// get the available permissions from AppleHealthKit.Constants object
+const PERMS = AppleHealthKit.Constants.Permissions;
+
+// setup healthkit read/write permissions using PERMS
+const healthKitOptions = {
+    permissions: {
+        read: [
+            PERMS.StepCount,
+            PERMS.DistanceWalkingRunning,
+            PERMS.ActiveEnergyBurned,
+        ],
+        write: [
+            PERMS.StepCount,
+            PERMS.DistanceWalkingRunning,
+            PERMS.ActiveEnergyBurned
+        ],
+    }
 };
+
 // create a component
 class MonthGraphScreen extends Component {
     _isMount = false;
@@ -46,19 +53,28 @@ class MonthGraphScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
-        const date = new Date().getDate();
-        const month = new Date().getMonth() + 1;
+        // const date = new Date().getDate();
+        // const month = new Date().getMonth() + 1;
+        // const year = new Date().getFullYear();
+        var date = new Date().getDate();
+        var month = new Date().getMonth() + 1;
         const year = new Date().getFullYear();
+        if (date < 10) {
+            date = "0" + date;
+        }
+        if (month < 10) {
+            month = "0" + month;
+        }
 
         this.state = {
             calDate: "",
             stepsCount: 0,
             CalorieCount: 0,
             DistanceCount: 0,
-            //prevMonthAvailable: false,
             dateSelected: year + "-" + month + "-" + date,
+            maxDate1: year + "-" + month + "-" + date,
             prevMonthAvailable: true,
             nextMonthAvailable: true
         }
@@ -66,8 +82,8 @@ class MonthGraphScreen extends Component {
         this.GetDailyCount = this.GetDailyCount.bind(this);
         this.DailyDistanceSamples = this.DailyDistanceSamples.bind(this);
         this.DailyCalorie = this.DailyCalorie.bind(this);
-        //this.onDayPress = this.onDayPress.bind(this);
         this.GetDateCal = this.GetDateCal.bind(this);
+        this.GetDateCalendar = this.GetDateCalendar.bind(this);
     }
 
     componentDidMount() {
@@ -77,118 +93,121 @@ class MonthGraphScreen extends Component {
         const year1 = new Date().getFullYear();
         const CurrentDate = year1 + "-" + month1 + "-" + date1;
         this.GetDateCal(CurrentDate);
+        //this.DailyDistanceSamples(CurrentDate);
     }
 
     GetDateCal(date) {
         this.GetDailyCount(date);
         this.DailyDistanceSamples(date);
     }
-
     GetDailyCount(date) {
-        this.state = {
-            loading: true,
-        }
-        var start_new_date = date + "T00:00:17.971Z";
-        var end_new_date = date + "T23:59:59.971Z";
 
-        const newOptions = {
-            startDate: start_new_date,
-            endDate: end_new_date
-        };
+        AppleHealthKit.isAvailable((err, available) => {
+            if (available) {
+                // ...
+                // console.log('available') 
+                AppleHealthKit.initHealthKit(healthKitOptions, (err, res) => {
+                    if (err) {
+                        console.log("error initializing healthkit: ", err);
+                        return;
+                    }
+                    this.state = {
+                        loading: true,
+                    }
+                    var start_new_date = date + "T00:00:17.971Z";
+                    var end_new_date = date + "T23:59:59.971Z";
 
-        GoogleFit.getDailyStepCountSamples(newOptions)
-            .then((res) => {
-                console.log('dateformat', res)
-                var SetDistance = "";
-                if (res == false) {
-                    SetDistance = 0;
-                }
-                else {
-                    if (res[2].steps != undefined && res[2].steps != null && res[2].steps != '') {
-                        SetDistance = Math.round(res[2].steps[0].value)
-                    }
-                    else {
-                        SetDistance = 0;
-                    }
-                }
-                this.setState({
-                    stepsCount: Math.abs(SetDistance),
+                    const newOptions = {
+                        startDate: start_new_date,
+                        endDate: end_new_date
+                    };
+                    //  console.log('resssss-', res) 
+                    AppleHealthKit.getDailyStepCountSamples(newOptions, (err, steps) => {
+                        if (err) {
+                            console.log('errerrerrerr-', err)
+                            return;
+                        }
+                        console.log('steppeppeppe-', steps)
+
+                        if (steps.length > 0) {
+                            var floosteps = Math.abs(steps[0].value)
+
+                            this.setState({
+                                stepsCount: Math.abs(floosteps)
+                            });
+                        }
+                        this.DailyCalorie(date);
+
+                    });
                 });
-                this.DailyCalorie(date);
-            })
-            .catch((err) => { console.warn(err) })
-        this.state = {
-            loading: false,
-        }
-    }
-
-    DailyDistanceSamples(date) {
-        this.state = {
-            loading: true,
-        }
-        var start_new_date = date + "T00:00:17.971Z";
-        var end_new_date = date + "T23:59:59.971Z";
-
-        const newOptions = {
-            startDate: start_new_date,
-            endDate: end_new_date
-        };
-
-        GoogleFit.getDailyDistanceSamples(newOptions, (err, res) => {
-            var SetDistance = "";
-            if (res == false) {
-                SetDistance = 0;
             }
-            else {
-                if (res[0].distance != undefined && res[0].distance != null && res[0].distance != '') {
-                    SetDistance = Math.round(res[0].distance)
-                }
-                else {
-                    SetDistance = 0;
-                }
-            }
-            this.setState({
-                DistanceCount: Math.abs(SetDistance),
-            });
         });
+
         this.state = {
             loading: false,
         }
     }
+    GetDateCalendar(date) {
+        this.GetDailyCountCalendar(date);
+        this.DailyDistanceSamples1(date);
+    }
 
+    GetDailyCountCalendar(date) {
+        AppleHealthKit.isAvailable((err, available) => {
+            if (available) {
+                // ...
+                // console.log('available') 
+                AppleHealthKit.initHealthKit(healthKitOptions, (err, res) => {
+                    if (err) {
+                        console.log("error initializing healthkit: ", err);
+                        return;
+                    }
+                    this.state = {
+                        loading: true,
+                    }
+                    var start_new_date = date + "T00:00:17.971Z";
+                    var end_new_date = date + "T00:00:17.971Z";
+                    //var end_new_date = date + "T23:59:59.971Z";
+
+                    const newOptions = {
+                        startDate: start_new_date,
+                        endDate: end_new_date
+                    };
+
+                    AppleHealthKit.getDailyStepCountSamples(newOptions, (err, steps) => {
+                        if (err) {
+                            console.log('1234567890 error-', err)
+                            this.setState({
+                                stepsCount: 0
+                            });
+                            return;
+                        }
+                        console.log('1234567890-', steps)
+
+                        if (steps.length > 0) {
+                            var floosteps = Math.abs(steps[0].value)
+                            this.setState({
+                                stepsCount: Math.abs(floosteps)
+                            });
+                        }
+                        else {
+                            this.setState({
+                                stepsCount: 0
+                            });
+
+                        }
+                        this.DailyCalorie(date);
+                    });
+                });
+            }
+        });
+
+        this.state = {
+            loading: false,
+        }
+    }
     DailyCalorie(date) {
-        // this.state = {
-        //     loading: true,
-        // }
 
-        var start_new_date = date + "T00:00:17.971Z";
-        var end_new_date = date + "T23:59:59.971Z";
-
-        // const newOptions = {
-        //     startDate: start_new_date,
-        //     endDate: end_new_date
-        // };
-
-        // GoogleFit.getDailyCalorieSamples(newOptions, (err, res) => {
-        //     var CalCount = "";
-        //     if (res == false) {
-        //         CalCount = 0;
-        //     }
-        //     else {
-        //         if (res[0].calorie != undefined && res[0].calorie != null && res[0].calorie != '') {
-        //             CalCount = Math.round(res[0].calorie)
-        //         }
-        //         else {
-        //             CalCount = 0;
-        //         }
-        //     }
-        //     this.setState({
-        //         CalorieCount: Math.abs(CalCount),
-        //     });
-        // });
-        // this.state = {
-        //     loading: false,
-        // } 
         var CalCount = "";
         if (this.state.stepsCount == undefined) {
             CalCount = 0;
@@ -200,6 +219,81 @@ class MonthGraphScreen extends Component {
             CalorieCount: Math.round(CalCount),
         });
 
+    }
+
+    DailyDistanceSamples(dateCal) {
+        var start_new_dateCal = dateCal + "T00:00:17.971Z";
+        var end_new_dateCal = dateCal + "T23:59:59.971Z";
+
+        let newOptionsCal = {
+            startDate: start_new_dateCal,
+            endDate: end_new_dateCal,
+        };
+        AppleHealthKit.getDistanceWalkingRunning(newOptionsCal, (err, distance) => {
+            if (err) {
+                console.log('distance month-', err)
+                this.setState({
+                    DistanceCount: 0
+                });
+                return;
+            }
+            console.log('distance month-', distance.message)
+
+            if (distance.message == undefined) {
+                this.setState({
+                    DistanceCount: 0
+                });
+            }
+            else {
+                var distanceFlor = Math.abs(distance.value)
+                this.setState({
+                    DistanceCount: Math.floor(distanceFlor)
+                });
+
+            }
+        });
+
+        this.state = {
+            loading: false,
+        }
+    }
+
+    DailyDistanceSamples1(dateCal) {
+        var start_new_dateCal = dateCal + "T00:00:17.971Z";
+        //var end_new_dateCal = dateCal + "T00:00:17.971Z";
+        var end_new_dateCal = dateCal + "T23:59:59.971Z";
+
+        let newOptionsCal = {
+            // startDate: start_new_dateCal,
+            date: end_new_dateCal,
+        };
+        console.log('newOptionsCalnewOptionsCal-', newOptionsCal)
+        AppleHealthKit.getDistanceWalkingRunning(newOptionsCal, (err, distanceCal1) => {
+            if (err) {
+                console.log('distanceCal error-', err)
+                this.setState({
+                    DistanceCount: 0
+                });
+                return;
+            }
+            console.log('distanceCal distanceCal1-', distanceCal1.value.message)
+            // if (distanceCal1.message == undefined) {
+            //     this.setState({
+            //         DistanceCount: 0
+            //     });
+            // }
+            // else {
+            var distanceFlor = Math.abs(distanceCal1.value)
+            this.setState({
+                DistanceCount: Math.floor(distanceFlor)
+            });
+
+            //}
+        });
+
+        this.state = {
+            loading: false,
+        }
     }
 
     componentWillUnmount() {
@@ -224,84 +318,67 @@ class MonthGraphScreen extends Component {
 
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />;
+            return <Loader loading={this.state.loading} />;
         }
         return (
-            <View style={ [GlobalStyle.container, localStyle.container] }>
+            <View style={[GlobalStyle.container, localStyle.container]}>
                 <Header
-                    style={ GlobalStyle.header }
+                    style={GlobalStyle.header}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 1 } }>
-                        <TouchableOpacity onPress={ () => this.props.navigation.goBack() }>
-                            <Image source={ Images.backArrow } style={ {
+                    <Left style={{ flex: 1 }}>
+                        <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                            <Image source={Images.backArrow} style={{
                                 marginRight: Utils.moderateScale(15, 0.5),
                                 width: Utils.moderateScale(18),
                                 height: Utils.moderateScale(14)
-                            } } resizeMode="contain" resizeMethod="resize" />
+                            }} resizeMode="contain" resizeMethod="resize" />
                         </TouchableOpacity>
                     </Left>
 
-                    <Body style={ GlobalStyle.headerBody }>
-                        <Text style={ GlobalStyle.headerTitle }>Monthly Record </Text>
+                    <Body style={GlobalStyle.headerBody}>
+                        <Text style={GlobalStyle.headerTitle}>Monthly Record </Text>
                     </Body>
                     <Right>
 
                     </Right>
                 </Header>
                 <ScrollView>
-                    <View style={ localStyle.innerContainer }>
-                        <View style={ [GlobalStyle.card, localStyle.card,
-                        { flexDirection: 'column', justifyContent: 'space-between' }] }>
+                    <View style={localStyle.innerContainer}>
+                        <View style={[GlobalStyle.card, localStyle.card,
+                        { flexDirection: 'column', justifyContent: 'space-between' }]}>
 
                             <Calendar
-                                style={ { width: "100%", } }
-                                current={ this.state.dateSelected }
-                                // minDate={ '2019-10-01' }
-                                maxDate={ this.state.dateSelected }
-                                // maxDate={ {
-                                //     [this.state.dateSelected]:
-                                //     {
-                                //         selectedDayBackgroundColor: '#3CB371',
-
-                                //     }
-                                // } }
-                                markedDates={ {
+                                style={{ width: "100%", }}
+                                current={this.state.dateSelected}
+                                maxDate={this.state.maxDate1}
+                                markedDates={{
                                     [this.state.calDate.dateString]:
                                         { selected: true, marked: false, selectedColor: '#3CB371' },
-                                } }
-
-                                // renderArrow={ (t) => {
-                                //     if (t == 'left') return (
-                                //         <FAIcon name={ 'arrow-left' } size={ Utils.moderateScale(15) } color="white"
-                                //         />);
-                                // } }
-
-                                onDayPress={ day => {
+                                }}
+                                onDayPress={day => {
                                     this.setState({
                                         calDate: day,
                                         selected: day.dateString
                                     }, () => {
-                                        this.GetDateCal(this.state.calDate.dateString);
+                                        this.GetDateCalendar(this.state.calDate.dateString);
                                     })
-                                } }
+                                }}
 
-                                renderArrow={ (direction) => {
-                                    if (direction == 'left' && this.state.prevMonthAvailable) return (<FAIcon name={ 'caret-left' } size={ 16 } color="white" />)
-                                    if (direction == 'right' && this.state.nextMonthAvailable) return (<FAIcon name={ 'caret-right' } size={ 16 } color="white" />)
-                                } }
+                                renderArrow={(direction) => {
+                                    if (direction == 'left' && this.state.prevMonthAvailable) return (<FAIcon name={'caret-left'} size={16} color="white" />)
+                                    if (direction == 'right' && this.state.nextMonthAvailable) return (<FAIcon name={'caret-right'} size={16} color="white" />)
+                                }}
 
-                                hideArrows={ false }
-                                hideExtraDays={ true }
-                                monthFormat={ "MMMM dd yyyy" }
-                                firstDay={ 1 }
-                                hideDayNames={ false }
-                                showWeekNumbers={ false }
-                                disableMonthChange={ false }
-                                // onPressArrowLeft={ substractMonth => substractMonth() }
-                                //onPressArrowRight={ addMonth => addMonth() }
-                                theme={ {
+                                hideArrows={false}
+                                hideExtraDays={true}
+                                monthFormat={"MMMM yyyy"}
+                                firstDay={1}
+                                hideDayNames={false}
+                                showWeekNumbers={false}
+                                disableMonthChange={false}
+                                theme={{
                                     backgroundColor: '#272727',
                                     calendarBackground: '#272727',
                                     textSectionTitleColor: '#fff',
@@ -314,157 +391,157 @@ class MonthGraphScreen extends Component {
                                     selectedDotColor: '#272727',
                                     monthTextColor: '#fff',
                                     indicatorColor: '#fff',
-                                } }
+                                }}
                             />
 
                         </View>
-                        <View style={ [GlobalStyle.card, localStyle.card,
-                        { flexDirection: 'row', justifyContent: 'space-between' }] }>
+                        <View style={[GlobalStyle.card, localStyle.card,
+                        { flexDirection: 'row', justifyContent: 'space-between' }]}>
                             <View
-                                style={ {
+                                style={{
                                     flex: 1,
                                     flexDirection: "row",
-                                } }
+                                }}
                             >
                                 <View
-                                    style={ {
+                                    style={{
                                         flex: 1,
                                         flexDirection: "row",
                                         // paddingTop: 80,
                                         fontSize: 15,
                                         justifyContent: 'space-between'
-                                    } }
+                                    }}
                                 >
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             flexDirection: "column",
                                             marginLeft: Utils.moderateScale(18),
                                             fontSize: 15,
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ { color: '#fff', fontSize: Utils.moderateVerticalScale(15) } }>
+                                        <Text style={{ color: '#fff', fontSize: Utils.moderateVerticalScale(15) }}>
                                             Total Steps </Text>
 
                                     </View>
 
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             flexDirection: "column",
                                             marginLeft: Utils.moderateScale(80),
                                             fontSize: 15,
 
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             color: '#fff',
                                             fontSize: Utils.moderateVerticalScale(18),
                                             marginLeft: Utils.moderateVerticalScale(60),
-                                        } }>   { this.state.stepsCount }
+                                        }}>   {this.state.stepsCount}
                                         </Text>
                                     </View>
                                 </View>
                             </View>
                         </View>
 
-                        <View style={ [GlobalStyle.card, localStyle.card,
-                        { flexDirection: 'row', justifyContent: 'space-between' }] }>
+                        <View style={[GlobalStyle.card, localStyle.card,
+                        { flexDirection: 'row', justifyContent: 'space-between' }]}>
                             <View
-                                style={ {
+                                style={{
                                     flex: 1,
                                     flexDirection: "row",
-                                } }
+                                }}
                             >
                                 <View
-                                    style={ {
+                                    style={{
                                         flex: 1,
                                         flexDirection: "row",
                                         // paddingTop: 80,
                                         fontSize: Utils.moderateVerticalScale(15),
                                         justifyContent: 'space-between'
-                                    } }
+                                    }}
                                 >
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             flexDirection: "column",
                                             marginLeft: Utils.moderateScale(18),
                                             fontSize: Utils.moderateVerticalScale(15),
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             color: '#fff',
                                             fontSize: Utils.moderateVerticalScale(15)
-                                        } }>
+                                        }}>
                                             Total Calories  </Text>
 
                                     </View>
 
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             flexDirection: "column",
                                             marginLeft: Utils.moderateScale(80),
                                             fontSize: Utils.moderateVerticalScale(15),
 
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             color: '#fff',
                                             fontSize: Utils.moderateVerticalScale(18),
                                             marginLeft: Utils.moderateVerticalScale(60),
-                                        } }> { this.state.CalorieCount }   </Text>
+                                        }}> {this.state.CalorieCount}   </Text>
 
                                     </View>
                                 </View>
                             </View>
 
                         </View>
-                        <View style={ [GlobalStyle.card, localStyle.card,
-                        { flexDirection: 'row', justifyContent: 'space-between' }] }>
+                        <View style={[GlobalStyle.card, localStyle.card,
+                        { flexDirection: 'row', justifyContent: 'space-between' }]}>
                             <View
-                                style={ {
+                                style={{
                                     flex: 1,
                                     flexDirection: "row",
-                                } }
+                                }}
                             >
                                 <View
-                                    style={ {
+                                    style={{
                                         flex: 1,
                                         flexDirection: "row",
                                         // paddingTop: 80,
                                         fontSize: Utils.moderateVerticalScale(15),
                                         justifyContent: 'space-between'
-                                    } }
+                                    }}
                                 >
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             flexDirection: "column",
                                             marginLeft: Utils.moderateScale(18),
                                             fontSize: Utils.moderateVerticalScale(15),
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ { color: '#fff', fontSize: Utils.moderateVerticalScale(15) } }>
+                                        <Text style={{ color: '#fff', fontSize: Utils.moderateVerticalScale(15) }}>
                                             Total Distance </Text>
 
                                     </View>
 
                                     <View
-                                        style={ {
+                                        style={{
                                             flex: 1,
                                             flexDirection: "column",
                                             marginLeft: Utils.moderateScale(80),
                                             fontSize: Utils.moderateVerticalScale(15),
 
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             color: '#fff',
                                             fontSize: Utils.moderateVerticalScale(18),
                                             marginLeft: Utils.moderateVerticalScale(60),
-                                        } }> { this.state.DistanceCount } m </Text>
+                                        }}> {this.state.DistanceCount} m </Text>
                                     </View>
                                 </View>
                             </View>

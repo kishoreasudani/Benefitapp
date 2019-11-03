@@ -38,7 +38,7 @@ class MyRewardsScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             loading: true,
@@ -154,71 +154,69 @@ class MyRewardsScreen extends Component {
         const _this = this;
         return (
             <View
-
-                style={ {
-                    width: "47%",
-                    marginLeft: Utils.moderateVerticalScale(5),
-                    marginRight: Utils.moderateVerticalScale(5),
+                style={{
+                    width: "50%",
+                    marginLeft: Utils.moderateVerticalScale(8),
+                    marginRight: Utils.moderateVerticalScale(0),
                     marginBottom: Utils.moderateVerticalScale(5),
                     borderRadius: Utils.moderateVerticalScale(8)
-                } }
+                }}
             >
-                <View style={ { width: "50%", height: Utils.moderateVerticalScale(170) } }>
-                    <View style={ localStyle.innerContainer }>
-                        <View style={ [GlobalStyle.card, localStyle.card3] }>
-
-                            <TouchableOpacity onPress={ () => {
+                <View style={{ width: "50%", height: Utils.moderateVerticalScale(170) }}>
+                    <View style={localStyle.innerContainer}>
+                        <View style={[GlobalStyle.card, localStyle.card3]}>
+                            <TouchableOpacity onPress={() => {
                                 this.globalData = item;
                                 this.ShowModalFunction(true)
-                            } }>
+                            }}>
 
-                                <ImageBackground source={ Images.confetti } style={ {
+                                <ImageBackground source={Images.confetti} style={{
                                     width: Utils.moderateScale(70),
                                     height: Utils.moderateVerticalScale(70),
-                                    borderRadius: 65 / 2,
+                                    borderRadius: Utils.moderateScale(70 / 2),
                                     alignItems: "center",
                                     marginTop: Utils.moderateScale(10),
-                                    marginLeft: Utils.moderateScale(35)
-                                    // paddingHorizontal: 45
-                                } }>
+                                    marginLeft: Utils.moderateScale(35),
+                                    paddingHorizontal: Utils.moderateScale(45)
+                                }}>
                                 </ImageBackground>
 
                                 <Image
-                                    source={ {
+                                    source={{
                                         uri: URL.ImageURLProduction + "data/vouchers/" + item.image
-                                    } }
-                                    style={ {
+                                    }}
+                                    style={{
                                         width: Utils.moderateScale(50),
                                         height: Utils.moderateVerticalScale(50),
-                                        borderRadius: 50 / 2,
+                                        borderRadius: Utils.moderateVerticalScale(50 / 2),
                                         alignItems: "center",
-                                        marginTop: -55,
+                                        marginTop: Utils.moderateVerticalScale(-55),
                                         marginLeft: Utils.moderateScale(50)
-                                    } }
+                                    }}
                                 />
 
                                 <View
-                                    style={ {
+                                    style={{
                                         flex: 1,
                                         flexDirection: "row",
                                         justifyContent: 'center',
                                         alignContent: 'center',
                                         alignItems: "stretch",
-                                    } }
+                                    }}
                                 >
                                     <View
-                                        style={ {
+                                        style={{
                                             height: Utils.moderateVerticalScale(120),
                                             marginBottom: Utils.moderateVerticalScale(25),
                                             marginLeft: Utils.moderateScale(20),
                                             fontSize: 18,
                                             padding: Utils.moderateScale(7),
-                                        } }
+                                        }}
                                     >
-                                        <Text style={ {
+                                        <Text style={{
                                             fontSize: 11, color: "#fff",
                                             justifyContent: 'center', alignContent: 'center'
-                                        } }>Coupon Code  { item.code }</Text>
+                                        }}>Coupon Code  {item.code}</Text>
                                         {/* { item.amount == null && item.amount == "" && item.amount == undefined
                                             ? (null)
                                             : (<Text style={ {
@@ -226,13 +224,13 @@ class MyRewardsScreen extends Component {
                                                 marginLeft: Utils.moderateScale(15),
                                             } }>₹ { item.amount }</Text>)
                                         } */}
-                                        <Text style={ {
+                                        <Text style={{
                                             fontSize: 13, color: "#fff",
-                                        } }>{ item.name }</Text>
-                                        <Text style={ {
+                                        }}>{item.name}</Text>
+                                        <Text style={{
                                             fontSize: 11, color: "#555555",
-                                        } }>
-                                            Expire in { item.day_diff }
+                                        }}>
+                                            Expire in {item.day_diff}
                                         </Text>
                                     </View>
                                 </View>
@@ -247,139 +245,144 @@ class MyRewardsScreen extends Component {
 
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />;
+            return <Loader loading={this.state.loading} />;
         }
         return (
-            <View style={ [GlobalStyle.container, localStyle.container] }>
+            <View style={[GlobalStyle.container, localStyle.container]}>
                 <Header
-                    style={ GlobalStyle.header }
+                    style={GlobalStyle.header}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 1 } }>
-                        <TouchableOpacity onPress={ () => this.props.navigation.navigate('MyCoins') }>
-                            <Image source={ Images.backArrow } style={ {
+                    <Left style={{ flex: 1 }}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('MyCoins')}>
+                            <Image source={Images.backArrow} style={{
                                 marginRight: Utils.moderateScale(15, 0.5),
                                 width: Utils.moderateScale(18),
                                 height: Utils.moderateScale(14)
-                            } } resizeMode="contain" resizeMethod="resize" />
+                            }} resizeMode="contain" resizeMethod="resize" />
                         </TouchableOpacity>
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
-                        <Text style={ GlobalStyle.headerTitle }>MY REWARDS</Text>
+                    <Body style={GlobalStyle.headerBody}>
+                        <Text style={GlobalStyle.headerTitle}>MY REWARDS</Text>
                     </Body>
                     <Right>
-                        <TouchableOpacity onPress={ () => this.props.navigation.navigate("Notifications") }>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Notifications")}>
                             <FAIcon
                                 name="bell"
-                                style={ {
+                                style={{
                                     color: "white",
                                     fontSize: Utils.moderateScale(15),
-                                } }
+                                }}
                             />
                         </TouchableOpacity>
                     </Right>
                 </Header>
 
                 <FlatList
-                    style={ {
-                        flex: 1,
-                        marginBottom: Utils.scale(5)
-                    } }
-                    data={ this.state.voucherData }
-                    numColumns={ 2 }
-                    showsVerticalScrollIndicator={ false }
-                    horizontal={ false }
-                    keyExtractor={ (item, index) => item.id.toString() }
-                    renderItem={ this.renderRewards }
+                    // style={{
+                    //     flex: 1,
+                    //     marginBottom: Utils.scale(5)
+                    // }}
+                    data={this.state.voucherData}
+                    numColumns={2}
+                    showsVerticalScrollIndicator={false}
+                    horizontal={false}
+                    keyExtractor={(item, index) => item.id.toString()}
+                    renderItem={this.renderRewards}
                     ListEmptyComponent={
                         <ListEmptyComponent message="No Reward available." />
                     }
-                    onEndReached={ this.handleLoadMore }
-                    onEndReachedThreshold={ 0.2 }
+                    onEndReached={this.handleLoadMore}
+                    onEndReachedThreshold={0.2}
                     refreshControl={
                         <RefreshControl
-                            colors={ ["red", "blue", "orange"] }
-                            refreshing={ this.state.refreshing }
-                            onRefresh={ this.handleRefresh }
+                            colors={["red", "blue", "orange"]}
+                            refreshing={this.state.refreshing}
+                            onRefresh={this.handleRefresh}
                         />
                     }
                 />
 
                 <Modal
-                    transparent={ true }
-                    animationType={ "slide" }
-                    visible={ this.state.ModalVisibleStatus }
-                    onRequestClose={ () => { this.ShowModalFunction(!this.state.ModalVisibleStatus) } } >
-                    <View style={ {
+                    transparent={true}
+                    animationType={"slide"}
+                    visible={this.state.ModalVisibleStatus}
+                    onRequestClose={() => { this.ShowModalFunction(!this.state.ModalVisibleStatus) }} >
+                    <View style={{
                         flex: 1, justifyContent: 'center',
                         alignItems: 'center', backgroundColor: '#25232354',
-                    } }>
-                        <View style={ localStyle.ModalInsideView }>
-                            <TouchableOpacity onPress={ () => { this.ShowModalFunction(false) } }>
-                                <Text style={ localStyle.close }>
+                    }}>
+                        <View style={localStyle.ModalInsideView}>
+                            <TouchableOpacity onPress={() => { this.ShowModalFunction(false) }}>
+                                <Text style={localStyle.close}>
                                     X
                                 </Text>
                             </TouchableOpacity>
 
-                            <View style={ { width: "100%", height: Utils.moderateVerticalScale(170) } }>
-                                <View style={ localStyle.innerContainerModal }>
-                                    <View style={ [localStyle.card4, localStyle.cardModal] }>
-                                        <View style={ { marginLeft: Utils.moderateVerticalScale(20) } } >
-                                            <View style={ {
+                            <View style={{ width: "100%", height: Utils.moderateVerticalScale(170) }}>
+                                <View style={localStyle.innerContainerModal}>
+                                    <View style={[localStyle.card4, localStyle.cardModal]}>
+                                        <View style={{ marginLeft: Utils.moderateVerticalScale(20) }} >
+                                            <View style={{
                                                 justifyContent: 'center',
                                                 alignItems: 'center',
-                                            } }>
-                                                <ImageBackground source={ Images.confetti } style={ {
+                                            }}>
+                                                <ImageBackground source={Images.confetti} style={{
                                                     width: Utils.moderateScale(80),
                                                     height: Utils.moderateVerticalScale(80),
-                                                    borderRadius: 80 / 2,
+                                                    borderRadius: Utils.moderateVerticalScale(80 / 2),
                                                     justifyContent: 'center',
                                                     alignItems: 'center',
                                                     marginBottom: Utils.moderateScale(-15),
                                                     marginRight: Utils.moderateScale(40),
-                                                } }>
+                                                }}>
                                                 </ImageBackground>
                                             </View>
-                                            <Image
-                                                source={ {
-                                                    uri: URL.ImageURLProduction + "data/vouchers/" + this.globalData.image
-                                                } }
-                                                style={ {
-                                                    width: Utils.moderateScale(60),
-                                                    height: Utils.moderateVerticalScale(60),
-                                                    borderRadius: 45 / 2,
-                                                    justifyContent: 'center',
-                                                    alignItems: 'center',
-                                                    marginTop: Utils.moderateVerticalScale(-50),
-                                                    marginLeft: Utils.moderateVerticalScale(50)
-                                                } }
-                                            />
-
+                                            <View style={{
+                                                justifyContent: 'center',
+                                                alignItems: 'center',
+                                            }}>
+                                                <Image
+                                                    source={{
+                                                        uri: URL.ImageURLProduction + "data/vouchers/" + this.globalData.image
+                                                    }}
+                                                    style={{
+                                                        width: Utils.moderateScale(60),
+                                                        height: Utils.moderateVerticalScale(60),
+                                                        borderRadius: Utils.moderateVerticalScale(30),
+                                                        justifyContent: 'center',
+                                                        alignItems: "center",
+                                                        marginTop: Utils.moderateVerticalScale(-50),
+                                                        marginLeft: Utils.moderateVerticalScale(-22)
+                                                    }}
+                                                />
+                                            </View>
                                             <View
-                                                style={ {
+                                                style={{
                                                     flex: 1,
                                                     flexDirection: "row",
                                                     justifyContent: 'center',
                                                     alignContent: 'center'
-                                                } }
+                                                }}
                                             >
                                                 <View
-                                                    style={ {
+                                                    style={{
                                                         height: Utils.moderateVerticalScale(120),
                                                         marginBottom: Utils.moderateVerticalScale(25),
                                                         alignContent: 'center',
                                                         justifyContent: 'center',
                                                         fontSize: 18,
                                                         padding: Utils.moderateScale(15)
-                                                    } }
+                                                    }}
                                                 >
-                                                    <Text style={ {
-                                                        fontSize: 15, color: "#000",
+                                                    <Text style={{
+                                                        fontSize: 12,
+                                                        color: "#000",
                                                         justifyContent: 'space-around'
-                                                    } }>Coupon Code { " " }
-                                                        <Text style={ { fontWeight: "bold" } }>
-                                                            { this.globalData.code }</Text>
+                                                    }}>Coupon Code {" "}
+                                                        <Text style={{ fontWeight: "bold" }}>
+                                                            {this.globalData.code}</Text>
                                                     </Text>
 
                                                     {/* { this.globalData.amount == null && this.globalData.amount == "" && this.globalData.amount == undefined
@@ -398,24 +401,25 @@ class MyRewardsScreen extends Component {
                                                         </Text>
                                                         )
                                                     } */}
-                                                    <Text style={ {
-                                                        fontSize: 15,
+                                                    <Text style={{
+                                                        //fontSize: 15,
                                                         color: "green",
                                                         marginTop: Utils.moderateScale(-2),
                                                         justifyContent: 'center',
                                                         alignItems: 'center'
-                                                    } }>
-                                                        { this.globalData.name }
+                                                    }}>
+                                                        {this.globalData.name}
                                                     </Text>
 
-                                                    <Text style={ {
-                                                        fontSize: 15, color: "#555555",
+                                                    <Text style={{
+                                                        //fontSize: 15,
+                                                        color: "#555555",
                                                         marginTop: Utils.moderateScale(0),
                                                         marginLeft: Utils.moderateScale(0),
                                                         justifyContent: 'center',
                                                         alignItems: 'center'
-                                                    } }>
-                                                        Expire in { this.globalData.day_diff }
+                                                    }}>
+                                                        Expire in {this.globalData.day_diff}
                                                     </Text>
 
                                                 </View>
@@ -424,46 +428,47 @@ class MyRewardsScreen extends Component {
                                     </View>
                                 </View>
                             </View>
-                            <View style={ {
+                            <View style={{
                                 height: Utils.moderateVerticalScale(0.5),
                                 width: '80%', backgroundColor: "#525252",
                                 marginLeft: Utils.moderateVerticalScale(25),
                                 marginTop: Utils.moderateScale(10),
-                            } } />
+                            }} />
                             <View
-                                style={ {
+                                style={{
                                     flex: 1,
                                     flexDirection: "row",
                                     justifyContent: 'center',
                                     alignContent: 'center'
-                                } }
+                                }}
                             >
                                 <View
-                                    style={ {
+                                    style={{
                                         height: Utils.moderateVerticalScale(120),
                                         marginBottom: Utils.moderateVerticalScale(25),
                                         marginLeft: Utils.moderateScale(10),
                                         fontSize: 18,
                                         padding: Utils.moderateScale(7)
-                                    } }
+                                    }}
                                 >
-                                    <TouchableOpacity onPress={ () => {
+                                    <TouchableOpacity onPress={() => {
                                         this.props.navigation.navigate("ViewReward", {
-                                            referenceId: this.globalData.id
+                                            referenceId: this.globalData.id,
+                                            image: this.globalData.image,
                                         });
                                         this.ShowModalFunction(false);
-                                    } }>
-                                        <Text style={ {
+                                    }}>
+                                        <Text style={{
                                             fontSize: 13
-                                        } }>
-                                            You spent { this.globalData.coins_required } coins to receive this award
+                                        }}>
+                                            You spent {this.globalData.coins_required} coins to receive this award
                                            </Text>
 
-                                        <Text style={ {
+                                        <Text style={{
                                             fontSize: 13,
                                             fontWeight: "bold",
                                             paddingHorizontal: 85
-                                        } }>
+                                        }}>
                                             Details
                                            </Text>
                                     </TouchableOpacity>

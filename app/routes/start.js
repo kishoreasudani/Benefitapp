@@ -8,6 +8,7 @@ import SignupScreen from "../screens/Signup";
 import SignupCreatePasswordScreen from "../screens/SignupCreatePassword";
 import ForgotPasswordScreen from "../screens/ForgotPassword";
 import OtpScreen from "../screens/Otp";
+import OtpForgetScreen from "../screens/OtpForget";
 import UpdatePasswordScreen from "../screens/UpdatePassword";
 import ChangePasswordScreen from "../screens/ChangePassword";
 import AboutUsScreen from "../screens/AboutUs";
@@ -24,9 +25,8 @@ import NotificationScreen from "../screens/Notifications";
 import WeekGraphScreen from "../screens/WeekGraph";
 import MonthGraphScreen from "../screens/MonthGraph";
 import ViewRewardScreen from "../screens/ViewReward";
-import audioScreen from "../screens/audio";
-//import { Images } from "../assets/images/index";
-const TabBarComponent = props => <BottomTabBar { ...props } />;
+
+const TabBarComponent = props => <BottomTabBar {...props} />;
 const LoggedOutStack = createStackNavigator({
   Landing: {
     screen: LandingScreen
@@ -40,16 +40,18 @@ const LoggedOutStack = createStackNavigator({
     screen: ForgotPasswordScreen
   }, Otp: {
     screen: OtpScreen
+  }, OtpForget: {
+    screen: OtpForgetScreen
   }, UpdatePassword: {
     screen: UpdatePasswordScreen
   },
 }, {
-  initialRouteName: "Landing",
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false,
-  }
-});
+    initialRouteName: "Landing",
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
+  });
 
 const DashboardStack = createStackNavigator({
   Home: {
@@ -66,12 +68,12 @@ const DashboardStack = createStackNavigator({
   }
 
 }, {
-  initialRouteName: "Home",
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false,
-  }
-});
+    initialRouteName: "Home",
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
+  });
 
 const MyCoinsStack = createStackNavigator({
   MyCoins: {
@@ -81,13 +83,13 @@ const MyCoinsStack = createStackNavigator({
     screen: MyRewardsScreen
   },
 }, {
-  initialRouteName: "MyCoins",
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false,
-  }
+    initialRouteName: "MyCoins",
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
 
-});
+  });
 
 const RewardsStack = createStackNavigator({
 
@@ -98,12 +100,12 @@ const RewardsStack = createStackNavigator({
     screen: ViewRewardScreen
   }
 }, {
-  initialRouteName: "AllRewards",
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false,
-  }
-});
+    initialRouteName: "AllRewards",
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
+  });
 
 const SettingStack = createStackNavigator({
   Settings: {
@@ -126,17 +128,14 @@ const SettingStack = createStackNavigator({
   },
   Profile: {
     screen: ProfileScreen
-  },
-  audio: {
-    screen: audioScreen
   }
 }, {
-  initialRouteName: "Settings",
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false,
-  }
-});
+    initialRouteName: "Settings",
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
+  });
 const tabBarOptions = {
   activeTintColor: "#441f87",
   inactiveTintColor: "#B7B7B7",
@@ -157,21 +156,43 @@ const LoggedInTabs = createBottomTabNavigator({
         var icon = focused ?
           Images.MenuOn :
           Images.MenuOff;
-        return <Image style={ { height: 20, width: 20 } } source={ (icon) } />;
+        return <Image style={{ height: 20, width: 20 }} source={(icon)} />;
       },
+      // tabBarOptions: {
+      //   activeTintColor: "#3CB371",
+      //   inactiveTintColor: "#676767",
+      //   activeBackgroundColor: "#000",
+      //   inactiveBackgroundColor: "#000",
+      //   labelStyle: {
+      //     fontSize: 12,
+      //     //color: '#3CB371'
+      //   },
+
+      // },
+      // animationEnabled: false,
+      swipeEnabled: true,
       tabBarOptions: {
         activeTintColor: "#3CB371",
-        inactiveTintColor: "#676767",
-        activeBackgroundColor: "#000",
-        inactiveBackgroundColor: "#000",
-        labelStyle: {
-          fontSize: 12,
-          //color: '#3CB371'
+        // inactiveTintColor: "#000",
+        indicatorStyle: {
+          backgroundColor: '#000',
+        },
+        tabStyle: {
+          height: 48,
+          backgroundColor: '#000',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        style: {
+          backgroundColor: '#000',
         },
       },
       tabBarComponent: props => (
-        <TabBarComponent { ...props } style={ { borderTopColor: '#000' } } />
+        <TabBarComponent {...props} style={{ borderTopColor: '#000', backgroundColor: '#000' }} />
       ),
+      tabBarOnPress: (props) => {
+        props.navigation.navigate("Home");
+      },
       animationEnabled: true
     }
   },
@@ -181,22 +202,58 @@ const LoggedInTabs = createBottomTabNavigator({
       drawerLabel: "MyCoins",
       tabBarIcon: ({ focused }) => {
         var icon = focused ? Images.coinsOn : Images.coinsOff;
-        return <Image style={ { height: 20, width: 20 } } source={ (icon) } />;
+        return <Image style={{ height: 20, width: 20 }} source={(icon)} />;
       },
+      // tabBarOptions: {
+      //   activeTintColor: "#3CB371",
+      //   inactiveTintColor: "#676767",
+      //   activeBackgroundColor: "#000",
+      //   inactiveBackgroundColor: "#000",
+
+      //   labelStyle: {
+      //     fontSize: 12,
+      //     //color: '#3CB371'
+      //   },
+      // },
+      // tabBarComponent: props => (
+      //   <TabBarComponent {...props} style={{ borderTopColor: '#000' }} />
+      // ),
+      // animationEnabled: true
+      // tabBarOptions: {
+      //   activeTintColor: "#3CB371",
+      //   inactiveTintColor: "#676767",
+      //   activeBackgroundColor: "#000",
+      //   inactiveBackgroundColor: "#000",
+      //   labelStyle: {
+      //     fontSize: 12,
+      //     //color: '#3CB371'
+      //   },
+
+      // },
+      // animationEnabled: false,
+      swipeEnabled: true,
       tabBarOptions: {
         activeTintColor: "#3CB371",
-        inactiveTintColor: "#676767",
-        activeBackgroundColor: "#000",
-        inactiveBackgroundColor: "#000",
-
-        labelStyle: {
-          fontSize: 12,
-          //color: '#3CB371'
+        // inactiveTintColor: "#000",
+        indicatorStyle: {
+          backgroundColor: '#000',
+        },
+        tabStyle: {
+          height: 48,
+          backgroundColor: '#000',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        style: {
+          backgroundColor: '#000',
         },
       },
       tabBarComponent: props => (
-        <TabBarComponent { ...props } style={ { borderTopColor: '#000' } } />
+        <TabBarComponent {...props} style={{ borderTopColor: '#000', backgroundColor: '#000' }} />
       ),
+      tabBarOnPress: (props) => {
+        props.navigation.navigate("MyCoins");
+      },
       animationEnabled: true
     }
   },
@@ -206,21 +263,57 @@ const LoggedInTabs = createBottomTabNavigator({
       drawerLabel: "Rewards",
       tabBarIcon: ({ focused }) => {
         var icon = focused ? Images.rewardsOn : Images.rewardsOff;
-        return <Image style={ { height: 20, width: 20 } } source={ (icon) } />;
+        return <Image style={{ height: 20, width: 20 }} source={(icon)} />;
       },
+      // tabBarOptions: {
+      //   activeTintColor: "#3CB371",
+      //   inactiveTintColor: "#676767",
+      //   activeBackgroundColor: "#000",
+      //   inactiveBackgroundColor: "#000",
+      //   labelStyle: {
+      //     fontSize: 12,
+      //     //color: '#3CB371'
+      //   },
+      // },
+      // tabBarComponent: props => (
+      //   <TabBarComponent {...props} style={{ borderTopColor: '#000' }} />
+      // ),
+      // animationEnabled: true
+      // tabBarOptions: {
+      //   activeTintColor: "#3CB371",
+      //   inactiveTintColor: "#676767",
+      //   activeBackgroundColor: "#000",
+      //   inactiveBackgroundColor: "#000",
+      //   labelStyle: {
+      //     fontSize: 12,
+      //     //color: '#3CB371'
+      //   },
+
+      // },
+      // animationEnabled: false,
+      swipeEnabled: true,
       tabBarOptions: {
         activeTintColor: "#3CB371",
-        inactiveTintColor: "#676767",
-        activeBackgroundColor: "#000",
-        inactiveBackgroundColor: "#000",
-        labelStyle: {
-          fontSize: 12,
-          //color: '#3CB371'
+        // inactiveTintColor: "#000",
+        indicatorStyle: {
+          backgroundColor: '#000',
+        },
+        tabStyle: {
+          height: 48,
+          backgroundColor: '#000',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        style: {
+          backgroundColor: '#000',
         },
       },
       tabBarComponent: props => (
-        <TabBarComponent { ...props } style={ { borderTopColor: '#000' } } />
+        <TabBarComponent {...props} style={{ borderTopColor: '#000', backgroundColor: '#000' }} />
       ),
+      tabBarOnPress: (props) => {
+        props.navigation.navigate("AllRewards");
+      },
       animationEnabled: true
     }
   },
@@ -230,22 +323,58 @@ const LoggedInTabs = createBottomTabNavigator({
       drawerLabel: "Settings",
       tabBarIcon: ({ focused }) => {
         var icon = focused ? Images.settingsOn : Images.settingsOff;
-        return <Image style={ { height: 20, width: 20 } } source={ (icon) } />;
+        return <Image style={{ height: 20, width: 20 }} source={(icon)} />;
       },
 
+      // tabBarOptions: {
+      //   activeTintColor: "#3CB371",
+      //   inactiveTintColor: "#676767",
+      //   activeBackgroundColor: "#000",
+      //   inactiveBackgroundColor: "#000",
+      //   labelStyle: {
+      //     fontSize: 12,
+      //     //color: '#3CB371'
+      //   },
+      // },
+      // tabBarComponent: props => (
+      //   <TabBarComponent {...props} style={{ borderTopColor: '#000' }} />
+      // ),
+      // animationEnabled: true
+      // tabBarOptions: {
+      //   activeTintColor: "#3CB371",
+      //   inactiveTintColor: "#676767",
+      //   activeBackgroundColor: "#000",
+      //   inactiveBackgroundColor: "#000",
+      //   labelStyle: {
+      //     fontSize: 12,
+      //     //color: '#3CB371'
+      //   },
+
+      // },
+      // animationEnabled: false,
+      swipeEnabled: true,
       tabBarOptions: {
         activeTintColor: "#3CB371",
-        inactiveTintColor: "#676767",
-        activeBackgroundColor: "#000",
-        inactiveBackgroundColor: "#000",
-        labelStyle: {
-          fontSize: 12,
-          //color: '#3CB371'
+        // inactiveTintColor: "#000",
+        indicatorStyle: {
+          backgroundColor: '#000',
+        },
+        tabStyle: {
+          height: 48,
+          backgroundColor: '#000',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        style: {
+          backgroundColor: '#000',
         },
       },
       tabBarComponent: props => (
-        <TabBarComponent { ...props } style={ { borderTopColor: '#000' } } />
+        <TabBarComponent {...props} style={{ borderTopColor: '#000', backgroundColor: '#000' }} />
       ),
+      tabBarOnPress: (props) => {
+        props.navigation.navigate("Settings");
+      },
       animationEnabled: true
     }
   },
@@ -266,8 +395,8 @@ const RootStackCreator = (signedIn = false) => {
       screen: LoggedInTabs
     }
   }, {
-    initialRouteName: signedIn ? "LoggedIn" : "LoggedOut"
-  }
+      initialRouteName: signedIn ? "LoggedIn" : "LoggedOut"
+    }
   );
 };
 export default RootStackCreator;

@@ -29,20 +29,47 @@ class OtpScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             otp: '',
             MobileNo: ''
         }
+
         this.inputs = {};
         this.MobileNo = this.props.navigation.getParam("mobileNo");
         this._handlePress = this._handlePress.bind(this);
         this.VerifyOtp = this.VerifyOtp.bind(this);
+        this.SendRegisterOtp = this.SendRegisterOtp.bind(this);
     }
 
     componentDidMount() {
         this._isMount = true;
+        this.SendRegisterOtp();
+    }
+    async SendRegisterOtp() {
+        const _this = this;
+        let data = {
+            "mobile": this.MobileNo,
+            otp_type: "register"
+        };
+        Utils.makeApiRequest(URL.API_URL.sendOtp.url, URL.API_URL.sendOtp.endPoint, data)
+            .then(async response => {
+                if (response) {
+                    this.setState({
+                        loading: false
+                    })
+                    Utils.displayAlert("OTP Send Your Mobile No!", response.message);
+                    // _this.props.navigation.navigate('Otp',
+                    //     {
+                    //         mobileNo: this.MobileNo
+                    //     });
+                } else {
+                    this.setState({
+                        loading: false
+                    })
+                }
+            })
     }
 
     componentWillUnmount() {
@@ -60,6 +87,7 @@ class OtpScreen extends Component {
         let data = {
             "mobile": this.state.MobileNo,
             "otp": this.state.otp,
+            otp_type: "register"
         };
 
         Utils.makeApiRequest(URL.API_URL.verifyOtp.url, URL.API_URL.verifyOtp.endPoint, data)
@@ -69,9 +97,7 @@ class OtpScreen extends Component {
                         loading: false
                     })
                     Utils.displayAlert("Verify Otp ", response.message);
-                    _this.props.navigation.navigate('UpdatePassword', {
-                        id: response.body.user_id
-                    })
+                    _this.props.navigation.navigate('Login')
                 } else {
                     this.setState({
                         loading: false
@@ -103,88 +129,87 @@ class OtpScreen extends Component {
     }
     render() {
         return (
-            <View style={ [GlobalStyle.container, styles.container] }>
+            <View style={[GlobalStyle.container, styles.container]}>
                 <Header
-                    style={ GlobalStyle.header }
+                    style={GlobalStyle.header}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 1 } }>
-                        <TouchableOpacity onPress={ () => this.props.navigation.navigate('ForgotPassword') }>
+                    <Left style={{ flex: 1 }}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ForgotPassword')}>
                             <FAIcon
                                 name="arrow-left"
-                                style={ {
+                                style={{
                                     color: "white",
                                     fontSize: Utils.moderateScale(15),
-                                } }
+                                }}
                             />
                         </TouchableOpacity>
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
-                        <Text style={ GlobalStyle.headerTitle }>Verify OTP</Text>
+                    <Body style={GlobalStyle.headerBody}>
+                        <Text style={GlobalStyle.headerTitle}>Verify OTP</Text>
                     </Body>
-                    <Right style={ { flex: 1 } }>
+                    <Right style={{ flex: 1 }}>
                     </Right>
                 </Header>
-                <ImageBackground source={ require("../assets/Images/img/background.png") }
-                    style={ { flex: 1, width: '100%', height: '100%' } }>
+                <ImageBackground source={require("../assets/Images/img/background.png")}
+                    style={{ flex: 1, width: '100%', height: '100%' }}>
 
-                    <View style={ {
+                    <View style={{
                         paddingLeft: Utils.moderateVerticalScale(25),
                         paddingRight: Utils.moderateVerticalScale(35),
                         paddingTop: Utils.moderateVerticalScale(50),
                         flex: 1,
                         backgroundColor: 'transparent'
-                    } }>
+                    }}>
                         <Image
-                            source={ require("../assets/Images/img/landing-logo.png") }
-                            style={ {
+                            source={require("../assets/Images/img/landing-logo.png")}
+                            style={{
                                 width: Utils.moderateVerticalScale(90),
                                 height: Utils.moderateVerticalScale(90),
                                 alignItems: "center",
                                 marginLeft: Utils.moderateVerticalScale(115),
                                 marginTop: Utils.moderateVerticalScale(20)
-                            } }
+                            }}
                         />
 
 
                     </View>
-                    <ScrollView style={ { marginTop: Utils.moderateVerticalScale(150) } }>
-                        <View style={ { marginLeft: Utils.moderateVerticalScale(70), width: "60%" } }>
+                    <ScrollView style={{ marginTop: Utils.moderateVerticalScale(150) }}>
+                        <View style={{ marginLeft: Utils.moderateVerticalScale(50), width: "60%" }}>
                             <OTPTextView
-                                containerStyle={ styles.textInputContainer }
-                                handleTextChange={ text => this.setState({ otp: text }) }
-                                textInputStyle={ styles.otpTextInput }
-                                inputCount={ 6 }
+                                containerStyle={styles.textInputContainer}
+                                handleTextChange={text => this.setState({ otp: text })}
+                                textInputStyle={styles.otpTextInput}
+                                inputCount={6}
                                 keyboardType="numeric"
                             />
-
                         </View>
 
-                        <View style={ {
+                        <View style={{
                             flex: 1, backgroundColor: 'transparent',
                             marginVertical: Utils.moderateVerticalScale(10),
                             paddingVertical: Utils.moderateVerticalScale(20),
                             justifyContent: 'center', alignItems: 'center',
                             alignContent: 'center'
-                        } }>
-                            <TouchableOpacity>
-                                <Text style={ {
+                        }}>
+                            <TouchableOpacity onPress={() => this._handlePress()}>
+                                <Text style={{
                                     fontFamily: "Khand-Regular",
                                     color: '#fff',
                                     fontSize: Utils.moderateVerticalScale(15)
-                                } }>RESEND OTP</Text>
+                                }}>RESEND OTP</Text>
                             </TouchableOpacity>
 
-                            {/* <Text style={{ , color: '#fff', fontSize: Utils.moderateVerticalScale(12) }}>02 <Text style={{ fontWeight: 'normal', color: '#fff' }}>/02</Text></Text> */ }
-                            <TouchableOpacity onPress={ () => this._handlePress() } style={ { marginTop: Utils.moderateVerticalScale(10), alignContent: 'center', justifyContent: 'center', alignItems: 'center' } }>
+                            {/* <Text style={{ , color: '#fff', fontSize: Utils.moderateVerticalScale(12) }}>02 <Text style={{ fontWeight: 'normal', color: '#fff' }}>/02</Text></Text> */}
+                            <TouchableOpacity onPress={() => this._handlePress()} style={{ marginTop: Utils.moderateVerticalScale(10), alignContent: 'center', justifyContent: 'center', alignItems: 'center' }}>
                                 <Image
-                                    source={ require("../assets/Images/img/arrow-button.png") }
-                                    style={ {
+                                    source={require("../assets/Images/img/arrow-button.png")}
+                                    style={{
                                         width: Utils.moderateScale(55),
                                         height: Utils.moderateScale(55),
                                         alignItems: "center"
-                                    } }
+                                    }}
                                 />
                             </TouchableOpacity>
                         </View>

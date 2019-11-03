@@ -25,7 +25,7 @@ class ForgotPasswordScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             txtMobileNo: '',
@@ -49,6 +49,7 @@ class ForgotPasswordScreen extends Component {
         let data = {
             "mobile": this.state.txtMobileNo,
         };
+        //console.log('sdfjgdsfgdsgfsdfgu', data)
         Utils.makeApiRequest(URL.API_URL.sendOtp.url, URL.API_URL.sendOtp.endPoint, data)
             .then(async response => {
                 if (response) {
@@ -56,7 +57,7 @@ class ForgotPasswordScreen extends Component {
                         loading: false
                     })
                     Utils.displayAlert("OTP Send Your Mobile No!", response.message);
-                    _this.props.navigation.navigate('Otp',
+                    _this.props.navigation.navigate('OtpForget',
                         {
                             mobileNo: this.state.txtMobileNo
                         });
@@ -91,64 +92,64 @@ class ForgotPasswordScreen extends Component {
     }
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />
+            return <Loader loading={this.state.loading} />
         }
         return (
-            <ImageBackground source={ require("../assets/Images/img/background.png") } style={ { flex: 1, width: '100%', height: '100%' } }>
+            <ImageBackground source={require("../assets/Images/img/background.png")} style={{ flex: 1, width: '100%', height: '100%' }}>
                 <StatusBar backgroundColor="transparent" barStyle="light-content" />
-                <View style={ {
+                <View style={{
                     paddingLeft: Utils.moderateVerticalScale(25),
                     paddingRight: Utils.moderateVerticalScale(35),
                     paddingTop: Utils.moderateVerticalScale(50),
                     flex: 1,
                     backgroundColor: 'transparent'
-                } }>
+                }}>
                     <Image
-                        source={ require("../assets/Images/img/landing-logo.png") }
-                        style={ {
+                        source={require("../assets/Images/img/landing-logo.png")}
+                        style={{
                             width: Utils.moderateVerticalScale(90),
                             height: Utils.moderateVerticalScale(90),
                             alignItems: "center",
                             marginLeft: Utils.moderateVerticalScale(115),
                             marginTop: Utils.moderateVerticalScale(20)
-                        } }
+                        }}
                     />
-                    <Text style={ styles.TextStyle1 }>FORGOT PASSWORD</Text>
+                    <Text style={styles.TextStyle1}>FORGOT PASSWORD</Text>
 
                 </View>
-                <ScrollView style={ { marginTop: Utils.moderateVerticalScale(170) } }>
-                    <View style={ styles.container }>
-                        <Text style={ styles.TextStyle2 }>REGISTERED MOBILE NUMBER</Text>
+                <ScrollView style={{ marginTop: Utils.moderateVerticalScale(170) }}>
+                    <View style={styles.container}>
+                        <Text style={styles.TextStyle2}>REGISTERED MOBILE NUMBER</Text>
                         <TextInput
-                            value={ this.state.txtMobileNo }
-                            onChangeText={ txtMobileNo =>
+                            value={this.state.txtMobileNo}
+                            onChangeText={txtMobileNo =>
                                 this.setState({ txtMobileNo: txtMobileNo })
                             }
                             returnKeyType="next"
-                            style={ styles.input }
+                            style={styles.input}
                             placeholder="Mobile"
-                            maxLength={ 10 }
+                            maxLength={10}
                             keyboardType="numeric"
                             placeholderTextColor="#555555"
                             autoCapitalize="none"
 
-                            ref={ input => (this.inputs["txtMobileNo"] = input) }
+                            ref={input => (this.inputs["txtMobileNo"] = input)}
 
                             underlineColorAndroid="transparent"
                         />
 
                     </View>
                 </ScrollView>
-                <View style={ { flex: 1, backgroundColor: 'transparent', marginVertical: Utils.moderateVerticalScale(10), paddingVertical: Utils.moderateVerticalScale(20), justifyContent: 'center', alignItems: 'center', alignContent: 'center' } }>
-                    {/* <Text style={{ , color: '#fff', fontSize: Utils.moderateVerticalScale(12) }}>02 <Text style={{ fontWeight: 'normal', color: '#fff' }}>/02</Text></Text> */ }
-                    <TouchableOpacity onPress={ () => this._handlePress() } style={ { marginTop: Utils.moderateVerticalScale(10), alignContent: 'center', justifyContent: 'center', alignItems: 'center' } }>
+                <View style={{ flex: 1, backgroundColor: 'transparent', marginVertical: Utils.moderateVerticalScale(10), paddingVertical: Utils.moderateVerticalScale(20), justifyContent: 'center', alignItems: 'center', alignContent: 'center' }}>
+                    {/* <Text style={{ , color: '#fff', fontSize: Utils.moderateVerticalScale(12) }}>02 <Text style={{ fontWeight: 'normal', color: '#fff' }}>/02</Text></Text> */}
+                    <TouchableOpacity onPress={() => this._handlePress()} style={{ marginTop: Utils.moderateVerticalScale(10), alignContent: 'center', justifyContent: 'center', alignItems: 'center' }}>
                         <Image
-                            source={ require("../assets/Images/img/arrow-button.png") }
-                            style={ {
+                            source={require("../assets/Images/img/arrow-button.png")}
+                            style={{
                                 width: Utils.moderateScale(55),
                                 height: Utils.moderateScale(55),
                                 alignItems: "center"
-                            } }
+                            }}
                         />
                     </TouchableOpacity>
                 </View>

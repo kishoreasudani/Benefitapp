@@ -32,7 +32,7 @@ class PrivacyPolicyScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             username: '',
@@ -54,6 +54,10 @@ class PrivacyPolicyScreen extends Component {
     }
     PrivacyPolicy() {
         const _this = this;
+        this.setState({
+            loading: true,
+            loadingWeb: true,
+        })
         Utils.makeApiRequest(URL.API_URL.getPrivacyPolicy.url, URL.API_URL.getPrivacyPolicy.endPoint, {}, { authorization: this.props.userData.token }, "GET", false, false)
             .then(async response => {
                 if (response) {
@@ -61,13 +65,15 @@ class PrivacyPolicyScreen extends Component {
                     setTimeout(() =>
                         this.setState({
                             PrivacyPolicyData: response.body,
-                            loading: false
+                            loading: false,
+                            loadingWeb: false,
                         }), 2000);
 
                 } else {
                     this.setState({
                         PrivacyPolicyData: [],
-                        loading: false
+                        loading: false,
+                        loadingWeb: false,
                     })
                 }
             })
@@ -76,55 +82,67 @@ class PrivacyPolicyScreen extends Component {
     hideSpinner() {
         this.setState({ loadingWeb: false });
     }
+    htmlRender(rawData) {
+        let data = '<html> <head><meta name="viewport" content="width=device-width, initial-scale=1"> </head> <body>';
+        data += rawData;
+        data += '</body></html>'
+        return data;
+    }
 
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />;
+            return <Loader loading={this.state.loading} />;
         }
         return (
-            <View style={ [GlobalStyle.container] }>
+            <View style={[GlobalStyle.container]}>
                 <Header
-                    style={ localStyle.PolicyHeader }
+                    style={localStyle.PolicyHeader}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 1 } }>
+                    <Left style={{ flex: 1 }}>
 
-                        <TouchableOpacity onPress={ () => this.props.navigation.goBack() } >
-                            <FAIcon
+                        <TouchableOpacity onPress={() => this.props.navigation.goBack()} >
+                            {/* <FAIcon
                                 name="arrow-left"
-                                style={ {
+                                style={{
                                     color: "white",
                                     fontSize: Utils.moderateScale(15),
-                                } }
-                            />
+                                }}
+                            /> */}
+                            <Image source={Images.backArrow} style={{
+                                marginRight: Utils.moderateScale(15, 0.5),
+                                width: Utils.moderateScale(18),
+                                height: Utils.moderateScale(14)
+                            }} resizeMode="contain" resizeMethod="resize" />
                         </TouchableOpacity>
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
-                        <Text style={ GlobalStyle.headerTitle }> PRIVACY POLICY</Text>
+                    <Body style={GlobalStyle.headerBody}>
+                        <Text style={GlobalStyle.headerTitle}> PRIVACY POLICY</Text>
                     </Body>
-                    <Right style={ { flex: 1 } }>
+                    <Right style={{ flex: 1 }}>
 
                     </Right>
                 </Header>
-                <View style={ { flex: 1, backgroundColor: "#161616", } }>
-                    <View style={ [localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }] }>
-                        <View style={ localStyle.PolicyView }>
-                            <Text style={ { color: '#555555', fontSize: Utils.moderateVerticalScale(15) } }>PRIVACY POLICY</Text>
-                            <View style={ localStyle.PrivacyView } />
-                            <View style={ { flex: 1, width: "100%", } }>
+                <View style={{ flex: 1, backgroundColor: "#161616", }}>
+                    <View style={[localStyle.card, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+                        <View style={localStyle.PolicyView}>
+                            <Text style={{ color: '#555555', fontSize: Utils.moderateVerticalScale(15) }}>PRIVACY POLICY</Text>
+                            <View style={localStyle.PrivacyView} />
+                            <View style={{ flex: 1, width: "100%", backgroundColor: '#161616' }}>
                                 <WebView
-                                    style={ { backgroundColor: "#272727", color: "#fff" } }
-                                    scalesPageToFit={ true }
-                                    source={ {
-                                        html: '<p style="color: white">' + this.state.PrivacyPolicyData.description + '</p>'
-                                    } }
-                                    onLoad={ () => this.hideSpinner() }
-                                    javaScriptEnabled={ true }
-                                    domStorageEnabled={ true }
+                                    style={{ flex: 1, backgroundColor: 'transparent', }}
+                                    scalesPageToFit={true}
+                                    // source={{
+                                    //     html: '<p style="color: white">' + this.state.PrivacyPolicyData.description + '</p>'
+                                    // }}
+                                    source={{ html: this.htmlRender(this.state.PrivacyPolicyData.description) }}
+                                    onLoad={() => this.hideSpinner()}
+                                    javaScriptEnabled={true}
+                                    domStorageEnabled={true}
                                 />
                             </View>
-                            { this.state.loadingWeb && <LoaderInline loading={ this.state.loadingWeb } /> }
+                            {this.state.loadingWeb && <LoaderInline loading={this.state.loadingWeb} />}
                         </View>
                     </View>
                 </View>
@@ -153,6 +171,7 @@ const localStyle = StyleSheet.create({
     PolicyHeader: {
         width: Utils.width,
         backgroundColor: "#161616",
+        borderBottomColor: "#161616",
         height: Utils.moderateVerticalScale(100),
         paddingTop: Utils.moderateVerticalScale(30),
         elevation: 0
@@ -177,6 +196,7 @@ const localStyle = StyleSheet.create({
         borderRadius: Utils.moderateVerticalScale(10),
         justifyContent: 'center',
         alignContent: 'center'
+
     },
     MainContainer: {
         flex: 1,

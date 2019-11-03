@@ -42,7 +42,7 @@ class AllRewardsScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             loading: true,
@@ -69,6 +69,12 @@ class AllRewardsScreen extends Component {
         this._isMount = false;
     }
 
+    componentWillReceiveProps(props) {
+        const _this = this;
+        setInterval(() => {
+            _this.voucher();
+        }, 2000);
+    }
     voucher() {
         this.state = {
             loading: true,
@@ -169,14 +175,15 @@ class AllRewardsScreen extends Component {
     // }
 
     renderRewards({ item, index }) {
+
         const _this = this;
         return (
-            <View style={ localStyle.innerContainer }>
-                <ImageBackground source={ { uri: URL.ImageURLProduction + "data/vouchers/" + item.bg_image } }
-                    style={ localStyle.card }
-                    imageStyle={ { borderRadius: Utils.moderateVerticalScale(15) } }>
+            <View style={localStyle.innerContainer}>
+                <ImageBackground source={{ uri: URL.ImageURLProduction + "data/vouchers/" + item.bg_image }}
+                    style={localStyle.card}
+                    imageStyle={{ borderRadius: Utils.moderateVerticalScale(15) }}>
                     <View
-                        style={ {
+                        style={{
                             backgroundColor: "rgba(0,0,0,0.7)",
                             width: "100%",
                             justifyContent: 'center',
@@ -185,26 +192,32 @@ class AllRewardsScreen extends Component {
                             borderRadius: Utils.moderateVerticalScale(15),
                             paddingVertical: Utils.moderateVerticalScale(20),
                             //marginBottom: Utils.moderateVerticalScale(15)
-                        } }
+                        }}
                     >
-                        <Image source={ { uri: URL.ImageURLProduction + "data/vouchers/" + item.image } }
-                            style={ {
-                                width: Utils.moderateVerticalScale(80),
-                                height: Utils.moderateVerticalScale(80),
+                        <Image source={{ uri: URL.ImageURLProduction + "data/vouchers/" + item.image }}
+                            style={{
+                                width: Utils.moderateVerticalScale(100),
+                                height: Utils.moderateVerticalScale(100),
+                                // borderRadius: Utils.moderateVerticalScale(5),
+                                // resizeMode: "cover",
+                                // alignItems: "center",
                                 borderRadius: Utils.moderateVerticalScale(100 / 2),
+                                borderColor: "#fff",
+                                borderWidth: 1,
                                 alignItems: "center",
+                                resizeMode: "cover",
                                 zIndex: 10,
-                            } }
+                            }}
                         />
-                        <Text style={ {
+                        <Text style={{
                             marginTop: Utils.moderateVerticalScale(30), color: '#fff',
                             fontWeight: '200', fontSize: Utils.moderateVerticalScale(18)
-                        } }> { item.name }   </Text>
-                        <Text style={ {
+                        }}> {item.name}   </Text>
+                        <Text style={{
                             padding: 5, color: '#fff',
                             fontSize: Utils.moderateVerticalScale(13)
-                        } }>Expires in { item.day_diff1 }  </Text>
-                        <Text style={ {
+                        }}>Expires in {item.day_diff1}  </Text>
+                        <Text style={{
                             paddingHorizontal: 17,
                             color: '#fff',
                             marginTop: 10,
@@ -213,39 +226,41 @@ class AllRewardsScreen extends Component {
                             alignContent: 'center',
                             alignItems: 'center',
                             fontWeight: '200',
-                            fontSize: Utils.moderateVerticalScale(12)
-                        } }>
-                            { item.descriptions } </Text>
-                        <Image source={ Images.benefitCoin }
-                            style={ {
+                            fontSize: Utils.moderateVerticalScale(15)
+                        }}>
+                            {item.descriptions} </Text>
+                        <Image source={Images.benefitCoin}
+                            style={{
                                 width: Utils.moderateVerticalScale(40),
                                 height: Utils.moderateVerticalScale(40),
-                                borderRadius: Utils.moderateVerticalScale(60 / 2),
+                                borderRadius: Utils.moderateVerticalScale(5),
                                 alignItems: "center",
+                                resizeMode: "cover",
                                 zIndex: 10,
                                 marginTop: Utils.moderateVerticalScale(20)
-                            } }
+                            }}
                         />
-                        <Text style={ { padding: 5, color: '#fff', fontWeight: '400', fontSize: Utils.moderateVerticalScale(13) } }>
-                            <Text style={ { fontWeight: '200', fontSize: Utils.moderateVerticalScale(15) } } >
-                                Need { item.coins_required } </Text>coins to buy this reward</Text>
+                        <Text style={{ padding: 5, color: '#fff', fontWeight: '400', fontSize: Utils.moderateVerticalScale(13) }}>
+                            <Text style={{ fontWeight: '200', fontSize: Utils.moderateVerticalScale(15) }} >
+                                Need {item.coins_required} </Text>coins to buy this reward</Text>
 
-                        <View style={ { width: "50%" } }>
-                            <TouchableOpacity onPress={ () => {
+                        <View style={{ width: "50%" }}>
+                            <TouchableOpacity onPress={() => {
                                 this.props.navigation.navigate("ViewReward", {
-                                    referenceId: item.id
+                                    referenceId: item.id,
+                                    image: item.image
                                 });
-                            } }>
+                            }}>
                                 <LinearGradient
-                                    start={ { x: 0, y: 0 } }
-                                    end={ { x: 1, y: 0 } }
-                                    colors={ ['#70bf51', '#54c18d', '#3cc4f5'] }
-                                    style={ localStyle.buttonContainer1 }>
+                                    start={{ x: 0, y: 0 }}
+                                    end={{ x: 1, y: 0 }}
+                                    colors={['#70bf51', '#54c18d', '#3cc4f5']}
+                                    style={localStyle.buttonContainer1}>
 
-                                    <Text style={ {
+                                    <Text style={{
                                         color: "#fff",
                                         fontSize: 15
-                                    } }>
+                                    }}>
                                         Get This
                                         </Text>
 
@@ -262,21 +277,21 @@ class AllRewardsScreen extends Component {
 
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />;
+            return <Loader loading={this.state.loading} />;
         }
         const config = {
             velocityThreshold: 0.3,
             directionalOffsetThreshold: 80
         };
         return (
-            <View style={ [GlobalStyle.container, localStyle.container] }>
+            <View style={[GlobalStyle.container, localStyle.container]}>
                 <Header
-                    style={ GlobalStyle.header }
+                    style={GlobalStyle.header}
                     androidStatusBarColor="#161616"
                     iosBarStyle="light-content"
                 >
-                    <Left style={ { flex: 0 } }>
-                        <Text style={ GlobalStyle.headerTitle }>All Rewards</Text>
+                    <Left style={{ flex: 0 }}>
+                        <Text style={GlobalStyle.headerTitle}>All Rewards</Text>
                         {/* <TouchableOpacity onPress={ () => this.props.navigation.goBack() }>
                             <Image source={ Images.backArrow } style={ {
                                 marginRight: Utils.moderateScale(15, 0.5),
@@ -286,10 +301,10 @@ class AllRewardsScreen extends Component {
                             } } resizeMode="contain" resizeMethod="resize" />
                         </TouchableOpacity> */}
                     </Left>
-                    <Body style={ GlobalStyle.headerBody }>
+                    <Body style={GlobalStyle.headerBody}>
 
                     </Body>
-                    <Right style={ { flex: 1 } }>
+                    <Right style={{ flex: 1 }}>
                         {/* <TouchableOpacity onPress={ () => this.props.navigation.navigate("Notifications") }>
                             <FAIcon
                                 name="bell"
@@ -299,34 +314,34 @@ class AllRewardsScreen extends Component {
                                 } }
                             />
                         </TouchableOpacity> */}
-                        <Buttons.ShowNotification onPress={ () => {
+                        <Buttons.ShowNotification onPress={() => {
                             this.props.navigation.navigate("Notifications")
-                        } } />
+                        }} />
                     </Right>
                 </Header>
 
                 <FlatList
-                    style={ {
+                    style={{
                         flex: 1,
                         marginTop: Utils.moderateVerticalScale(10),
                         marginBottom: Utils.scale(5)
-                    } }
-                    data={ this.state.voucherData }
-                    numColumns={ 1 }
-                    showsVerticalScrollIndicator={ false }
-                    horizontal={ false }
+                    }}
+                    data={this.state.voucherData}
+                    numColumns={1}
+                    showsVerticalScrollIndicator={false}
+                    horizontal={false}
                     // keyExtractor={ (item, index) => item.id.toString() }
-                    renderItem={ this.renderRewards }
+                    renderItem={this.renderRewards}
                     ListEmptyComponent={
                         <ListEmptyComponent message="No Reward available." />
                     }
-                    onEndReached={ this.handleLoadMore }
-                    onEndReachedThreshold={ 0.2 }
+                    onEndReached={this.handleLoadMore}
+                    onEndReachedThreshold={0.2}
                     refreshControl={
                         <RefreshControl
-                            colors={ ["red", "blue", "orange"] }
-                            refreshing={ this.state.refreshing }
-                            onRefresh={ this.handleRefresh }
+                            colors={["red", "blue", "orange"]}
+                            refreshing={this.state.refreshing}
+                            onRefresh={this.handleRefresh}
                         />
                     }
                 />

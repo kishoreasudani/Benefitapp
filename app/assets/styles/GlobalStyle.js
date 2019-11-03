@@ -101,8 +101,9 @@ export const GlobalStyle = StyleSheet.create({
   header: {
     width: Utils.width,
     backgroundColor: "#161616",
+    borderBottomColor: "#161616",
     height: Utils.moderateVerticalScale(Platform.OS == "ios" ? 70 : 70),
-    paddingTop: Utils.moderateVerticalScale(Platform.OS == "ios" ? 10 : 40),
+    paddingTop: Utils.moderateVerticalScale(Platform.OS == "ios" ? 40 : 40),
     elevation: 0
   },
   headerModal: {

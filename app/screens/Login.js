@@ -29,7 +29,7 @@ class LoginScreen extends Component {
         header: null
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             showLoginType: true,
@@ -105,11 +105,28 @@ class LoginScreen extends Component {
             .then(async response => {
                 if (response) {
                     resultData = response.body;
-                    _this.props.setLoggedInUserData(resultData);
-                    global.userData = resultData;
-                    await Utils.saveStateAsyncStorage({ userData: resultData });
+                    // _this.props.setLoggedInUserData(resultData);
+                    // global.userData = resultData;
+                    // await Utils.saveStateAsyncStorage({ userData: resultData });
+                    // _this.setState({ loading: false }, () => {
+                    //     _this.props.navigation.navigate('Home');
+                    // });
+                    if (resultData.verified == 'Yes') {
+                        _this.props.setLoggedInUserData(resultData);
+                        global.userData = resultData;
+                        await Utils.saveStateAsyncStorage({ userData: resultData });
+                    }
                     _this.setState({ loading: false }, () => {
-                        _this.props.navigation.navigate('Home');
+                        if (resultData.verified == 'Yes') {
+                            _this.props.navigation.navigate('Home');
+                        }
+                        else {
+                            _this.props.navigation.navigate('Otp',
+                                {
+                                    mobileNo: resultData.mobile
+                                });
+                        }
+
                     });
                 } else {
                     this.setState({
@@ -152,72 +169,72 @@ class LoginScreen extends Component {
     }
     render() {
         if (this.state.loading) {
-            return <Loader loading={ this.state.loading } />
+            return <Loader loading={this.state.loading} />
         }
         return (
-            <ImageBackground source={ Images.background }
-                style={ { flex: 1, width: '100%', height: '100%' } }>
+            <ImageBackground source={Images.background}
+                style={{ flex: 1, width: '100%', height: '100%' }}>
                 <StatusBar backgroundColor="transparent" barStyle="light-content" />
-                <View style={ styles.headerview }>
-                    <Image source={ Images.logo } style={ styles.image } />
-                    <Text style={ styles.TextStyle1 }>LOGIN</Text>
+                <View style={styles.headerview}>
+                    <Image source={Images.logo} style={styles.image} />
+                    <Text style={styles.TextStyle1}>LOGIN</Text>
                 </View>
-                <ScrollView style={ { marginTop: Utils.moderateVerticalScale(170) } }>
-                    <View style={ styles.container }>
+                <ScrollView style={{ marginTop: Utils.moderateVerticalScale(170) }}>
+                    <View style={styles.container}>
                         <View>
-                            <Text style={ styles.TextStyle2 }>USERNAME</Text>
+                            <Text style={styles.TextStyle2}>USERNAME</Text>
                             <TextInput
-                                value={ this.state.txtEmailId }
-                                onChangeText={ txtEmailId =>
+                                value={this.state.txtEmailId}
+                                onChangeText={txtEmailId =>
                                     this.setState({ txtEmailId: txtEmailId })
                                 }
                                 returnKeyType="next"
-                                style={ styles.input }
+                                style={styles.input}
                                 placeholder="Username"
                                 placeholderTextColor="#555555"
                                 autoCapitalize="none"
-                                ref={ input => (this.inputs["txtEmailId"] = input) }
+                                ref={input => (this.inputs["txtEmailId"] = input)}
 
                                 underlineColorAndroid="transparent"
                             />
                         </View>
-                        <Text style={ styles.TextStyle2 }>PASSWORD</Text>
+                        <Text style={styles.TextStyle2}>PASSWORD</Text>
                         <TextInput
-                            value={ this.state.txtPassword }
-                            style={ styles.input }
+                            value={this.state.txtPassword}
+                            style={styles.input}
                             placeholder="Password"
                             placeholderTextColor="#555555"
                             autoCapitalize="none"
-                            onChangeText={ txtPassword =>
+                            onChangeText={txtPassword =>
                                 this.setState({ txtPassword: txtPassword })
                             }
                             returnKeyType="next"
-                            secureTextEntry={ true }
-                            style={ styles.input }
-                            ref={ input => (this.inputs["txtPassword"] = input) }
+                            secureTextEntry={true}
+                            style={styles.input}
+                            ref={input => (this.inputs["txtPassword"] = input)}
                             underlineColorAndroid="transparent"
                         />
                     </View>
-                    <View style={ styles.imageview }>
-                        <TouchableOpacity onPress={ () => this._handlePress() } >
-                            <Image source={ Images.nextArrow } style={ styles.ImageArrow } />
+                    <View style={styles.imageview}>
+                        <TouchableOpacity onPress={() => this._handlePress()} >
+                            <Image source={Images.nextArrow} style={styles.ImageArrow} />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={ () => this.props.navigation.navigate("ForgotPassword") }
-                            style={ {
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ForgotPassword")}
+                            style={{
                                 width: '100%', alignContent: 'center', justifyContent: 'center',
                                 alignItems: 'center', height: '100%'
-                            } }>
-                            <Text style={ styles.TextStyle3 }>Forgot Password?</Text>
+                            }}>
+                            <Text style={styles.TextStyle3}>Forgot Password?</Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
-                <View style={ styles.signup }>
-                    <TouchableOpacity onPress={ () => this.props.navigation.navigate("Signup") }
-                        style={ {
+                <View style={styles.signup}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Signup")}
+                        style={{
                             width: '100%', alignContent: 'center', justifyContent: 'center',
                             alignItems: 'center', height: '100%'
-                        } }>
-                        <Text style={ { color: '#fff' } }>New user? <Text style={ {} }>SIGNUP</Text></Text>
+                        }}>
+                        <Text style={{ color: '#fff' }}>New user? <Text style={{}}>SIGNUP</Text></Text>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>

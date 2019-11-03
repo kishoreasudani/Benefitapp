@@ -109,26 +109,26 @@ function displayAlert(
       dialogStyle: { borderRadius: 10, width: "90%", padding: 0 },
       children: (
         <DialogContent
-          contentStyle={ { borderRadius: 10, padding: 0, margin: 0 } }
+          contentStyle={{ borderRadius: 10, padding: 0, margin: 0 }}
         >
           <View
-            style={ [
+            style={[
               displayAlertStyle.container,
               { borderRadius: 10, margin: 0, paddingHorizontal: 0 }
-            ] }
+            ]}
           >
             <View
-              style={ {
+              style={{
                 padding: moderateScale(20),
                 marginVertical: moderateVerticalScale(5),
                 justifyContent: "center",
                 alignContent: "center",
                 alignItems: "center"
-              } }
+              }}
             >
-              { hasIcon ? (
+              {hasIcon ? (
                 <View
-                  style={ {
+                  style={{
                     height: moderateScale(45),
                     width: moderateScale(45),
                     justifyContent: "center",
@@ -136,26 +136,26 @@ function displayAlert(
                     alignItems: "center",
                     borderWidth: 1,
                     borderColor: "transparent"
-                  } }
+                  }}
                 >
                   <Image
-                    source={ icon }
+                    source={icon}
                     resizeMode="contain"
-                    style={ {
+                    style={{
                       height: moderateScale(40),
                       width: moderateScale(40)
-                    } }
+                    }}
                   />
                 </View>
               ) : (
-                  <Text style={ displayAlertStyle.heading }>{ title }</Text>
-                ) }
-              <View style={ displayAlertStyle.messageContainer }>
-                <Text style={ displayAlertStyle.messageText }>{ messageText }</Text>
+                  <Text style={displayAlertStyle.heading}>{title}</Text>
+                )}
+              <View style={displayAlertStyle.messageContainer}>
+                <Text style={displayAlertStyle.messageText}>{messageText}</Text>
               </View>
             </View>
             <View
-              style={ {
+              style={{
                 justifyContent: "space-evenly",
                 alignContent: "center",
                 alignItems: "center",
@@ -166,31 +166,31 @@ function displayAlert(
                 borderTopColor: "#bdbdbd",
                 borderTopWidth: 1,
                 height: moderateVerticalScale(80)
-              } }
+              }}
             >
-              { cancelable ? (
+              {cancelable ? (
                 <TouchableOpacity
-                  onPress={ () => {
+                  onPress={() => {
                     DialogManager.dismissAll(() => {
                     });
-                  } }
-                  style={ displayAlertStyle.cancelButton }
+                  }}
+                  style={displayAlertStyle.cancelButton}
                 >
-                  <Text style={ displayAlertStyle.cancelButtonText }>
-                    { cancelableText.toUpperCase() }
+                  <Text style={displayAlertStyle.cancelButtonText}>
+                    {cancelableText.toUpperCase()}
                   </Text>
                 </TouchableOpacity>
-              ) : null }
+              ) : null}
               <TouchableOpacity
-                onPress={ () => {
+                onPress={() => {
                   DialogManager.dismissAll(() => {
                     typeof callbackOnOk === "function" && callbackOnOk();
                   });
-                } }
-                style={ displayAlertStyle.acceptButton }
+                }}
+                style={displayAlertStyle.acceptButton}
               >
-                <Text style={ displayAlertStyle.acceptButtonText }>
-                  { buttonText.toUpperCase() }
+                <Text style={displayAlertStyle.acceptButtonText}>
+                  {buttonText.toUpperCase()}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -279,26 +279,26 @@ function displayAlertRewards(
       dialogStyle: { borderRadius: 10, width: "90%", padding: 0 },
       children: (
         <DialogContent
-          contentStyle={ { borderRadius: 10, padding: 0, margin: 0 } }
+          contentStyle={{ borderRadius: 10, padding: 0, margin: 0 }}
         >
           <View
-            style={ [
+            style={[
               displayAlertStyle.container,
               { borderRadius: 10, margin: 0, paddingHorizontal: 0 }
-            ] }
+            ]}
           >
             <View
-              style={ {
+              style={{
                 padding: moderateScale(20),
                 marginVertical: moderateVerticalScale(5),
                 justifyContent: "center",
                 alignContent: "center",
                 alignItems: "center"
-              } }
+              }}
             >
-              { hasIcon ? (
+              {hasIcon ? (
                 <View
-                  style={ {
+                  style={{
                     height: moderateScale(45),
                     width: moderateScale(45),
                     justifyContent: "center",
@@ -306,26 +306,26 @@ function displayAlertRewards(
                     alignItems: "center",
                     borderWidth: 1,
                     borderColor: "transparent"
-                  } }
+                  }}
                 >
                   <Image
-                    source={ icon }
+                    source={icon}
                     resizeMode="contain"
-                    style={ {
+                    style={{
                       height: moderateScale(100),
                       width: moderateScale(100)
-                    } }
+                    }}
                   />
                 </View>
               ) : (
-                  <Text style={ displayAlertStyle.heading }>{ title }</Text>
-                ) }
-              <View style={ displayAlertStyle.messageContainer }>
-                <Text style={ displayAlertStyle.messageText }>{ messageText }</Text>
+                  <Text style={displayAlertStyle.heading}>{title}</Text>
+                )}
+              <View style={displayAlertStyle.messageContainer}>
+                <Text style={displayAlertStyle.messageText}>{messageText}</Text>
               </View>
             </View>
             <View
-              style={ {
+              style={{
                 justifyContent: "space-evenly",
                 alignContent: "center",
                 alignItems: "center",
@@ -336,7 +336,7 @@ function displayAlertRewards(
                 borderTopColor: "#bdbdbd",
                 borderTopWidth: 1,
                 height: moderateVerticalScale(80)
-              } }
+              }}
             >
               {/* { cancelable ? (
                 <TouchableOpacity
@@ -352,15 +352,15 @@ function displayAlertRewards(
                 </TouchableOpacity>
               ) : null } */}
               <TouchableOpacity
-                onPress={ () => {
+                onPress={() => {
                   DialogManager.dismissAll(() => {
                     typeof callbackOnOk === "function" && callbackOnOk();
                   });
-                } }
-                style={ displayAlertStyle.acceptButton }
+                }}
+                style={displayAlertStyle.acceptButton}
               >
-                <Text style={ displayAlertStyle.acceptButtonText }>
-                  { buttonText.toUpperCase() }
+                <Text style={displayAlertStyle.acceptButtonText}>
+                  {buttonText.toUpperCase()}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -427,9 +427,9 @@ async function makeApiRequest(url, endpoint = null, data, headers = {}, method =
       console.log(e);
       try {
         const error = JSON.parse(e.message);
-        displayAlert("", error.message, "okay", null, false, "", true, true, Images.alert);
+        // displayAlert("", error.message, "okay", null, false, "", true, true, Images.alert);
       } catch (e) {
-        displayAlert("", "Something went wrong. Please contact the administrator", "okay", null, false, "", true, true, Images.alert);
+        // displayAlert("", "Something went wrong. Please contact the administrator", "okay", null, false, "", true, true, Images.alert);
       }
       return false;
     });
