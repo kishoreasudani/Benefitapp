@@ -84,7 +84,7 @@
     "redux-logger": "^3.0.6",
     "rn-apple-healthkit": "^0.6.5",
     "rn-fetch-blob": "^0.10.15",
-    "zrender": "4.0.7"
+    "zrender": "5.2.1"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",
